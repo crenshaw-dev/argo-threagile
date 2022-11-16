@@ -1,0 +1,1408 @@
+threagile_version: 1.0.0
+
+# NOTE:
+#
+# For a perfect editing experience within your IDE of choice you can easily
+# get model syntax validation and autocompletion (very handy for enum values)
+# as well as live templates: Just import the schema.json into your IDE and assign
+# it as "schema" to each Threagile YAML file. Also try to import individual parts
+# from the live-templates.txt file into your IDE as live editing templates.
+#
+# You might also want to try the REST API when running in server mode...
+
+
+# This is only a stub for simple quick editing and is not complete.
+# For a complete usable example model see the "-create-example-model" option.
+
+
+title: Argo CD
+
+date: 2022-11-13
+
+author:
+  name: Argoproj Maintainers
+  homepage: argoproj.io
+
+management_summary_comment: >
+  Just some <b>more</b> custom summary possible here...
+
+business_criticality: important # values: archive, operational, important, critical, mission-critical
+
+
+
+
+business_overview:
+  description: Some more <i>demo text</i> here and even images...
+  images:
+#    - custom-image-1.png: Some dummy image 1
+#    - custom-image-2.png: Some dummy image 2
+
+
+technical_overview:
+  description: Some more <i>demo text</i> here and even images...
+  images:
+#    - custom-image-1.png: Some dummy image 1
+#    - custom-image-2.png: Some dummy image 2
+
+
+
+questions: # simply use "" as answer to signal "unanswered"
+  Some question without an answer?: ""
+  Some question with an answer?: >
+    Some answer
+
+abuse_cases:
+  Deploying Crypto-Miner: >
+    Attacker uses a compromised Argo CD instance to deploy a crypto-miner
+
+
+security_requirements:
+  Users are restricted by RBAC: >
+    RBAC rules defined by an Argo CD operator are actually enforced for API access.
+
+
+
+# Tags can be used for anything, it's just a tag. Also risk rules can act based on tags if you like.
+# Tags can be used for example to name the products used (which is more concrete than the technology types that only specify the type)
+tags_available:
+  - aws
+  - aws:apigateway
+  - aws:dynamodb
+  - aws:ebs
+  - aws:ec2
+  - aws:iam
+  - aws:lambda
+  - aws:rds
+  - aws:s3
+  - aws:sqs
+  - aws:vpc
+  - azure
+  - docker
+  - gcp
+  - git
+  - kubernetes
+  - nexus
+  - ocp
+  - openshift
+  - tomcat
+  - some-tag
+  - some-other-tag
+
+data_assets:
+  Argo CD GitHub Push Token:
+    id: argo-cd-github-push-token
+    description: A token granting push access to the Argo CD GitHub repo.
+    usage: devops
+    origin: GitHub UI or API
+    quantity: few
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+  Argo CD Container Image:
+    id: argo-cd-container-image
+    description: Argo CD container image, primarily hosted on Quay.
+    usage: devops
+    origin: Argo CD GitHub build pipeline
+    quantity: many
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+  Rendered Manifests:
+    id: rendered-manifests
+    description: Some Description
+    usage: devops # values: business, devops
+    origin: Some Origin
+    owner: Argo CD
+    quantity: many # values: very-few, few, many, very-many
+    confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: operational # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The manifests are potentially-sensitive, especially in a multi-tenant Argo CD installation. They shouldn't contain
+      any secrets. Integrity is important to ensure the correct manifests are deployed. The cache helps mitigate denial-of-service
+      on the controller and API server, but Argo CD can still function without the cache.
+  Manifest Sources:
+    id: manifest-sources
+    description: Some Description
+    usage: devops # values: business, devops
+    origin: Some Origin
+    owner: Argo CD
+    quantity: many # values: very-few, few, many, very-many
+    confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: operational # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The manifest sources are potentially-sensitive, especially in a multi-tenant Argo CD installation. They shouldn't contain
+      any secrets. Integrity is important to ensure the correct manifests are deployed. The cache helps mitigate denial-of-service
+      on the controller and API server, but Argo CD can still function without the cache.
+  Application Name:
+    id: application-name
+    description: Name of the Application
+    usage: devops # values: business, devops
+    origin: Some Origin
+    owner: Argo CD
+    quantity: many # values: very-few, few, many, very-many
+    confidentiality: restricted # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: operational # values: archive, operational, important, critical, mission-critical
+    availability: operational # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The application name is used to identify the application and the project which controls it. It should be protected
+      from tenants or users who do not have access to that application.
+  Application Manifest:
+    id: application-manifest
+    description: Manifest of an Application, defining things such as manifest source and destination cluster.
+    usage: devops
+    origin: Argo CD Operator or Users
+    owner: Argo CD Operator
+    quantity: many
+    confidentiality: confidential
+    integrity: important
+    availability: operational
+  AppProject Manifest:
+    id: appproject-manifest
+    description: Manifest of an AppProject, a CRD which expresses certain rules applied to Applications.
+    usage: devops
+    origin: Argo CD Operator or Users
+    owner: Argo CD Operator
+    quantity: few
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+  Live Manifests:
+    id: live-manifests
+    description: Live manifests representing some Kubernetes resource. May include contents of secrets.
+    usage: devops
+    origin: Kubernetes
+    owner: Argo CD User
+    quantity: very-many
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+  OIDC Tokens:
+    id: oidc-tokens
+    description: JWTs holding user information, including group membership.
+    usage: business
+    origin: OIDC provider
+    quantity: very-many
+    confidentiality: strictly-confidential
+    integrity: operational
+    availability: operational
+  Argo Tokens:
+    id: argo-tokens
+    description: API access tokens generated by the API server and validated by the API server.
+    usage: devops
+    origin: Argo CD API Server
+    quantity: very-many
+    confidentiality: strictly-confidential
+    integrity: operational
+    availability: operational
+  API Server Secret:
+    id: api-server-secret
+    description: A randomly-generated key used by the API server to sign access tokens.
+    usage: devops
+    origin: Argo CD API Server
+    quantity: few
+    confidentiality: strictly-confidential
+    integrity: operational
+    availability: operational
+#  CLI Configuration File:
+#  CLI Binary:
+#    integrity: mission-critical
+#    justification_cia_rating: >
+#      If an attacker could modify the CLI binary, they could, for example, exfiltrate an access token, or use the access
+#      token to make changes to cluster resources such as the Argo CD configuration itself.
+#  Argo CD Frontend Dependencies:
+#  Argo CD Go Dependencies:
+  Argo CD Base Image:
+    id: argo-cd-base-image
+    description: Ubuntu base image which the Argo CD image is built on.
+    usage: devops
+    origin: Ubuntu
+    quantity: very-few
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+  #  Argo CD Debian Packages:
+#  Argo CD Dex HAProxy Manifests:
+#  Argo CD Redis HA Manifests:
+#  Argo CD Source Repo Push Token:
+#  RBAC Config:
+  Cluster Access Credentials:
+    id: cluster-access-credentials
+    description: Credentials granting access to manage an external Kubernetes cluster's resources.
+    usage: devops
+    origin: External cluster API.
+    quantity: many
+    confidentiality: strictly-confidential
+    integrity: operational
+    availability: operational
+  Cluster Access Configuration:
+    id: cluster-access-configuration
+    description: Configuration for external cluster access. Includes clusterResources boolean and namespaces list.
+    usage: devops
+    origin: Argo CD Operator
+    quantity: many
+    confidentiality: restricted
+    integrity: critical
+    availability: operational
+    justification_cia_rating: >
+      Integrity is critical because an attacker could disable TLS validation or enable write access to cluster resources
+      or out-of-bounds namespaces, of those were previously restricted at the cluster config level. Resource scope and
+      destinations may be restricted elsewhere as well (for example, in an AppProject).
+  OIDC Public Keys:
+    id: oidc-public-keys
+    description: Public keys used to validate OIDC tokens.
+    usage: business
+    origin: OIDC provider
+    quantity: few
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+#  OIDC Configuration:
+  Repo Access Credentials:
+    id: repo-access-credentials
+    description: Credentials for retrieving manifest sources from a source control manager (git, Helm, etc.).
+    usage: devops
+    origin: Argo CD Operator
+    quantity: many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+#  Repo Access Configuration:
+  Git Repo URL:
+    id: git-repo-url
+    description: URL of a git repo.
+    usage: devops
+    origin: SCM API or Argo CD User
+    quantity: many
+    confidentiality: confidential
+    integrity: important
+    availability: operational
+  Git Repo Name:
+    id: git-repo-name
+    description: Name of a git repo.
+    usage: devops
+    origin: SCM API or Argo CD User
+    quantity: many
+    confidentiality: restricted
+    integrity: operational
+    availability: operational
+  Git Branch Name:
+    id: git-branch-name
+    description: Name of a branch in a git repo.
+    usage: devops
+    origin: SCM API or Argo CD User
+    quantity: very-many
+    confidentiality: confidential
+    integrity: critical
+    availability: operational
+  Git Organization Name:
+    id: git-org-name
+    description: Name of an organization/project in a git source control management system.
+    usage: devops
+    origin: SCM API or Argo CD User
+    quantity: many
+    confidentiality: confidential
+    integrity: important
+    availability: operational
+  ApplicationSet Name:
+    id: applicationset-name
+    description: Name of an ApplicationSet.
+    usage: devops
+    origin: Argo CD Operator
+    quantity: many
+    confidentiality: restricted
+    integrity: critical
+    availability: operational
+  ApplicationSet Manifest:
+    id: applicationset-manifest
+    description: Manifest representing an ApplicationSet.
+    usage: devops
+    origin: Argo CD Operator
+    quantity: many
+    confidentiality: restricted
+    integrity: mission-critical
+    availability: operational
+  Quay Push Token:
+    id: quay-push-token
+    description: Quay token with push access to the Argo CD repository.
+    usage: devops
+    origin: Quay
+    owner: Argo CD build team.
+    quantity: very-few
+    confidentiality: strictly-confidential
+    integrity: operational
+    availability: operational
+  Argo CD Container Image Tag:
+    id: argo-cd-container-image-tag
+    description: Repo name/tag for the Argo CD container image.
+    usage: devops
+    origin: Manifests repository.
+    quantity: very-few
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+  Argo CD Source:
+    id: argo-cd-source
+    description: The source code for  Argo CD.
+    usage: devops
+    origin: Argo CD maintainers
+    quantity: very-few
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+  Argo CD RBAC Config:
+    id: argo-cd-rbac-config
+    description: The RBAC settings for an Argo CD instance.
+    usage: devops
+    origin: Argo CD Operator
+    quantity: very-few
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+
+technical_assets:
+  Argo CD Maintainer Git Client:
+    id: argo-cd-maintainer-git-client
+    description: Git client (and configuration) used by an Argo CD maintainer.
+    type: process
+    usage: devops
+    used_as_client_by_human: true
+    out_of_scope: false
+    size: application
+    technology: cli
+    internet: false
+    machine: physical
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD Maintainer
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: false
+    redundant: false
+    data_assets_processed:
+      - argo-cd-source
+      - argo-cd-container-image-tag
+    data_assets_stored:
+      - argo-cd-source
+      - argo-cd-container-image-tag
+      - argo-cd-github-push-token
+    data_formats_accepted:
+      - file
+    communication_links:
+      Push Code/Tags to GitHub:
+        target: argo-cd-source-repo
+        description: >
+          Push code to the Argo CD repo (as when cherry-picking changes) and/or push tags (as when cutting a release).
+        protocol: https
+        authentication: two-factor
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - argo-cd-github-push-token
+          - argo-cd-source
+          - argo-cd-container-image-tag
+        data_assets_received:
+          - argo-cd-source
+          - argo-cd-container-image-tag
+  Quay:
+    id: quay
+    description: Quay image repository.
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: system
+    technology: artifact-registry
+    internet: true
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: Red Hat
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: false
+    data_assets_processed:
+      - argo-cd-container-image
+      - argo-cd-container-image-tag
+      - quay-push-token
+    data_assets_stored:
+      - argo-cd-container-image
+  Docker Hub:
+    id: docker-hub
+    description: Docker Hub image repository.
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: system
+    technology: artifact-registry
+    internet: true
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: Ubuntu
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: false
+    data_assets_processed:
+      - argo-cd-base-image
+    data_assets_stored:
+      - argo-cd-base-image
+  Argo CD Source Repo (GitHub):
+    id: argo-cd-source-repo
+    description: GitHub reo holding the Argo CD source code.
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: application
+    technology: sourcecode-repository
+    internet: true
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: GitHub
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: false
+    data_assets_processed:
+      - argo-cd-source
+    data_assets_stored:
+      - argo-cd-source
+  Argo CD Build Pipeline (GitHub Actions):
+    id: argo-cd-build-pipeline
+    description: Argo CD build pipeline, hosted on GitHub Actions.
+    type: process
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: application
+    technology: build-pipeline
+    internet: true
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: GitHub
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: false
+    data_assets_processed:
+      - argo-cd-container-image
+      - argo-cd-source
+      - argo-cd-base-image
+      - quay-push-token
+    data_assets_stored:
+      - quay-push-token
+      - argo-cd-github-push-token
+    communication_links:
+      Pull Source:
+        target: argo-cd-source-repo
+        description: Pull the Argo CD source from the GitHub repo.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+        data_assets_received:
+          - argo-cd-source
+      Pull Base Image from Docker Hub:
+        target: docker-hub
+        description: Pull the Ubuntu base image from Docker Hub.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+        data_assets_received:
+          - argo-cd-base-image
+      Push Image to Quay:
+        target: quay
+        description: Quay image repository.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - quay-push-token
+          - argo-cd-container-image
+        data_assets_received:
+  API Server:
+    id: api-server
+    description: Argo CD API server. Accepts requests from the UI and CLI.
+    type: process
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component
+    technology: application-server
+    internet: false
+    machine: container
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD Operator
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: true
+    data_assets_processed:
+      - argo-cd-rbac-config
+      - rendered-manifests
+      - application-name
+      - live-manifests
+      - oidc-tokens
+      - oidc-public-keys
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - api-server-secret
+      - argo-tokens
+      - repo-access-credentials
+      - appproject-manifest
+      - applicationset-manifest
+      - application-manifest
+      - argo-cd-container-image-tag
+      - argo-cd-container-image
+      - manifest-sources # When sent for server-side generation or override sync.
+    data_assets_stored:
+      - oidc-public-keys
+      - argo-cd-rbac-config
+    data_formats_accepted:
+      - json
+      - csv
+    communication_links:
+      Pull Argo CD Image:
+        target: quay
+        description: Pull the Argo CD container image from Quay.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+          - argo-cd-container-image-tag
+        data_assets_received:
+          - argo-cd-container-image
+      Fetching Rendered Manifests from Cache:
+        target: repo-server
+        description: Fetch manifests from the repo server to display via UI or CLI.
+        protocol: https # values: see help
+        authentication: none # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: none # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: true
+        readonly: true
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - application-name
+        data_assets_received: # sequence of IDs to reference
+          - rendered-manifests
+      Get/Update/Delete Live Resource State from Kubernetes (Host):
+        target: host-cluster-kubernetes-api
+        description: Get the live state of an Argo CD-managed resource, or potentially update or delete a resource.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - application-name
+          - rendered-manifests
+          - cluster-access-credentials
+          - cluster-access-configuration
+          - argo-cd-rbac-config
+          - repo-access-credentials
+        vpn: false
+        ip_filtered: false
+        data_assets_received:
+          - live-manifests
+          - api-server-secret
+          - cluster-access-credentials
+          - cluster-access-configuration
+          - repo-access-credentials
+          - argo-cd-rbac-config
+      Get/Update/Delete Live Resource State from Kubernetes (External):
+        target: external-cluster-kubernetes-api
+        description: >
+          Get the live state of an Argo CD-managed resource, or potentially update or delete a resource on an
+          external cluster.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - application-name
+          - rendered-manifests
+          - cluster-access-credentials
+        vpn: false
+        ip_filtered: false
+        data_assets_received:
+          - live-manifests
+      Update Repo Access Credentials:
+        target: host-cluster-kubernetes-api
+        description: Write changes from the UI/CLI/API to repo secrets.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        readonly: false
+        usage: devops
+        vpn: false
+        ip_filtered: false
+        data_assets_sent:
+          - repo-access-credentials
+        data_assets_received:
+          - repo-access-credentials
+      Update Cluster Access Config:
+        target: host-cluster-kubernetes-api
+        description: Write changes from the UI/CLI/API to cluster secrets.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        readonly: false
+        usage: devops
+        vpn: false
+        ip_filtered: false
+        data_assets_sent:
+          - cluster-access-credentials
+          - cluster-access-configuration
+        data_assets_received:
+          - cluster-access-credentials
+          - cluster-access-configuration
+      Update RBAC Config:
+        target: host-cluster-kubernetes-api
+        description: Write changes from the UI/CLI/API to RBAC config.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        readonly: false
+        usage: devops
+        vpn: false
+        ip_filtered: false
+        data_assets_sent:
+          - argo-cd-rbac-config
+        data_assets_received:
+          - argo-cd-rbac-config
+      Validate Dex OIDC Token:
+        target: dex-server
+        description: Get public keys from Dex server to validate tokens.
+        protocol: https
+        authentication: none
+        authorization: none
+        readonly: true
+        usage: devops
+        vpn: false
+        ip_filtered: true
+        data_assets_received:
+          - oidc-public-keys
+        data_assets_sent:
+      Validate External OIDC Token:
+        target: oidc-provider
+        description: Get public keys from OIDC provider to validate tokens.
+        protocol: https
+        authentication: none
+        authorization: none
+        readonly: true
+        usage: business
+        vpn: false
+        ip_filtered: false
+        data_assets_received:
+          - oidc-public-keys
+        data_assets_sent:
+  Application Controller:
+    id: application-controller
+    description: Some Description
+    type: process # values: external-entity, process, datastore
+    usage: devops # values: business, devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component # values: system, service, application, component
+    technology: web-service-rest # values: see help
+    internet: false
+    machine: container # values: physical, virtual, container, serverless
+    encryption: data-with-symmetric-shared-key # values: none, transparent, data-with-symmetric-shared-key, data-with-asymmetric-shared-key, data-with-enduser-individual-key
+    owner: Argo CD Operator
+    confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: critical # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The application controller is responsible for deploying applications. It contains sensitive information, i.e. 
+      deployment manifests. Changes to these manifests can change what's deployed. If the application controller is
+      down, no other services will be disrupted, but no deployments will be made.
+    multi_tenant: true
+    redundant: false
+    custom_developed_parts: true
+    data_assets_processed: # sequence of IDs to reference
+      - rendered-manifests
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - live-manifests
+      - argo-cd-container-image-tag
+      - argo-cd-container-image
+    data_assets_stored: # sequence of IDs to reference
+    data_formats_accepted: # sequence of formats like: json, xml, serialization, file, csv
+      - json
+    communication_links:
+      Pull Argo CD Image:
+        target: quay
+        description: Pull the Argo CD container image from Quay.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+          - argo-cd-container-image-tag
+        data_assets_received:
+          - argo-cd-container-image
+      Rendered Manifest Requests:
+        target: repo-server
+        description: Fetch manifests from the repo server to be applied to the cluster.
+        protocol: https # values: see help
+        authentication: none # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: none # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: true
+        readonly: true
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - application-name
+        data_assets_received: # sequence of IDs to reference
+          - rendered-manifests
+      Reconcile Resource State (Host Cluster):
+        target: host-cluster-kubernetes-api
+        description: Reconcile the current desired manifests with the live state.
+        protocol: https
+        authorization: technical-user
+        authentication: token
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - rendered-manifests
+          - application-name
+        data_assets_received:
+          - live-manifests
+      Reconcile Resource State (External Cluster):
+        target: external-cluster-kubernetes-api
+        description: Reconcile the current desired manifests with the live state in an external cluster.
+        protocol: https
+        authorization: technical-user
+        authentication: token
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - rendered-manifests
+          - application-name
+          - cluster-access-credentials
+        data_assets_received:
+          - live-manifests
+  ApplicationSet Controller:
+    id: applicationset-controller
+    description: Some Description
+    type: process # values: external-entity, process, datastore
+    usage: devops # values: business, devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component # values: system, service, application, component
+    technology: web-service-rest # values: see help
+    internet: false
+    machine: container # values: physical, virtual, container, serverless
+    encryption: data-with-symmetric-shared-key # values: none, transparent, data-with-symmetric-shared-key, data-with-asymmetric-shared-key, data-with-enduser-individual-key
+    owner: Argo CD Operator
+    confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: critical # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The ApplicationSet controller is responsible for deploying ApplicationSets. It contains sensitive information, i.e. 
+      deployment manifests. Changes to these manifests can change what's deployed.
+    multi_tenant: true
+    redundant: false
+    custom_developed_parts: true
+    data_assets_processed: # sequence of IDs to reference
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - argo-cd-container-image-tag
+      - argo-cd-container-image
+      - applicationset-manifest
+      - live-manifests
+      - applicationset-name
+      - git-branch-name
+      - git-org-name
+      - git-repo-url
+      - repo-access-credentials
+    data_assets_stored: # sequence of IDs to reference
+    data_formats_accepted: # sequence of formats like: json, xml, serialization, file, csv
+      - json
+    communication_links:
+      Pull Argo CD Image:
+        target: quay
+        description: Pull the Argo CD container image from Quay.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+          - argo-cd-container-image-tag
+        data_assets_received:
+          - argo-cd-container-image
+      Git Generator Pull:
+        target: internal-source-control-management-api
+        description: Get information about organizations, branches, and pull requests from the SCM.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+          - git-repo-url
+          - repo-access-credentials
+        data_assets_received:
+          - git-branch-name
+          - git-repo-name
+          - git-org-name
+      Reconcile Resource State (Host Cluster):
+        target: host-cluster-kubernetes-api
+        description: Reconcile the current desired manifests with the live state.
+        protocol: https
+        authorization: technical-user
+        authentication: token
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - applicationset-name
+          - applicationset-manifest
+        data_assets_received:
+          - live-manifests
+  Repo Server:
+    id: repo-server
+    description: Pulls from manifests sources, builds manifests, caches manifests
+    type: process # values: external-entity, process, datastore
+    usage: devops # values: business, devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component # values: system, service, application, component
+    technology: web-service-rest # values: see help
+    internet: false
+    machine: container # values: physical, virtual, container, serverless
+    encryption: data-with-symmetric-shared-key # values: none, transparent, data-with-symmetric-shared-key, data-with-asymmetric-shared-key, data-with-enduser-individual-key
+    owner: Argo CD Repo-Server
+    confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: critical # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The repo-server is responsible for fetching manifests and performing transformations on them ("building"). It 
+      contains sensitive information, i.e. deployment manifests. Changes to these manifests can change what's deployed. 
+      If the application controller is down, no other services will be disrupted, but no deployments will be made.
+    multi_tenant: true
+    redundant: true
+    custom_developed_parts: true
+    data_assets_processed: # sequence of IDs to reference
+      - rendered-manifests
+      - manifest-sources
+      - repo-access-credentials
+      - argo-cd-container-image-tag
+      - argo-cd-container-image
+    data_assets_stored:
+      - manifest-sources
+      #    data_assets_stored:
+      #- helm-repo-contents
+      #- git-repo-contents
+    data_formats_accepted: # sequence of formats like: json, xml, serialization, file, csv
+      - json
+      - file
+    communication_links:
+      Pull Argo CD Image:
+        target: quay
+        description: Pull the Argo CD container image from Quay.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_sent:
+          - argo-cd-container-image-tag
+        data_assets_received:
+          - argo-cd-container-image
+      Fetch Manifest Sources:
+        target: internal-source-control-management-api
+        description: Pulls manifest sources from source control.
+        protocol: https # values: see help
+        authentication: credentials # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: technical-user # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - application-name
+        data_assets_received: # sequence of IDs to reference
+          - manifest-sources
+      Send/Receive Cached Rendered Manifests:
+        target: rendered-manifests-cache
+        description: Sends and receives rendered manifests to and from the cache.
+        protocol: https # values: see help
+        authentication: none # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: none # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: true
+        readonly: false
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - rendered-manifests
+          - application-name
+        data_assets_received: # sequence of IDs to reference
+          - rendered-manifests
+          - application-name
+      Get Repo Access Credentials:
+        target: host-cluster-kubernetes-api
+        description: Get repo access credentials from Kubernetes to pull manifest sources from source control.
+        protocol: https
+        authentication: token
+        authorization: technical-user
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops
+        data_assets_received:
+          - repo-access-credentials
+        data_assets_sent:
+      Store Cached Manifest Sources:
+        target: repo-server-storage
+        description: Cache manifest sources (from git, helm repo, OCI, etc.) to local ephemeral storage.
+        protocol: local-file-access
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops
+        data_assets_sent:
+          - manifest-sources
+        data_assets_received:
+          - manifest-sources
+  Repo Server Storage:
+    id: repo-server-storage
+    description: Local (by default, ephemeral) storage for the repo-server.
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component
+    technology: local-file-system
+    internet: false
+    machine: container
+    encryption: none
+    owner: Cluster Operator
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    data_assets_processed:
+      - manifest-sources
+    data_assets_stored:
+      - manifest-sources
+  Host Cluster Kubernetes API:
+    id: host-cluster-kubernetes-api
+    description: Kubernetes API Server for the cluster Argo CD is deployed to
+    type: external-entity # values: external-entity, process, datastore
+    usage: devops # values: business, devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: system # values: system, service, application, component
+    technology: web-service-rest # values: see help
+    internet: false
+    machine: container # values: physical, virtual, container, serverless
+    encryption: data-with-symmetric-shared-key # values: none, transparent, data-with-symmetric-shared-key, data-with-asymmetric-shared-key, data-with-enduser-individual-key
+    owner: Cluster Operator
+    confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: operational
+    justification_cia_rating: >
+      The Kubernetes API Server is how Argo CD interacts with the cluster. Argo CD's configuration is stored in the
+      cluster, and Argo CD uses the Kubernetes API Server to apply changes to the cluster. If the Kubernetes API Server
+      is down, Argo CD will be down.
+    multi_tenant: true
+    data_assets_processed:
+      - rendered-manifests
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - live-manifests
+      - applicationset-manifest
+      - applicationset-name
+      - application-manifest
+      - application-name
+      - appproject-manifest
+    data_assets_stored:
+      - live-manifests
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - repo-access-credentials
+      - api-server-secret
+      - applicationset-manifest
+      - application-manifest
+      - appproject-manifest
+  External Cluster Kubernetes API:
+    id: external-cluster-kubernetes-api
+    description: Kubernetes API Server for a cluster Argo CD is managing
+    type: external-entity # values: external-entity, process, datastore
+    usage: devops # values: business, devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: system # values: system, service, application, component
+    technology: web-service-rest # values: see help
+    internet: false
+    machine: container # values: physical, virtual, container, serverless
+    encryption: data-with-symmetric-shared-key # values: none, transparent, data-with-symmetric-shared-key, data-with-asymmetric-shared-key, data-with-enduser-individual-key
+    owner: External Cluster Operator
+    confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: operational
+    multi_tenant: true
+    data_assets_processed:
+      - cluster-access-credentials
+      - rendered-manifests
+      - live-manifests
+    data_assets_stored:
+      - live-manifests
+  Internal Source Control Management API:
+    id: internal-source-control-management-api
+    description: >
+      Source control manager (GitHub, GitLab, Helm repo, etc.) accessible only from the organization's network.
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: system
+    technology: web-service-rest
+    internet: false
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: Source Control Management Operator
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: mission-critical
+    multi_tenant: true
+    data_assets_processed:
+      - repo-access-credentials
+      - git-repo-url
+      - git-org-name
+      - git-branch-name
+    data_assets_stored:
+      - manifest-sources
+  Internal Source Control Management UI:
+    id: internal-source-control-management-ui
+    type: datastore
+    usage: devops
+    used_as_client_by_human: true
+    out_of_scope: false
+    size: system
+    technology: web-application
+    internet: false
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: Source Control Management Operator
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    data_assets_processed:
+      - manifest-sources
+    communication_links:
+      Push Manifest Sources:
+        target: internal-source-control-management-api
+        description: Pushes manifests to source control.
+        protocol: https # values: see help
+        authentication: credentials # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: enduser-identity-propagation # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - manifest-sources
+        data_assets_received: # sequence of IDs to reference
+          - manifest-sources
+  Rendered Manifests Cache (Redis):
+    id: rendered-manifests-cache
+    type: datastore
+    usage: devops
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component
+    technology: web-service-rest
+    internet: false
+    machine: container
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD Operator
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    redundant: true
+    data_assets_stored:
+      - rendered-manifests
+      - application-manifest
+      - appproject-manifest
+      - application-name
+    data_formats_accepted:
+      - json
+  OIDC Proxy (Dex):
+    id: dex-server
+    type: process
+    usage: business
+    used_as_client_by_human: false
+    out_of_scope: false
+    size: component
+    technology: identity-provider
+    internet: false
+    machine: container
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD Operator
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    data_assets_stored:
+      - oidc-public-keys
+    data_assets_processed:
+      - oidc-public-keys
+      - oidc-tokens
+    communication_links:
+      Proxying to an External OIDC Provider:
+        target: oidc-provider
+        description: Proxy requests to an external OIDC provider.
+        protocol: https # values: see help
+        authentication: credentials # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: technical-user # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+        data_assets_received: # sequence of IDs to reference
+          - oidc-tokens
+  OIDC Provider (External):
+    id: oidc-provider
+    type: process
+    usage: business
+    out_of_scope: false
+    size: service
+    technology: identity-provider
+    internet: true
+    machine: virtual
+    encryption: data-with-symmetric-shared-key
+    owner: Organization
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: true
+    data_assets_stored:
+      - oidc-public-keys
+    data_assets_processed:
+      - oidc-public-keys
+      - oidc-tokens
+  User CLI:
+    id: user-cli
+    type: process
+    usage: devops
+    size: application
+    technology: cli
+    internet: false
+    machine: physical
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD User
+    confidentiality: strictly-confidential
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: false
+    used_as_client_by_human: true
+    data_assets_stored:
+      - oidc-tokens
+      - argo-tokens
+    data_assets_processed:
+      - rendered-manifests
+      - live-manifests
+      - oidc-tokens
+      - argo-tokens
+      - application-manifest
+      - appproject-manifest
+      - application-name
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - manifest-sources  # When doing things like local diffing or local syncing
+      - repo-access-credentials
+    communication_links:
+      Make Requests to API Server:
+        target: api-server
+        description: Make requests to the API server.
+        protocol: https # values: see help
+        authentication: token # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: enduser-identity-propagation # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - oidc-tokens
+          - rendered-manifests
+          - manifest-sources
+          - application-name
+          - application-manifest
+          - appproject-manifest
+          - cluster-access-credentials
+          - cluster-access-configuration
+          - repo-access-credentials
+        data_assets_received: # sequence of IDs to reference
+          - argo-tokens
+
+trust_boundaries:
+  Kubernetes Argo CD Namespace:
+    id: kubernetes-argo-cd-namespace
+    description: >
+      The Kubernetes namespace where Argo CD is deployed.
+    type: network-policy-namespace-isolation
+    technical_assets_inside:
+      - repo-server
+      - repo-server-storage
+      - application-controller
+      - applicationset-controller
+      - rendered-manifests-cache
+      - api-server
+      - dex-server
+    trust_boundaries_nested:
+  Kubernetes Network:
+    id: kubernetes-network
+    description: Some Description
+    type: network-policy-namespace-isolation # values: see help
+    tags:
+    technical_assets_inside: # sequence of IDs to reference
+      - host-cluster-kubernetes-api
+    trust_boundaries_nested: # sequence of IDs to reference
+      - kubernetes-argo-cd-namespace
+  Organization Network:
+    id: organization-network
+    description: For example, a company VPN.
+    type: network-virtual-lan # values: see help
+    tags:
+    technical_assets_inside: # sequence of IDs to reference
+      - internal-source-control-management-api
+      - internal-source-control-management-ui
+      - user-cli
+    trust_boundaries_nested: # sequence of IDs to reference
+      - kubernetes-network
+
+shared_runtimes:
+  Kubernetes Node:
+    id: kubernetes-node
+    description: >
+      Multiple Argo CD components _may_ share a single node.
+    tags:
+    technical_assets_running: # sequence of IDs to reference
+      - repo-server
+      - application-controller
+
+#individual_risk_categories: # used for adding custom manually identified risks
+#  Some Individual Risk Example:
+#    id: something-strange
+#    description: Some text describing the risk category...
+#    impact: Some text describing the impact...
+#    asvs: V0 - Something Strange
+#    cheat_sheet: https://example.com
+#    action: Some text describing the action...
+#    mitigation: Some text describing the mitigation...
+#    check: Check if XYZ...
+#    function: business-side # values: business-side, architecture, development, operations
+#    stride: repudiation # values: spoofing, tampering, repudiation, information-disclosure, denial-of-service, elevation-of-privilege
+#    detection_logic: Some text describing the detection logic...
+#    risk_assessment: Some text describing the risk assessment...
+#    false_positives: Some text describing the most common types of false positives...
+#    model_failure_possible_reason: false
+#    cwe: 693
+#    risks_identified:
+#      <b>Example Individual Risk</b> at <b>Some Technical Asset</b>:
+#        severity: critical # values: low, medium, elevated, high, critical
+#        exploitation_likelihood: likely # values: unlikely, likely, very-likely, frequent
+#        exploitation_impact: medium # values: low, medium, high, very-high
+#        data_breach_probability: probable # values: improbable, possible, probable
+#        data_breach_technical_assets: # list of technical asset IDs which might have data breach
+#          - some-component
+#        most_relevant_data_asset:
+#        most_relevant_technical_asset: some-component
+#        most_relevant_communication_link:
+#        most_relevant_trust_boundary:
+#        most_relevant_shared_runtime:
+
+
+
+
+
+# NOTE:
+# For risk tracking each risk-id needs to be defined (the string with the @ sign in it). These unique risk IDs
+# are visible in the PDF report (the small grey string under each risk), the Excel (column "ID"), as well as the JSON responses.
+# Some risk IDs have only one @ sign in them, while others multiple. The idea is to allow for unique but still speaking IDs.
+# Therefore each risk instance creates its individual ID by taking all affected elements causing the risk to be within an @-delimited part.
+# Using wildcards (the * sign) for parts delimited by @ signs allows to handle groups of certain risks at once. Best is to lookup the IDs
+# to use in the created Excel file. Alternatively a model macro "seed-risk-tracking" is available that helps in initially
+# seeding the risk tracking part here based on already identified and not yet handled risks.
+#risk_tracking:
+#
+#  unencrypted-asset@some-component: # wildcards "*" between the @ characters are possible
+#    status: accepted # values: unchecked, in-discussion, accepted, in-progress, mitigated, false-positive
+#    justification: Risk accepted as tolerable
+#    ticket: XYZ-1234
+#    date: 2020-01-04
+#    checked_by: John Doe
+
+
+
+#diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
+
+#diagram_tweak_suppress_edge_labels: true
+#diagram_tweak_layout_left_to_right: true
+#diagram_tweak_nodesep: 2
+#diagram_tweak_ranksep: 2
+#diagram_tweak_invisible_connections_between_assets:
+#  - tech-asset-source-id-A:tech-asset-target-id-B
+#  - tech-asset-source-id-C:tech-asset-target-id-D
+#diagram_tweak_same_rank_assets:
+#  - tech-asset-source-id-E:tech-asset-target-id-F:tech-asset-source-id-G:tech-asset-target-id-H
+#  - tech-asset-source-id-M:tech-asset-target-id-N:tech-asset-source-id-O
