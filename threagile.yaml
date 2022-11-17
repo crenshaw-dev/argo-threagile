@@ -52,13 +52,65 @@ questions: # simply use "" as answer to signal "unanswered"
     Some answer
 
 abuse_cases:
-  Deploying Crypto-Miner: >
-    Attacker uses a compromised Argo CD instance to deploy a crypto-miner
+  Denial-of-Service: >
+    As an attacker, I want to disturb the functionality of the backend system in order to cause indirect reputational damage via unusable features.
+  CPU Cycle Theft / Deploying Crypto-Miner: >
+    As an attacker, I want to compromise an Argo CD instance, in order to deploy a crypto-miner, to seek financial gains through stealing resources.
+  Ransomware: >
+    As a attacker I want to encrypt the storage and file systems in order to demand ransom.
+  Identity Theft: >
+    As a attacker I want to steal identity data in order to reuse credentials and/or keys on other targets of the same company or outside.
+  PII Theft: >
+    As a attacker I want to steal PII (Personally Identifiable Information) data in order to blackmail the company and/or damage
+    their repudiation by publishing them.
+  Database Compromise: >
+    As a attacker I want to access the database backend of the SQL or Redis Database in order to steal/modify sensitive
+    business data.
+  Cross-Site Scripting Attacks: >
+    As a attacker I want to execute Cross-Site Scripting (XSS) and similar attacks in order to takeover victim sessions and
+    cause reputational damage.
+  # Argo specific
+  Denial-of-Service of Argo CD Functionality: >
+    As a attacker I want to disturb the functionality of Argo CD application areas in order to cause reputational and direct damage.
+  Denial-of-Service of Argo CD User Functionality: >
+    As a attacker I want to disturb the functionality of Argo CD user application areas in order to cause reputational and direct damage.
+  Supply Chain Compromise:
+    As a attacker I want to inflitrate the codebase of Argo CD so that I can introduce threats to the Argo project,
+    and potentially projects using Argo CD causing both tangiable and reputational damage.
+  Secrets System Compromise:
+    As a attacker I want to find out Argo CD user secrets by attacking an Argo CD user's secrets manager
+  Code Repository Compromise:
+    As a attacker I want to infiltrate the codebase of an Argo CD user to affect their continuous delivery.
+  Kubernetes Pod Container Compromise:
+    As a attacker I want to compromise the integrity of a Kubernetes Container in order to conduct an attack.
+  Kubernetes Pod Shared Storage Compromise:
+    As a attacker I want to compromise the integrity of Kubernetes pod shared storage in order to conduct an attack.
+  Kubernetes Pod Network Resources Compromise:
+    As a attacker I want to compromise the integrity of a Kubernetes pod network resources in order to conduct an attack.
+  Kubernetes Pod Init Container Compromise:
+    As a attacker I want to compromise the integrity of a Kubernetes init container in order to conduct an attack.
+  Kubernetes Node Compromise:
+    As a attacker I want to compromise the integrity of a Kubernetes init container in order to conduct an attack.
+  Kubernetes Cluster Compromise:
+    As a attacker I want to compromise the integrity of a Kubernetes init container in order to conduct an attack.
+  Argo CD Server Compromise:
+    As a attacker I want to compromise the integrity of an Argo CD server in order to find information on users to perform attacks
+  Poor validation:
+    As a attacker I want to find areas in the system where validation is performed poorly so that I can attack systems.
+  Malicious-In-The-Middle Attack:
+    As a attacker I want to compromise Argo CD events, Argo CD rollouts and potentional connections between servers to enumerate as attack on a system
+
 
 
 security_requirements:
   Users are restricted by RBAC: >
     RBAC rules defined by an Argo CD operator are actually enforced for API access.
+  Input Validation: >
+    Strict input validation is required to reduce the overall attack surface.
+  Encryption During Transit: >
+    Data must be transported through parts of the system encrypted to prevent Malicious-In-The-Middle Attack.
+  Encryption at Rest: >
+    If sensitive data is stored within the Argo CD system, then this must be encrypted to prevent an attacker retrieving this data during breach.
 
 
 
@@ -85,8 +137,9 @@ tags_available:
   - ocp
   - openshift
   - tomcat
-  - some-tag
-  - some-other-tag
+  - argocd
+  - redis
+  - postgres
 
 data_assets:
   Argo CD GitHub Push Token:
@@ -116,7 +169,7 @@ data_assets:
     quantity: many # values: very-few, few, many, very-many
     confidentiality: confidential # values: public, internal, restricted, confidential, strictly-confidential
     integrity: mission-critical # values: archive, operational, important, critical, mission-critical
-    availability: operational # values: archive, operational, important, critical, mission-critical
+    availability: important # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
       The manifests are potentially-sensitive, especially in a multi-tenant Argo CD installation. They shouldn't contain
       any secrets. Integrity is important to ensure the correct manifests are deployed. The cache helps mitigate denial-of-service
@@ -205,14 +258,14 @@ data_assets:
     confidentiality: strictly-confidential
     integrity: operational
     availability: operational
-#  CLI Configuration File:
-#  CLI Binary:
-#    integrity: mission-critical
-#    justification_cia_rating: >
-#      If an attacker could modify the CLI binary, they could, for example, exfiltrate an access token, or use the access
-#      token to make changes to cluster resources such as the Argo CD configuration itself.
-#  Argo CD Frontend Dependencies:
-#  Argo CD Go Dependencies:
+  #  CLI Configuration File:
+  #  CLI Binary:
+  #    integrity: mission-critical
+  #    justification_cia_rating: >
+  #      If an attacker could modify the CLI binary, they could, for example, exfiltrate an access token, or use the access
+  #      token to make changes to cluster resources such as the Argo CD configuration itself.
+  #  Argo CD Frontend Dependencies:
+  #  Argo CD Go Dependencies:
   Argo CD Base Image:
     id: argo-cd-base-image
     description: Ubuntu base image which the Argo CD image is built on.
@@ -223,10 +276,10 @@ data_assets:
     integrity: mission-critical
     availability: operational
   #  Argo CD Debian Packages:
-#  Argo CD Dex HAProxy Manifests:
-#  Argo CD Redis HA Manifests:
-#  Argo CD Source Repo Push Token:
-#  RBAC Config:
+  #  Argo CD Dex HAProxy Manifests:
+  #  Argo CD Redis HA Manifests:
+  #  Argo CD Source Repo Push Token:
+  #  RBAC Config:
   Cluster Access Credentials:
     id: cluster-access-credentials
     description: Credentials granting access to manage an external Kubernetes cluster's resources.
@@ -258,7 +311,7 @@ data_assets:
     confidentiality: public
     integrity: mission-critical
     availability: operational
-#  OIDC Configuration:
+  #  OIDC Configuration:
   Repo Access Credentials:
     id: repo-access-credentials
     description: Credentials for retrieving manifest sources from a source control manager (git, Helm, etc.).
@@ -268,7 +321,7 @@ data_assets:
     confidentiality: confidential
     integrity: operational
     availability: operational
-#  Repo Access Configuration:
+  #  Repo Access Configuration:
   Git Repo URL:
     id: git-repo-url
     description: URL of a git repo.
@@ -344,7 +397,7 @@ data_assets:
     availability: operational
   Argo CD Source:
     id: argo-cd-source
-    description: The source code for  Argo CD.
+    description: The source code for Argo CD.
     usage: devops
     origin: Argo CD maintainers
     quantity: very-few
@@ -360,6 +413,77 @@ data_assets:
     confidentiality: confidential
     integrity: mission-critical
     availability: operational
+
+  Argo CD User Application Code: &client-application-code # this example shows the inheritance-like features of YAML
+    id: client-application-code
+    description: Projects that use Argo CD
+    usage: devops # values: business, devops
+    tags:
+    origin: Argo CD User
+    owner: Argo CD User
+    quantity: very-few # values: very-few, few, many, very-many
+    confidentiality: public # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: critical # values: archive, operational, important, critical, mission-critical
+    availability: important # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The integrity of the public data is critical to avoid reputational damage and the availability is important on the
+      long-term scale (but not critical) to keep the growth rate of the customer base steady.
+
+  Argo CD User Server Application Code:
+    <<: *client-application-code # here we're referencing the above created asset as base and just overwrite few values
+    id: server-application-code
+    description: API and other server-side code of the application.
+    confidentiality: internal # values: public, internal, restricted, confidential, strictly-confidential
+    integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+    availability: important # values: archive, operational, important, critical, mission-critical
+    justification_cia_rating: >
+      The integrity of the API code is critical to avoid reputational damage and the availability is important on the
+      long-term scale (but not critical) to keep the growth rate of the customer base steady.
+
+    Database Customizing and Dumps:
+      id: db-dumps
+      description: Data for customizing of the DB system, which might include full database dumps and backups
+      usage: devops # values: business, devops
+      tags:
+        - postgres
+      origin: Some
+      owner: Argo CD User
+      quantity: very-few # values: very-few, few, many, very-many
+      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
+      integrity: critical # values: archive, operational, important, critical, mission-critical
+      availability: critical # values: archive, operational, important, critical, mission-critical
+      justification_cia_rating: >
+        Data for customizing of the DB system, which might include full database dumps.
+
+    Argo CD Database Export:
+      id: argocd-db-export
+      description: Export once Argo CD admin export command is run. Also contains configuration and potentially secrets
+      usage: devops # values: business, devops
+      tags:
+        - redis, kubernetes, argocd,
+      origin: Argo CD
+      owner: Argo CD
+      quantity: very-few # values: very-few, few, many, very-many
+      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
+      integrity: critical # values: archive, operational, important, critical, mission-critical
+      availability: critical # values: archive, operational, important, critical, mission-critical
+      justification_cia_rating: >
+        Data for customizing of the DB system, which might include full database dumps.
+
+    Argo CD User Provided Secret:
+      id: user-provided-secret
+      description: Secrets within Argo CD that come from Kubernetes shown in the UI but not in the deployment.
+      usage: devops # values: business, devops
+      tags:
+        - kuberbetes
+      origin: Argo CD User
+      owner: Kubernetes
+      quantity: very-many # values: very-few, few, many, very-many
+      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
+      integrity: mission-critical # values: archive, operational, important, critical, mission-critical
+      availability: mission-critical # values: archive, operational, important, critical, mission-critical
+      justification_cia_rating: >
+        Potentially very sensitive data being shown within UI. Care here must be shown with regards to transport to UI.
 
 technical_assets:
   Argo CD Maintainer Git Client:
@@ -744,7 +868,7 @@ technical_assets:
     integrity: mission-critical # values: archive, operational, important, critical, mission-critical
     availability: critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
-      The application controller is responsible for deploying applications. It contains sensitive information, i.e. 
+      The application controller is responsible for deploying applications. It contains sensitive information, i.e.
       deployment manifests. Changes to these manifests can change what's deployed. If the application controller is
       down, no other services will be disrupted, but no deployments will be made.
     multi_tenant: true
@@ -838,7 +962,7 @@ technical_assets:
     integrity: mission-critical # values: archive, operational, important, critical, mission-critical
     availability: critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
-      The ApplicationSet controller is responsible for deploying ApplicationSets. It contains sensitive information, i.e. 
+      The ApplicationSet controller is responsible for deploying ApplicationSets. It contains sensitive information, i.e.
       deployment manifests. Changes to these manifests can change what's deployed.
     multi_tenant: true
     redundant: false
@@ -922,8 +1046,8 @@ technical_assets:
     integrity: mission-critical # values: archive, operational, important, critical, mission-critical
     availability: critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
-      The repo-server is responsible for fetching manifests and performing transformations on them ("building"). It 
-      contains sensitive information, i.e. deployment manifests. Changes to these manifests can change what's deployed. 
+      The repo-server is responsible for fetching manifests and performing transformations on them ("building"). It
+      contains sensitive information, i.e. deployment manifests. Changes to these manifests can change what's deployed.
       If the application controller is down, no other services will be disrupted, but no deployments will be made.
     multi_tenant: true
     redundant: true
@@ -1321,14 +1445,24 @@ trust_boundaries:
   Organization Network:
     id: organization-network
     description: For example, a company VPN.
-    type: network-virtual-lan # values: see help
+    type: network-cloud-provider # values: see help
     tags:
     technical_assets_inside: # sequence of IDs to reference
-      - internal-source-control-management-api
       - internal-source-control-management-ui
       - user-cli
     trust_boundaries_nested: # sequence of IDs to reference
       - kubernetes-network
+  Build Time Boundary:
+    id: buildtime-boundary
+    description: Build infrastructure
+    type:  # values: see help
+    tags:
+    technical_assets_inside: # sequence of IDs to reference
+      - argo-cd-build-pipeline
+      - argo-cd-source-repo
+      - docker-hub
+      - quay
+      - argo-cd-maintainer-git-client
 
 shared_runtimes:
   Kubernetes Node:
