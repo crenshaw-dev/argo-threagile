@@ -413,77 +413,36 @@ data_assets:
     confidentiality: confidential
     integrity: mission-critical
     availability: operational
-
-  Argo CD User Application Code: &client-application-code # this example shows the inheritance-like features of YAML
-    id: client-application-code
-    description: Projects that use Argo CD
+  Argo CD Database Export:
+    id: argocd-db-export
+    description: Export once Argo CD admin export command is run. Also contains configuration and potentially secrets
     usage: devops # values: business, devops
     tags:
-    origin: Argo CD User
-    owner: Argo CD User
+      - redis
+      - kubernetes
+      - argocd
+    origin: Argo CD
+    owner: Argo CD
     quantity: very-few # values: very-few, few, many, very-many
-    confidentiality: public # values: public, internal, restricted, confidential, strictly-confidential
+    confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
     integrity: critical # values: archive, operational, important, critical, mission-critical
-    availability: important # values: archive, operational, important, critical, mission-critical
+    availability: critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
-      The integrity of the public data is critical to avoid reputational damage and the availability is important on the
-      long-term scale (but not critical) to keep the growth rate of the customer base steady.
-
-  Argo CD User Server Application Code:
-    <<: *client-application-code # here we're referencing the above created asset as base and just overwrite few values
-    id: server-application-code
-    description: API and other server-side code of the application.
-    confidentiality: internal # values: public, internal, restricted, confidential, strictly-confidential
+      Data for customizing of the DB system, which might include full database dumps.
+  Argo CD User Provided Secret:
+    id: user-provided-secret
+    description: Secrets within Argo CD that come from Kubernetes shown in the UI but not in the deployment.
+    usage: devops # values: business, devops
+    tags:
+      - kubernetes
+    origin: Argo CD User
+    owner: Kubernetes
+    quantity: very-many # values: very-few, few, many, very-many
+    confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
     integrity: mission-critical # values: archive, operational, important, critical, mission-critical
-    availability: important # values: archive, operational, important, critical, mission-critical
+    availability: mission-critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
-      The integrity of the API code is critical to avoid reputational damage and the availability is important on the
-      long-term scale (but not critical) to keep the growth rate of the customer base steady.
-
-    Database Customizing and Dumps:
-      id: db-dumps
-      description: Data for customizing of the DB system, which might include full database dumps and backups
-      usage: devops # values: business, devops
-      tags:
-        - postgres
-      origin: Some
-      owner: Argo CD User
-      quantity: very-few # values: very-few, few, many, very-many
-      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
-      integrity: critical # values: archive, operational, important, critical, mission-critical
-      availability: critical # values: archive, operational, important, critical, mission-critical
-      justification_cia_rating: >
-        Data for customizing of the DB system, which might include full database dumps.
-
-    Argo CD Database Export:
-      id: argocd-db-export
-      description: Export once Argo CD admin export command is run. Also contains configuration and potentially secrets
-      usage: devops # values: business, devops
-      tags:
-        - redis, kubernetes, argocd,
-      origin: Argo CD
-      owner: Argo CD
-      quantity: very-few # values: very-few, few, many, very-many
-      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
-      integrity: critical # values: archive, operational, important, critical, mission-critical
-      availability: critical # values: archive, operational, important, critical, mission-critical
-      justification_cia_rating: >
-        Data for customizing of the DB system, which might include full database dumps.
-
-    Argo CD User Provided Secret:
-      id: user-provided-secret
-      description: Secrets within Argo CD that come from Kubernetes shown in the UI but not in the deployment.
-      usage: devops # values: business, devops
-      tags:
-        - kuberbetes
-      origin: Argo CD User
-      owner: Kubernetes
-      quantity: very-many # values: very-few, few, many, very-many
-      confidentiality: strictly-confidential # values: public, internal, restricted, confidential, strictly-confidential
-      integrity: mission-critical # values: archive, operational, important, critical, mission-critical
-      availability: mission-critical # values: archive, operational, important, critical, mission-critical
-      justification_cia_rating: >
-        Potentially very sensitive data being shown within UI. Care here must be shown with regards to transport to UI.
+      Potentially very sensitive data being shown within UI. Care here must be shown with regards to transport to UI.
 
 technical_assets:
   Argo CD Maintainer Git Client:
@@ -580,7 +539,7 @@ technical_assets:
       - argo-cd-base-image
   Argo CD Source Repo (GitHub):
     id: argo-cd-source-repo
-    description: GitHub reo holding the Argo CD source code.
+    description: GitHub repo holding the Argo CD source code.
     type: datastore
     usage: devops
     used_as_client_by_human: false
@@ -1058,6 +1017,7 @@ technical_assets:
       - repo-access-credentials
       - argo-cd-container-image-tag
       - argo-cd-container-image
+      - user-provided-secret
     data_assets_stored:
       - manifest-sources
       #    data_assets_stored:
@@ -1161,6 +1121,8 @@ technical_assets:
       - manifest-sources
     data_assets_stored:
       - manifest-sources
+    data_assets_produced:
+      - argocd-database-export
   Host Cluster Kubernetes API:
     id: host-cluster-kubernetes-api
     description: Kubernetes API Server for the cluster Argo CD is deployed to
@@ -1192,6 +1154,7 @@ technical_assets:
       - application-manifest
       - application-name
       - appproject-manifest
+      - user-provided-secret
     data_assets_stored:
       - live-manifests
       - cluster-access-credentials
@@ -1231,7 +1194,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: web-service-rest
     internet: false
@@ -1247,6 +1210,8 @@ technical_assets:
       - git-repo-url
       - git-org-name
       - git-branch-name
+      - git-repo-name
+      - git-repo-name
     data_assets_stored:
       - manifest-sources
   Internal Source Control Management UI:
@@ -1254,7 +1219,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: true
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: web-application
     internet: false
@@ -1347,7 +1312,7 @@ technical_assets:
     id: oidc-provider
     type: process
     usage: business
-    out_of_scope: false
+    out_of_scope: true
     size: service
     technology: identity-provider
     internet: true
@@ -1369,6 +1334,7 @@ technical_assets:
     usage: devops
     size: application
     technology: cli
+    out_of_scope: true
     internet: false
     machine: physical
     encryption: data-with-symmetric-shared-key
@@ -1393,6 +1359,7 @@ technical_assets:
       - cluster-access-configuration
       - manifest-sources  # When doing things like local diffing or local syncing
       - repo-access-credentials
+      - user-provided-secret
     communication_links:
       Make Requests to API Server:
         target: api-server
@@ -1415,6 +1382,7 @@ technical_assets:
           - cluster-access-credentials
           - cluster-access-configuration
           - repo-access-credentials
+          - user-provided-secret
         data_assets_received: # sequence of IDs to reference
           - argo-tokens
 
@@ -1449,13 +1417,14 @@ trust_boundaries:
     tags:
     technical_assets_inside: # sequence of IDs to reference
       - internal-source-control-management-ui
+      - internal-source-control-management-api
       - user-cli
     trust_boundaries_nested: # sequence of IDs to reference
       - kubernetes-network
   Build Time Boundary:
     id: buildtime-boundary
     description: Build infrastructure
-    type:  # values: see help
+    type:  network-cloud-provider # values: see help
     tags:
     technical_assets_inside: # sequence of IDs to reference
       - argo-cd-build-pipeline
@@ -1463,6 +1432,14 @@ trust_boundaries:
       - docker-hub
       - quay
       - argo-cd-maintainer-git-client
+  External Services:
+    id: external-services-boundary
+    description: Represents external services used by an Argoo CD User.
+    type: network-cloud-provider # values: see help
+    tags:
+    technical_assets_inside: # sequence of IDs to reference
+      - external-cluster-kubernetes-api
+      - oidc-provider
 
 shared_runtimes:
   Kubernetes Node:
