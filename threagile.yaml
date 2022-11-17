@@ -661,14 +661,32 @@ technical_assets:
       - application-manifest
       - argo-cd-container-image-tag
       - argo-cd-container-image
+      - argocd-db-export
       - manifest-sources # When sent for server-side generation or override sync.
     data_assets_stored:
       - oidc-public-keys
       - argo-cd-rbac-config
+    data_assets_sent:
+      - argocd-db-export
+    data_assets_produced:
+      - argocd-db-export
     data_formats_accepted:
       - json
       - csv
     communication_links:
+      Export Database:
+        target: user-cli
+        description: Send database export to Admin Argo CD User
+        protocol: https # values: see help
+        authentication: token # values: none, credentials, session-id, token, client-certificate, two-factor
+        authorization: enduser-identity-propagation # values: none, technical-user, enduser-identity-propagation
+        tags:
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: devops # values: business, devops
+        data_assets_sent: # sequence of IDs to reference
+          - argocd-db-export
       Pull Argo CD Image:
         target: quay
         description: Pull the Argo CD container image from Quay.
@@ -1121,8 +1139,6 @@ technical_assets:
       - manifest-sources
     data_assets_stored:
       - manifest-sources
-    data_assets_produced:
-      - argocd-database-export
   Host Cluster Kubernetes API:
     id: host-cluster-kubernetes-api
     description: Kubernetes API Server for the cluster Argo CD is deployed to
@@ -1334,7 +1350,7 @@ technical_assets:
     usage: devops
     size: application
     technology: cli
-    out_of_scope: true
+    out_of_scope: false
     internet: false
     machine: physical
     encryption: data-with-symmetric-shared-key
