@@ -1,1 +1,1940 @@
-[{"category":"missing-identity-store","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Identity Store\u003c/b\u003e in the threat model (referencing asset \u003cb\u003eUser CLI\u003c/b\u003e as an example)","synthetic_id":"missing-identity-store@user-cli","most_relevant_data_asset":"","most_relevant_technical_asset":"user-cli","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":[]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003eFetching Rendered Manifests from Cache\u003c/b\u003e from \u003cb\u003eAPI Server\u003c/b\u003e to \u003cb\u003eRepo Server\u003c/b\u003e","synthetic_id":"missing-authentication@api-server\u003efetching-rendered-manifests-from-cache@api-server@repo-server","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003efetching-rendered-manifests-from-cache","data_breach_probability":"possible","data_breach_technical_assets":["repo-server"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003ePull Argo CD Image\u003c/b\u003e from \u003cb\u003eAPI Server\u003c/b\u003e to \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"missing-authentication@api-server\u003epull-argo-cd-image@api-server@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003ePull Argo CD Image\u003c/b\u003e from \u003cb\u003eApplication Controller\u003c/b\u003e to \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"missing-authentication@application-controller\u003epull-argo-cd-image@application-controller@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003ePull Argo CD Image\u003c/b\u003e from \u003cb\u003eApplicationSet Controller\u003c/b\u003e to \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"missing-authentication@applicationset-controller\u003epull-argo-cd-image@applicationset-controller@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"applicationset-controller\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003ePull Argo CD Image\u003c/b\u003e from \u003cb\u003eRepo Server\u003c/b\u003e to \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"missing-authentication@repo-server\u003epull-argo-cd-image@repo-server@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003ePull Base Image from Docker Hub\u003c/b\u003e from \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e to \u003cb\u003eDocker Hub\u003c/b\u003e","synthetic_id":"missing-authentication@argo-cd-build-pipeline\u003epull-base-image-from-docker-hub@argo-cd-build-pipeline@docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"docker-hub","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epull-base-image-from-docker-hub","data_breach_probability":"possible","data_breach_technical_assets":["docker-hub"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003eRendered Manifest Requests\u003c/b\u003e from \u003cb\u003eApplication Controller\u003c/b\u003e to \u003cb\u003eRepo Server\u003c/b\u003e","synthetic_id":"missing-authentication@application-controller\u003erendered-manifest-requests@application-controller@repo-server","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003erendered-manifest-requests","data_breach_probability":"possible","data_breach_technical_assets":["repo-server"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003eSend/Receive Cached Rendered Manifests\u003c/b\u003e from \u003cb\u003eRepo Server\u003c/b\u003e to \u003cb\u003eRendered Manifests Cache (Redis)\u003c/b\u003e","synthetic_id":"missing-authentication@repo-server\u003esend-receive-cached-rendered-manifests@repo-server@rendered-manifests-cache","most_relevant_data_asset":"","most_relevant_technical_asset":"rendered-manifests-cache","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003esend-receive-cached-rendered-manifests","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache"]},{"category":"missing-authentication","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eMissing Authentication\u003c/b\u003e covering communication link \u003cb\u003eValidate Dex OIDC Token\u003c/b\u003e from \u003cb\u003eAPI Server\u003c/b\u003e to \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e","synthetic_id":"missing-authentication@api-server\u003evalidate-dex-oidc-token@api-server@dex-server","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003evalidate-dex-oidc-token","data_breach_probability":"possible","data_breach_technical_assets":["dex-server"]},{"category":"path-traversal","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003ePath-Traversal\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e against filesystem \u003cb\u003eRepo Server Storage\u003c/b\u003e via \u003cb\u003eStore Cached Manifest Sources\u003c/b\u003e","synthetic_id":"path-traversal@repo-server@repo-server-storage@repo-server\u003estore-cached-manifest-sources","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003estore-cached-manifest-sources","data_breach_probability":"probable","data_breach_technical_assets":["repo-server-storage"]},{"category":"missing-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Hardening\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"missing-hardening@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["api-server"]},{"category":"missing-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Hardening\u003c/b\u003e risk at \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e","synthetic_id":"missing-hardening@host-cluster-kubernetes-api","most_relevant_data_asset":"","most_relevant_technical_asset":"host-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["host-cluster-kubernetes-api"]},{"category":"missing-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Hardening\u003c/b\u003e risk at \u003cb\u003eUser CLI\u003c/b\u003e","synthetic_id":"missing-hardening@user-cli","most_relevant_data_asset":"","most_relevant_technical_asset":"user-cli","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["user-cli"]},{"category":"unnecessary-data-transfer","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnnecessary Data Transfer\u003c/b\u003e of \u003cb\u003eArgo CD Container Image Tag\u003c/b\u003e data at \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e from/to \u003cb\u003eArgo CD Maintainer Git Client\u003c/b\u003e","synthetic_id":"unnecessary-data-transfer@argo-cd-container-image-tag@argo-cd-source-repo@argo-cd-maintainer-git-client","most_relevant_data_asset":"argo-cd-container-image-tag","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"unnecessary-data-transfer","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnnecessary Data Transfer\u003c/b\u003e of \u003cb\u003eArgo CD Database Export\u003c/b\u003e data at \u003cb\u003eUser CLI\u003c/b\u003e from/to \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"unnecessary-data-transfer@argocd-db-export@user-cli@api-server","most_relevant_data_asset":"argocd-db-export","most_relevant_technical_asset":"user-cli","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["user-cli"]},{"category":"unnecessary-data-transfer","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnnecessary Data Transfer\u003c/b\u003e of \u003cb\u003eArgo CD GitHub Push Token\u003c/b\u003e data at \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e from/to \u003cb\u003eArgo CD Maintainer Git Client\u003c/b\u003e","synthetic_id":"unnecessary-data-transfer@argo-cd-github-push-token@argo-cd-source-repo@argo-cd-maintainer-git-client","most_relevant_data_asset":"argo-cd-github-push-token","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"unnecessary-data-transfer","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnnecessary Data Transfer\u003c/b\u003e of \u003cb\u003eArgo CD RBAC Config\u003c/b\u003e data at \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e from/to \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"unnecessary-data-transfer@argo-cd-rbac-config@host-cluster-kubernetes-api@api-server","most_relevant_data_asset":"argo-cd-rbac-config","most_relevant_technical_asset":"host-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["host-cluster-kubernetes-api"]},{"category":"unnecessary-data-transfer","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnnecessary Data Transfer\u003c/b\u003e of \u003cb\u003eArgo CD User Provided Secret\u003c/b\u003e data at \u003cb\u003eAPI Server\u003c/b\u003e from/to \u003cb\u003eUser CLI\u003c/b\u003e","synthetic_id":"unnecessary-data-transfer@user-provided-secret@api-server@user-cli","most_relevant_data_asset":"user-provided-secret","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["api-server"]},{"category":"missing-build-infrastructure","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Build Infrastructure\u003c/b\u003e in the threat model (referencing asset \u003cb\u003eApplication Controller\u003c/b\u003e as an example)","synthetic_id":"missing-build-infrastructure@application-controller","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":[]},{"category":"missing-vault","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Vault (Secret Storage)\u003c/b\u003e in the threat model (referencing asset \u003cb\u003eInternal Source Control Management API\u003c/b\u003e as an example)","synthetic_id":"missing-vault@internal-source-control-management-api","most_relevant_data_asset":"","most_relevant_technical_asset":"internal-source-control-management-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":[]},{"category":"unchecked-deployment","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eUnchecked Deployment\u003c/b\u003e risk at \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e","synthetic_id":"unchecked-deployment@argo-cd-build-pipeline","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-build-pipeline","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-build-pipeline","quay"]},{"category":"unchecked-deployment","risk_status":"unchecked","severity":"low","exploitation_likelihood":"unlikely","exploitation_impact":"low","title":"\u003cb\u003eUnchecked Deployment\u003c/b\u003e risk at \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e","synthetic_id":"unchecked-deployment@argo-cd-source-repo","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"unchecked-deployment","risk_status":"unchecked","severity":"low","exploitation_likelihood":"unlikely","exploitation_impact":"low","title":"\u003cb\u003eUnchecked Deployment\u003c/b\u003e risk at \u003cb\u003eDocker Hub\u003c/b\u003e","synthetic_id":"unchecked-deployment@docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"docker-hub","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["docker-hub"]},{"category":"unchecked-deployment","risk_status":"unchecked","severity":"low","exploitation_likelihood":"unlikely","exploitation_impact":"low","title":"\u003cb\u003eUnchecked Deployment\u003c/b\u003e risk at \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"unchecked-deployment@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-waf","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Web Application Firewall (WAF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"missing-waf@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["api-server"]},{"category":"missing-waf","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Web Application Firewall (WAF)\u003c/b\u003e risk at \u003cb\u003eExternal Cluster Kubernetes API\u003c/b\u003e","synthetic_id":"missing-waf@external-cluster-kubernetes-api","most_relevant_data_asset":"","most_relevant_technical_asset":"external-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["external-cluster-kubernetes-api"]},{"category":"missing-waf","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Web Application Firewall (WAF)\u003c/b\u003e risk at \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e","synthetic_id":"missing-waf@host-cluster-kubernetes-api","most_relevant_data_asset":"","most_relevant_technical_asset":"host-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["host-cluster-kubernetes-api"]},{"category":"unencrypted-asset","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eUnencrypted Technical Asset\u003c/b\u003e named \u003cb\u003eRepo Server Storage\u003c/b\u003e missing enduser-individual encryption with data-with-enduser-individual-key","synthetic_id":"unencrypted-asset@repo-server-storage","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server-storage","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["repo-server-storage"]},{"category":"missing-authentication-second-factor","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Two-Factor Authentication\u003c/b\u003e covering communication link \u003cb\u003eMake Requests to API Server\u003c/b\u003e from \u003cb\u003eUser CLI\u003c/b\u003e to \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"missing-authentication-second-factor@user-cli\u003emake-requests-to-api-server@user-cli@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"user-cli\u003emake-requests-to-api-server","data_breach_probability":"possible","data_breach_technical_assets":["api-server"]},{"category":"missing-file-validation","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"very-likely","exploitation_impact":"medium","title":"\u003cb\u003eMissing File Validation\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e","synthetic_id":"missing-file-validation@repo-server","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["repo-server"]},{"category":"accidental-secret-leak","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eAccidental Secret Leak\u003c/b\u003e risk at \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e","synthetic_id":"accidental-secret-leak@argo-cd-source-repo","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"accidental-secret-leak","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eAccidental Secret Leak\u003c/b\u003e risk at \u003cb\u003eDocker Hub\u003c/b\u003e","synthetic_id":"accidental-secret-leak@docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"docker-hub","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["docker-hub"]},{"category":"accidental-secret-leak","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eAccidental Secret Leak\u003c/b\u003e risk at \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"accidental-secret-leak@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["quay"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eOIDC Provider (External)\u003c/b\u003e via \u003cb\u003eValidate External OIDC Token\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@oidc-provider@api-server\u003evalidate-external-oidc-token","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003evalidate-external-oidc-token","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache","api-server","repo-server","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eExternal Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eGet/Update/Delete Live Resource State from Kubernetes (External)\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@external-cluster-kubernetes-api@api-server\u003eget-update-delete-live-resource-state-from-kubernetes-external","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eget-update-delete-live-resource-state-from-kubernetes-external","data_breach_probability":"possible","data_breach_technical_assets":["api-server","repo-server","dex-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eGet/Update/Delete Live Resource State from Kubernetes (Host)\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server\u003eget-update-delete-live-resource-state-from-kubernetes-host","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eget-update-delete-live-resource-state-from-kubernetes-host","data_breach_probability":"possible","data_breach_technical_assets":["api-server","repo-server","dex-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eUpdate Cluster Access Config\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server\u003eupdate-cluster-access-config","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eupdate-cluster-access-config","data_breach_probability":"possible","data_breach_technical_assets":["api-server","repo-server","dex-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eUpdate RBAC Config\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server\u003eupdate-rbac-config","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eupdate-rbac-config","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache","api-server","repo-server","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eUpdate Repo Access Credentials\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server\u003eupdate-repo-access-credentials","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eupdate-repo-access-credentials","data_breach_probability":"possible","data_breach_technical_assets":["api-server","repo-server","dex-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e via \u003cb\u003eValidate Dex OIDC Token\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@dex-server@api-server\u003evalidate-dex-oidc-token","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003evalidate-dex-oidc-token","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache","repo-server","dex-server","api-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eQuay\u003c/b\u003e via \u003cb\u003ePull Argo CD Image\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@quay@api-server\u003epull-argo-cd-image","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["api-server","rendered-manifests-cache","repo-server","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eRepo Server\u003c/b\u003e via \u003cb\u003eFetching Rendered Manifests from Cache\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@repo-server@api-server\u003efetching-rendered-manifests-from-cache","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003efetching-rendered-manifests-from-cache","data_breach_probability":"possible","data_breach_technical_assets":["repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eUser CLI\u003c/b\u003e via \u003cb\u003eExport Database\u003c/b\u003e","synthetic_id":"server-side-request-forgery@api-server@user-cli@api-server\u003eexport-database","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003eexport-database","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache","repo-server","dex-server","api-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplication Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eExternal Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eReconcile Resource State (External Cluster)\u003c/b\u003e","synthetic_id":"server-side-request-forgery@application-controller@external-cluster-kubernetes-api@application-controller\u003ereconcile-resource-state-external-cluster","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003ereconcile-resource-state-external-cluster","data_breach_probability":"possible","data_breach_technical_assets":["rendered-manifests-cache","application-controller","api-server","repo-server","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplication Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eReconcile Resource State (Host Cluster)\u003c/b\u003e","synthetic_id":"server-side-request-forgery@application-controller@host-cluster-kubernetes-api@application-controller\u003ereconcile-resource-state-host-cluster","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003ereconcile-resource-state-host-cluster","data_breach_probability":"possible","data_breach_technical_assets":["application-controller","rendered-manifests-cache","api-server","repo-server","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplication Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eQuay\u003c/b\u003e via \u003cb\u003ePull Argo CD Image\u003c/b\u003e","synthetic_id":"server-side-request-forgery@application-controller@quay@application-controller\u003epull-argo-cd-image","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["application-controller","repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplication Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eRepo Server\u003c/b\u003e via \u003cb\u003eRendered Manifest Requests\u003c/b\u003e","synthetic_id":"server-side-request-forgery@application-controller@repo-server@application-controller\u003erendered-manifest-requests","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"application-controller\u003erendered-manifest-requests","data_breach_probability":"possible","data_breach_technical_assets":["application-controller","repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplicationSet Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eReconcile Resource State (Host Cluster)\u003c/b\u003e","synthetic_id":"server-side-request-forgery@applicationset-controller@host-cluster-kubernetes-api@applicationset-controller\u003ereconcile-resource-state-host-cluster","most_relevant_data_asset":"","most_relevant_technical_asset":"applicationset-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"applicationset-controller\u003ereconcile-resource-state-host-cluster","data_breach_probability":"possible","data_breach_technical_assets":["applicationset-controller","repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplicationSet Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eInternal Source Control Management API\u003c/b\u003e via \u003cb\u003eGit Generator Pull\u003c/b\u003e","synthetic_id":"server-side-request-forgery@applicationset-controller@internal-source-control-management-api@applicationset-controller\u003egit-generator-pull","most_relevant_data_asset":"","most_relevant_technical_asset":"applicationset-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"applicationset-controller\u003egit-generator-pull","data_breach_probability":"possible","data_breach_technical_assets":["dex-server","api-server","applicationset-controller","rendered-manifests-cache","repo-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eApplicationSet Controller\u003c/b\u003e server-side web-requesting the target \u003cb\u003eQuay\u003c/b\u003e via \u003cb\u003ePull Argo CD Image\u003c/b\u003e","synthetic_id":"server-side-request-forgery@applicationset-controller@quay@applicationset-controller\u003epull-argo-cd-image","most_relevant_data_asset":"","most_relevant_technical_asset":"applicationset-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"applicationset-controller\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["dex-server","applicationset-controller","rendered-manifests-cache","api-server","repo-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e server-side web-requesting the target \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e via \u003cb\u003ePull Source\u003c/b\u003e","synthetic_id":"server-side-request-forgery@argo-cd-build-pipeline@argo-cd-source-repo@argo-cd-build-pipeline\u003epull-source","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-build-pipeline","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epull-source","data_breach_probability":"possible","data_breach_technical_assets":["quay","argo-cd-source-repo","argo-cd-build-pipeline","docker-hub"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e server-side web-requesting the target \u003cb\u003eDocker Hub\u003c/b\u003e via \u003cb\u003ePull Base Image from Docker Hub\u003c/b\u003e","synthetic_id":"server-side-request-forgery@argo-cd-build-pipeline@docker-hub@argo-cd-build-pipeline\u003epull-base-image-from-docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-build-pipeline","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epull-base-image-from-docker-hub","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-build-pipeline","docker-hub","quay","argo-cd-source-repo"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e server-side web-requesting the target \u003cb\u003eQuay\u003c/b\u003e via \u003cb\u003ePush Image to Quay\u003c/b\u003e","synthetic_id":"server-side-request-forgery@argo-cd-build-pipeline@quay@argo-cd-build-pipeline\u003epush-image-to-quay","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-build-pipeline","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epush-image-to-quay","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-build-pipeline","quay","argo-cd-source-repo","docker-hub"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eArgo CD Maintainer Git Client\u003c/b\u003e server-side web-requesting the target \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e via \u003cb\u003ePush Code/Tags to GitHub\u003c/b\u003e","synthetic_id":"server-side-request-forgery@argo-cd-maintainer-git-client@argo-cd-source-repo@argo-cd-maintainer-git-client\u003epush-code-tags-to-github","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-maintainer-git-client","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-maintainer-git-client\u003epush-code-tags-to-github","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-source-repo","docker-hub","argo-cd-maintainer-git-client","quay"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e server-side web-requesting the target \u003cb\u003eOIDC Provider (External)\u003c/b\u003e via \u003cb\u003eProxying to an External OIDC Provider\u003c/b\u003e","synthetic_id":"server-side-request-forgery@dex-server@oidc-provider@dex-server\u003eproxying-to-an-external-oidc-provider","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"dex-server\u003eproxying-to-an-external-oidc-provider","data_breach_probability":"possible","data_breach_technical_assets":["dex-server","rendered-manifests-cache","repo-server","api-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e via \u003cb\u003eGet Repo Access Credentials\u003c/b\u003e","synthetic_id":"server-side-request-forgery@repo-server@host-cluster-kubernetes-api@repo-server\u003eget-repo-access-credentials","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003eget-repo-access-credentials","data_breach_probability":"possible","data_breach_technical_assets":["repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eInternal Source Control Management API\u003c/b\u003e via \u003cb\u003eFetch Manifest Sources\u003c/b\u003e","synthetic_id":"server-side-request-forgery@repo-server@internal-source-control-management-api@repo-server\u003efetch-manifest-sources","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003efetch-manifest-sources","data_breach_probability":"possible","data_breach_technical_assets":["api-server","repo-server","rendered-manifests-cache","dex-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eQuay\u003c/b\u003e via \u003cb\u003ePull Argo CD Image\u003c/b\u003e","synthetic_id":"server-side-request-forgery@repo-server@quay@repo-server\u003epull-argo-cd-image","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003epull-argo-cd-image","data_breach_probability":"possible","data_breach_technical_assets":["repo-server","dex-server","api-server","rendered-manifests-cache"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e server-side web-requesting the target \u003cb\u003eRendered Manifests Cache (Redis)\u003c/b\u003e via \u003cb\u003eSend/Receive Cached Rendered Manifests\u003c/b\u003e","synthetic_id":"server-side-request-forgery@repo-server@rendered-manifests-cache@repo-server\u003esend-receive-cached-rendered-manifests","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"repo-server\u003esend-receive-cached-rendered-manifests","data_breach_probability":"possible","data_breach_technical_assets":["repo-server","rendered-manifests-cache","dex-server","api-server"]},{"category":"server-side-request-forgery","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eServer-Side Request Forgery (SSRF)\u003c/b\u003e risk at \u003cb\u003eUser CLI\u003c/b\u003e server-side web-requesting the target \u003cb\u003eAPI Server\u003c/b\u003e via \u003cb\u003eMake Requests to API Server\u003c/b\u003e","synthetic_id":"server-side-request-forgery@user-cli@api-server@user-cli\u003emake-requests-to-api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"user-cli","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"user-cli\u003emake-requests-to-api-server","data_breach_probability":"possible","data_breach_technical_assets":["user-cli","internal-source-control-management-api"]},{"category":"missing-cloud-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"unlikely","exploitation_impact":"very-high","title":"\u003cb\u003eMissing Cloud Hardening\u003c/b\u003e risk at \u003cb\u003eBuild Time Boundary\u003c/b\u003e","synthetic_id":"missing-cloud-hardening@buildtime-boundary","most_relevant_data_asset":"","most_relevant_technical_asset":"","most_relevant_trust_boundary":"buildtime-boundary","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["argo-cd-build-pipeline","argo-cd-source-repo","docker-hub","quay","argo-cd-maintainer-git-client"]},{"category":"missing-cloud-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"unlikely","exploitation_impact":"very-high","title":"\u003cb\u003eMissing Cloud Hardening\u003c/b\u003e risk at \u003cb\u003eExternal Services\u003c/b\u003e","synthetic_id":"missing-cloud-hardening@external-services-boundary","most_relevant_data_asset":"","most_relevant_technical_asset":"","most_relevant_trust_boundary":"external-services-boundary","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["external-cluster-kubernetes-api","oidc-provider"]},{"category":"missing-cloud-hardening","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"unlikely","exploitation_impact":"very-high","title":"\u003cb\u003eMissing Cloud Hardening\u003c/b\u003e risk at \u003cb\u003eOrganization Network\u003c/b\u003e","synthetic_id":"missing-cloud-hardening@organization-network","most_relevant_data_asset":"","most_relevant_technical_asset":"","most_relevant_trust_boundary":"organization-network","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["internal-source-control-management-ui","internal-source-control-management-api","user-cli","host-cluster-kubernetes-api","repo-server","repo-server-storage","application-controller","applicationset-controller","rendered-manifests-cache","api-server","dex-server"]},{"category":"code-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eCode Backdooring\u003c/b\u003e risk at \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e","synthetic_id":"code-backdooring@argo-cd-build-pipeline","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-build-pipeline","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["argo-cd-build-pipeline","quay"]},{"category":"code-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eCode Backdooring\u003c/b\u003e risk at \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e","synthetic_id":"code-backdooring@argo-cd-source-repo","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"code-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eCode Backdooring\u003c/b\u003e risk at \u003cb\u003eDocker Hub\u003c/b\u003e","synthetic_id":"code-backdooring@docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"docker-hub","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["docker-hub"]},{"category":"code-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eCode Backdooring\u003c/b\u003e risk at \u003cb\u003eQuay\u003c/b\u003e","synthetic_id":"code-backdooring@quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["quay"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["api-server"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eApplication Controller\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@application-controller","most_relevant_data_asset":"","most_relevant_technical_asset":"application-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["application-controller"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eApplicationSet Controller\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@applicationset-controller","most_relevant_data_asset":"","most_relevant_technical_asset":"applicationset-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["applicationset-controller"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eExternal Cluster Kubernetes API\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@external-cluster-kubernetes-api","most_relevant_data_asset":"","most_relevant_technical_asset":"external-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["external-cluster-kubernetes-api"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eHost Cluster Kubernetes API\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@host-cluster-kubernetes-api","most_relevant_data_asset":"","most_relevant_technical_asset":"host-cluster-kubernetes-api","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["host-cluster-kubernetes-api"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@dex-server","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["dex-server"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eRendered Manifests Cache (Redis)\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@rendered-manifests-cache","most_relevant_data_asset":"","most_relevant_technical_asset":"rendered-manifests-cache","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["rendered-manifests-cache"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eRepo Server Storage\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@repo-server-storage","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server-storage","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["repo-server-storage"]},{"category":"container-baseimage-backdooring","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"high","title":"\u003cb\u003eContainer Base Image Backdooring\u003c/b\u003e risk at \u003cb\u003eRepo Server\u003c/b\u003e","synthetic_id":"container-baseimage-backdooring@repo-server","most_relevant_data_asset":"","most_relevant_technical_asset":"repo-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"probable","data_breach_technical_assets":["repo-server"]},{"category":"unguarded-access-from-internet","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"very-likely","exploitation_impact":"medium","title":"\u003cb\u003eUnguarded Access from Internet\u003c/b\u003e of \u003cb\u003eArgo CD Source Repo (GitHub)\u003c/b\u003e by \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e via \u003cb\u003ePull Source\u003c/b\u003e","synthetic_id":"unguarded-access-from-internet@argo-cd-source-repo@argo-cd-build-pipeline@argo-cd-build-pipeline\u003epull-source","most_relevant_data_asset":"","most_relevant_technical_asset":"argo-cd-source-repo","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epull-source","data_breach_probability":"possible","data_breach_technical_assets":["argo-cd-source-repo"]},{"category":"unguarded-access-from-internet","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"very-likely","exploitation_impact":"medium","title":"\u003cb\u003eUnguarded Access from Internet\u003c/b\u003e of \u003cb\u003eDocker Hub\u003c/b\u003e by \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e via \u003cb\u003ePull Base Image from Docker Hub\u003c/b\u003e","synthetic_id":"unguarded-access-from-internet@docker-hub@argo-cd-build-pipeline@argo-cd-build-pipeline\u003epull-base-image-from-docker-hub","most_relevant_data_asset":"","most_relevant_technical_asset":"docker-hub","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epull-base-image-from-docker-hub","data_breach_probability":"possible","data_breach_technical_assets":["docker-hub"]},{"category":"unguarded-access-from-internet","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"very-likely","exploitation_impact":"medium","title":"\u003cb\u003eUnguarded Access from Internet\u003c/b\u003e of \u003cb\u003eQuay\u003c/b\u003e by \u003cb\u003eArgo CD Build Pipeline (GitHub Actions)\u003c/b\u003e via \u003cb\u003ePush Image to Quay\u003c/b\u003e","synthetic_id":"unguarded-access-from-internet@quay@argo-cd-build-pipeline@argo-cd-build-pipeline\u003epush-image-to-quay","most_relevant_data_asset":"","most_relevant_technical_asset":"quay","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"argo-cd-build-pipeline\u003epush-image-to-quay","data_breach_probability":"possible","data_breach_technical_assets":["quay"]},{"category":"missing-network-segmentation","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Network Segmentation\u003c/b\u003e to further encapsulate and protect \u003cb\u003eAPI Server\u003c/b\u003e against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers","synthetic_id":"missing-network-segmentation@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["api-server"]},{"category":"missing-network-segmentation","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Network Segmentation\u003c/b\u003e to further encapsulate and protect \u003cb\u003eApplicationSet Controller\u003c/b\u003e against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers","synthetic_id":"missing-network-segmentation@applicationset-controller","most_relevant_data_asset":"","most_relevant_technical_asset":"applicationset-controller","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["applicationset-controller"]},{"category":"missing-network-segmentation","risk_status":"unchecked","severity":"medium","exploitation_likelihood":"unlikely","exploitation_impact":"medium","title":"\u003cb\u003eMissing Network Segmentation\u003c/b\u003e to further encapsulate and protect \u003cb\u003eUser CLI\u003c/b\u003e against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers","synthetic_id":"missing-network-segmentation@user-cli","most_relevant_data_asset":"","most_relevant_technical_asset":"user-cli","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["user-cli"]},{"category":"cross-site-scripting","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eCross-Site Scripting (XSS)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"cross-site-scripting@api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["api-server"]},{"category":"cross-site-scripting","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"high","title":"\u003cb\u003eCross-Site Scripting (XSS)\u003c/b\u003e risk at \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e","synthetic_id":"cross-site-scripting@dex-server","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"possible","data_breach_technical_assets":["dex-server"]},{"category":"cross-site-request-forgery","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eCross-Site Request Forgery (CSRF)\u003c/b\u003e risk at \u003cb\u003eAPI Server\u003c/b\u003e via \u003cb\u003eMake Requests to API Server\u003c/b\u003e from \u003cb\u003eUser CLI\u003c/b\u003e","synthetic_id":"cross-site-request-forgery@api-server@user-cli\u003emake-requests-to-api-server","most_relevant_data_asset":"","most_relevant_technical_asset":"api-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"user-cli\u003emake-requests-to-api-server","data_breach_probability":"improbable","data_breach_technical_assets":["api-server"]},{"category":"cross-site-request-forgery","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"likely","exploitation_impact":"medium","title":"\u003cb\u003eCross-Site Request Forgery (CSRF)\u003c/b\u003e risk at \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e via \u003cb\u003eValidate Dex OIDC Token\u003c/b\u003e from \u003cb\u003eAPI Server\u003c/b\u003e","synthetic_id":"cross-site-request-forgery@dex-server@api-server\u003evalidate-dex-oidc-token","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"api-server\u003evalidate-dex-oidc-token","data_breach_probability":"improbable","data_breach_technical_assets":["dex-server"]},{"category":"missing-identity-provider-isolation","risk_status":"unchecked","severity":"elevated","exploitation_likelihood":"unlikely","exploitation_impact":"very-high","title":"\u003cb\u003eMissing Identity Provider Isolation\u003c/b\u003e to further encapsulate and protect identity-related asset \u003cb\u003eOIDC Proxy (Dex)\u003c/b\u003e against unrelated lower protected assets \u003cb\u003ein the same network segment\u003c/b\u003e, which might be easier to compromise by attackers","synthetic_id":"missing-identity-provider-isolation@dex-server","most_relevant_data_asset":"","most_relevant_technical_asset":"dex-server","most_relevant_trust_boundary":"","most_relevant_shared_runtime":"","most_relevant_communication_link":"","data_breach_probability":"improbable","data_breach_technical_assets":["dex-server"]}]
+[
+  {
+    "category": "missing-build-infrastructure",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Build Infrastructure</b> in the threat model (referencing asset <b>Application Controller</b> as an example)",
+    "synthetic_id": "missing-build-infrastructure@application-controller",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": []
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD Container Image Tag</b> data at <b>Argo CD Source Repo (GitHub)</b> from/to <b>Argo CD Maintainer Git Client</b>",
+    "synthetic_id": "unnecessary-data-transfer@argo-cd-container-image-tag@argo-cd-source-repo@argo-cd-maintainer-git-client",
+    "most_relevant_data_asset": "argo-cd-container-image-tag",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD Database Export</b> data at <b>User CLI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@argocd-db-export@user-cli@api-server",
+    "most_relevant_data_asset": "argocd-db-export",
+    "most_relevant_technical_asset": "user-cli",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "user-cli"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD GitHub Push Token</b> data at <b>Argo CD Source Repo (GitHub)</b> from/to <b>Argo CD Maintainer Git Client</b>",
+    "synthetic_id": "unnecessary-data-transfer@argo-cd-github-push-token@argo-cd-source-repo@argo-cd-maintainer-git-client",
+    "most_relevant_data_asset": "argo-cd-github-push-token",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD RBAC Config</b> data at <b>Host Cluster Kubernetes API</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@argo-cd-rbac-config@host-cluster-kubernetes-api@api-server",
+    "most_relevant_data_asset": "argo-cd-rbac-config",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD User Provided Secret</b> data at <b>API Server</b> from/to <b>User CLI</b>",
+    "synthetic_id": "unnecessary-data-transfer@user-provided-secret@api-server@user-cli",
+    "most_relevant_data_asset": "user-provided-secret",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Argo CD User Provided Secret</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@user-provided-secret@api-server@web-ui",
+    "most_relevant_data_asset": "user-provided-secret",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Bundled UI Code</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@bundled-ui-code@api-server@web-ui",
+    "most_relevant_data_asset": "bundled-ui-code",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Bundled UI Code</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@bundled-ui-code@web-ui@api-server",
+    "most_relevant_data_asset": "bundled-ui-code",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Manifest Sources</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@manifest-sources@web-ui@api-server",
+    "most_relevant_data_asset": "manifest-sources",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>OIDC Client Secret</b> data at <b>Host Cluster Kubernetes API</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@oidc-client-secret@host-cluster-kubernetes-api@api-server",
+    "most_relevant_data_asset": "oidc-client-secret",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>OIDC Configuration</b> data at <b>Host Cluster Kubernetes API</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@oidc-configuration@host-cluster-kubernetes-api@api-server",
+    "most_relevant_data_asset": "oidc-configuration",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "cross-site-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "very-likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get App Code</b> from <b>Web UI</b>",
+    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-app-code",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-app-code",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "cross-site-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Make Requests to API Server</b> from <b>User CLI</b>",
+    "synthetic_id": "cross-site-request-forgery@api-server@user-cli>make-requests-to-api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "user-cli>make-requests-to-api-server",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "cross-site-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Make Requests to API Server</b> from <b>Web UI</b>",
+    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>make-requests-to-api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "cross-site-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>OIDC Proxy (Dex)</b> via <b>Validate Dex OIDC Token</b> from <b>API Server</b>",
+    "synthetic_id": "cross-site-request-forgery@dex-server@api-server>validate-dex-oidc-token",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>validate-dex-oidc-token",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "dex-server"
+    ]
+  },
+  {
+    "category": "path-traversal",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Path-Traversal</b> risk at <b>Repo Server</b> against filesystem <b>Repo Server Storage</b> via <b>Store Cached Manifest Sources</b>",
+    "synthetic_id": "path-traversal@repo-server@repo-server-storage@repo-server>store-cached-manifest-sources",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>store-cached-manifest-sources",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "repo-server-storage"
+    ]
+  },
+  {
+    "category": "missing-file-validation",
+    "risk_status": "mitigated",
+    "severity": "elevated",
+    "exploitation_likelihood": "very-likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing File Validation</b> risk at <b>Repo Server</b>",
+    "synthetic_id": "missing-file-validation@repo-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "repo-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get App Code</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-app-code@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-app-code",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Make Requests to API Server</b> from <b>User CLI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@user-cli>make-requests-to-api-server@user-cli@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "user-cli>make-requests-to-api-server",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Make Requests to API Server</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>make-requests-to-api-server@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Hardening</b> risk at <b>API Server</b>",
+    "synthetic_id": "missing-hardening@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Hardening</b> risk at <b>Host Cluster Kubernetes API</b>",
+    "synthetic_id": "missing-hardening@host-cluster-kubernetes-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "missing-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Hardening</b> risk at <b>User CLI</b>",
+    "synthetic_id": "missing-hardening@user-cli",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "user-cli",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "user-cli"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>API Server</b>",
+    "synthetic_id": "container-baseimage-backdooring@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>Application Controller</b>",
+    "synthetic_id": "container-baseimage-backdooring@application-controller",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "application-controller"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>ApplicationSet Controller</b>",
+    "synthetic_id": "container-baseimage-backdooring@applicationset-controller",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "applicationset-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "applicationset-controller"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>External Cluster Kubernetes API</b>",
+    "synthetic_id": "container-baseimage-backdooring@external-cluster-kubernetes-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "external-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "external-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>Host Cluster Kubernetes API</b>",
+    "synthetic_id": "container-baseimage-backdooring@host-cluster-kubernetes-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>OIDC Proxy (Dex)</b>",
+    "synthetic_id": "container-baseimage-backdooring@dex-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "dex-server"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>Rendered Manifests Cache (Redis)</b>",
+    "synthetic_id": "container-baseimage-backdooring@rendered-manifests-cache",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "rendered-manifests-cache",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>Repo Server Storage</b>",
+    "synthetic_id": "container-baseimage-backdooring@repo-server-storage",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server-storage",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "repo-server-storage"
+    ]
+  },
+  {
+    "category": "container-baseimage-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Container Base Image Backdooring</b> risk at <b>Repo Server</b>",
+    "synthetic_id": "container-baseimage-backdooring@repo-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "repo-server"
+    ]
+  },
+  {
+    "category": "unchecked-deployment",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unchecked Deployment</b> risk at <b>Argo CD Build Pipeline (GitHub Actions)</b>",
+    "synthetic_id": "unchecked-deployment@argo-cd-build-pipeline",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-build-pipeline",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-build-pipeline",
+      "quay"
+    ]
+  },
+  {
+    "category": "unchecked-deployment",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unchecked Deployment</b> risk at <b>Argo CD Source Repo (GitHub)</b>",
+    "synthetic_id": "unchecked-deployment@argo-cd-source-repo",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "unchecked-deployment",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unchecked Deployment</b> risk at <b>Docker Hub</b>",
+    "synthetic_id": "unchecked-deployment@docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "docker-hub",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "unchecked-deployment",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unchecked Deployment</b> risk at <b>Quay</b>",
+    "synthetic_id": "unchecked-deployment@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-identity-store",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Identity Store</b> in the threat model (referencing asset <b>User CLI</b> as an example)",
+    "synthetic_id": "missing-identity-store@user-cli",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "user-cli",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": []
+  },
+  {
+    "category": "cross-site-scripting",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Cross-Site Scripting (XSS)</b> risk at <b>API Server</b>",
+    "synthetic_id": "cross-site-scripting@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "cross-site-scripting",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Cross-Site Scripting (XSS)</b> risk at <b>OIDC Proxy (Dex)</b>",
+    "synthetic_id": "cross-site-scripting@dex-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "dex-server"
+    ]
+  },
+  {
+    "category": "cross-site-scripting",
+    "risk_status": "in-progress",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Cross-Site Scripting (XSS)</b> risk at <b>Web UI</b>",
+    "synthetic_id": "cross-site-scripting@web-ui",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "missing-cloud-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "very-high",
+    "title": "<b>Missing Cloud Hardening</b> risk at <b>Build Time Boundary</b>",
+    "synthetic_id": "missing-cloud-hardening@buildtime-boundary",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "",
+    "most_relevant_trust_boundary": "buildtime-boundary",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "argo-cd-build-pipeline",
+      "argo-cd-source-repo",
+      "docker-hub",
+      "quay",
+      "argo-cd-maintainer-git-client"
+    ]
+  },
+  {
+    "category": "missing-cloud-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "very-high",
+    "title": "<b>Missing Cloud Hardening</b> risk at <b>External Services</b>",
+    "synthetic_id": "missing-cloud-hardening@external-services-boundary",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "",
+    "most_relevant_trust_boundary": "external-services-boundary",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "external-cluster-kubernetes-api",
+      "oidc-provider"
+    ]
+  },
+  {
+    "category": "missing-cloud-hardening",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "very-high",
+    "title": "<b>Missing Cloud Hardening</b> risk at <b>Organization Network</b>",
+    "synthetic_id": "missing-cloud-hardening@organization-network",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "",
+    "most_relevant_trust_boundary": "organization-network",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "internal-source-control-management-ui",
+      "internal-source-control-management-api",
+      "user-cli",
+      "web-ui",
+      "host-cluster-kubernetes-api",
+      "repo-server",
+      "repo-server-storage",
+      "application-controller",
+      "applicationset-controller",
+      "rendered-manifests-cache",
+      "api-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "missing-identity-provider-isolation",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "very-high",
+    "title": "<b>Missing Identity Provider Isolation</b> to further encapsulate and protect identity-related asset <b>OIDC Proxy (Dex)</b> against unrelated lower protected assets <b>in the same network segment</b>, which might be easier to compromise by attackers",
+    "synthetic_id": "missing-identity-provider-isolation@dex-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>OIDC Provider (External)</b> via <b>Validate External OIDC Token</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@oidc-provider@api-server>validate-external-oidc-token",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>validate-external-oidc-token",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get App Code</b>",
+    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-app-code",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-app-code",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "web-ui",
+      "internal-source-control-management-api",
+      "user-cli"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>External Cluster Kubernetes API</b> via <b>Get/Update/Delete Live Resource State from Kubernetes (External)</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@external-cluster-kubernetes-api@api-server>get-update-delete-live-resource-state-from-kubernetes-external",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-external",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "repo-server",
+      "dex-server",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Get/Update/Delete Live Resource State from Kubernetes (Host)</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>get-update-delete-live-resource-state-from-kubernetes-host",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-host",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Update Cluster Access Config</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-cluster-access-config",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>update-cluster-access-config",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "dex-server",
+      "repo-server",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Update RBAC Config</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-rbac-config",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>update-rbac-config",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Update Repo Access Credentials</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-repo-access-credentials",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>update-repo-access-credentials",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "dex-server",
+      "repo-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>OIDC Proxy (Dex)</b> via <b>Validate Dex OIDC Token</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@dex-server@api-server>validate-dex-oidc-token",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>validate-dex-oidc-token",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@quay@api-server>pull-argo-cd-image",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Repo Server</b> via <b>Fetching Rendered Manifests from Cache</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@repo-server@api-server>fetching-rendered-manifests-from-cache",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>fetching-rendered-manifests-from-cache",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server",
+      "api-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>User CLI</b> via <b>Export Database</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@user-cli@api-server>export-database",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>export-database",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Application Controller</b> server-side web-requesting the target <b>External Cluster Kubernetes API</b> via <b>Reconcile Resource State (External Cluster)</b>",
+    "synthetic_id": "server-side-request-forgery@application-controller@external-cluster-kubernetes-api@application-controller>reconcile-resource-state-external-cluster",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>reconcile-resource-state-external-cluster",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server",
+      "application-controller"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Application Controller</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Reconcile Resource State (Host Cluster)</b>",
+    "synthetic_id": "server-side-request-forgery@application-controller@host-cluster-kubernetes-api@application-controller>reconcile-resource-state-host-cluster",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>reconcile-resource-state-host-cluster",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server",
+      "dex-server",
+      "api-server",
+      "application-controller",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Application Controller</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
+    "synthetic_id": "server-side-request-forgery@application-controller@quay@application-controller>pull-argo-cd-image",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "application-controller",
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Application Controller</b> server-side web-requesting the target <b>Repo Server</b> via <b>Rendered Manifest Requests</b>",
+    "synthetic_id": "server-side-request-forgery@application-controller@repo-server@application-controller>rendered-manifest-requests",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "application-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "application-controller",
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>ApplicationSet Controller</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Reconcile Resource State (Host Cluster)</b>",
+    "synthetic_id": "server-side-request-forgery@applicationset-controller@host-cluster-kubernetes-api@applicationset-controller>reconcile-resource-state-host-cluster",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "applicationset-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "applicationset-controller>reconcile-resource-state-host-cluster",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "applicationset-controller",
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>ApplicationSet Controller</b> server-side web-requesting the target <b>Internal Source Control Management API</b> via <b>Git Generator Pull</b>",
+    "synthetic_id": "server-side-request-forgery@applicationset-controller@internal-source-control-management-api@applicationset-controller>git-generator-pull",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "applicationset-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "applicationset-controller>git-generator-pull",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "applicationset-controller",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server",
+      "api-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>ApplicationSet Controller</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
+    "synthetic_id": "server-side-request-forgery@applicationset-controller@quay@applicationset-controller>pull-argo-cd-image",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "applicationset-controller",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "applicationset-controller",
+      "repo-server",
+      "dex-server",
+      "api-server",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Argo CD Build Pipeline (GitHub Actions)</b> server-side web-requesting the target <b>Argo CD Source Repo (GitHub)</b> via <b>Pull Source</b>",
+    "synthetic_id": "server-side-request-forgery@argo-cd-build-pipeline@argo-cd-source-repo@argo-cd-build-pipeline>pull-source",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-build-pipeline",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay",
+      "argo-cd-build-pipeline",
+      "argo-cd-source-repo",
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Argo CD Build Pipeline (GitHub Actions)</b> server-side web-requesting the target <b>Docker Hub</b> via <b>Pull Base Image from Docker Hub</b>",
+    "synthetic_id": "server-side-request-forgery@argo-cd-build-pipeline@docker-hub@argo-cd-build-pipeline>pull-base-image-from-docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-build-pipeline",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-build-pipeline",
+      "docker-hub",
+      "quay",
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Argo CD Build Pipeline (GitHub Actions)</b> server-side web-requesting the target <b>Quay</b> via <b>Push Image to Quay</b>",
+    "synthetic_id": "server-side-request-forgery@argo-cd-build-pipeline@quay@argo-cd-build-pipeline>push-image-to-quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-build-pipeline",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-build-pipeline",
+      "docker-hub",
+      "quay",
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Argo CD Maintainer Git Client</b> server-side web-requesting the target <b>Argo CD Source Repo (GitHub)</b> via <b>Push Code/Tags to GitHub</b>",
+    "synthetic_id": "server-side-request-forgery@argo-cd-maintainer-git-client@argo-cd-source-repo@argo-cd-maintainer-git-client>push-code-tags-to-github",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-maintainer-git-client",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-maintainer-git-client>push-code-tags-to-github",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-maintainer-git-client",
+      "argo-cd-source-repo",
+      "docker-hub",
+      "quay"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>OIDC Proxy (Dex)</b> server-side web-requesting the target <b>OIDC Provider (External)</b> via <b>Proxying to an External OIDC Provider</b>",
+    "synthetic_id": "server-side-request-forgery@dex-server@oidc-provider@dex-server>proxying-to-an-external-oidc-provider",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "dex-server>proxying-to-an-external-oidc-provider",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server",
+      "api-server",
+      "dex-server",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Repo Server</b> server-side web-requesting the target <b>Host Cluster Kubernetes API</b> via <b>Get Repo Access Credentials</b>",
+    "synthetic_id": "server-side-request-forgery@repo-server@host-cluster-kubernetes-api@repo-server>get-repo-access-credentials",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>get-repo-access-credentials",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server",
+      "rendered-manifests-cache",
+      "dex-server",
+      "api-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Repo Server</b> server-side web-requesting the target <b>Internal Source Control Management API</b> via <b>Fetch Manifest Sources</b>",
+    "synthetic_id": "server-side-request-forgery@repo-server@internal-source-control-management-api@repo-server>fetch-manifest-sources",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>fetch-manifest-sources",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server",
+      "dex-server",
+      "api-server",
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Repo Server</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
+    "synthetic_id": "server-side-request-forgery@repo-server@quay@repo-server>pull-argo-cd-image",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server",
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Repo Server</b> server-side web-requesting the target <b>Rendered Manifests Cache (Redis)</b> via <b>Send/Receive Cached Rendered Manifests</b>",
+    "synthetic_id": "server-side-request-forgery@repo-server@rendered-manifests-cache@repo-server>send-receive-cached-rendered-manifests",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server",
+      "rendered-manifests-cache",
+      "dex-server",
+      "api-server"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>User CLI</b> server-side web-requesting the target <b>API Server</b> via <b>Make Requests to API Server</b>",
+    "synthetic_id": "server-side-request-forgery@user-cli@api-server@user-cli>make-requests-to-api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "user-cli",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "user-cli>make-requests-to-api-server",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "user-cli",
+      "internal-source-control-management-api"
+    ]
+  },
+  {
+    "category": "server-side-request-forgery",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Make Requests to API Server</b>",
+    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>make-requests-to-api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "internal-source-control-management-api",
+      "user-cli",
+      "web-ui"
+    ]
+  },
+  {
+    "category": "accidental-secret-leak",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Accidental Secret Leak</b> risk at <b>Argo CD Source Repo (GitHub)</b>",
+    "synthetic_id": "accidental-secret-leak@argo-cd-source-repo",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "accidental-secret-leak",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Accidental Secret Leak</b> risk at <b>Docker Hub</b>",
+    "synthetic_id": "accidental-secret-leak@docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "docker-hub",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "accidental-secret-leak",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Accidental Secret Leak</b> risk at <b>Quay</b>",
+    "synthetic_id": "accidental-secret-leak@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "code-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Code Backdooring</b> risk at <b>Argo CD Build Pipeline (GitHub Actions)</b>",
+    "synthetic_id": "code-backdooring@argo-cd-build-pipeline",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-build-pipeline",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "argo-cd-build-pipeline",
+      "quay"
+    ]
+  },
+  {
+    "category": "code-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Code Backdooring</b> risk at <b>Argo CD Source Repo (GitHub)</b>",
+    "synthetic_id": "code-backdooring@argo-cd-source-repo",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "code-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Code Backdooring</b> risk at <b>Docker Hub</b>",
+    "synthetic_id": "code-backdooring@docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "docker-hub",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "code-backdooring",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Code Backdooring</b> risk at <b>Quay</b>",
+    "synthetic_id": "code-backdooring@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "probable",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-vault",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Vault (Secret Storage)</b> in the threat model (referencing asset <b>Internal Source Control Management API</b> as an example)",
+    "synthetic_id": "missing-vault@internal-source-control-management-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "internal-source-control-management-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": []
+  },
+  {
+    "category": "unencrypted-asset",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "high",
+    "title": "<b>Unencrypted Technical Asset</b> named <b>Repo Server Storage</b> missing enduser-individual encryption with data-with-enduser-individual-key",
+    "synthetic_id": "unencrypted-asset@repo-server-storage",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server-storage",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "repo-server-storage"
+    ]
+  },
+  {
+    "category": "unguarded-access-from-internet",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "very-likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unguarded Access from Internet</b> of <b>Argo CD Source Repo (GitHub)</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Pull Source</b>",
+    "synthetic_id": "unguarded-access-from-internet@argo-cd-source-repo@argo-cd-build-pipeline@argo-cd-build-pipeline>pull-source",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "argo-cd-source-repo",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "argo-cd-source-repo"
+    ]
+  },
+  {
+    "category": "unguarded-access-from-internet",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "very-likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unguarded Access from Internet</b> of <b>Docker Hub</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Pull Base Image from Docker Hub</b>",
+    "synthetic_id": "unguarded-access-from-internet@docker-hub@argo-cd-build-pipeline@argo-cd-build-pipeline>pull-base-image-from-docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "docker-hub",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "unguarded-access-from-internet",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "very-likely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unguarded Access from Internet</b> of <b>Quay</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Push Image to Quay</b>",
+    "synthetic_id": "unguarded-access-from-internet@quay@argo-cd-build-pipeline@argo-cd-build-pipeline>push-image-to-quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-network-segmentation",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Network Segmentation</b> to further encapsulate and protect <b>API Server</b> against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers",
+    "synthetic_id": "missing-network-segmentation@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-network-segmentation",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Network Segmentation</b> to further encapsulate and protect <b>User CLI</b> against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers",
+    "synthetic_id": "missing-network-segmentation@user-cli",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "user-cli",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "user-cli"
+    ]
+  },
+  {
+    "category": "missing-network-segmentation",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Network Segmentation</b> to further encapsulate and protect <b>Web UI</b> against unrelated lower protected assets in the same network segment, which might be easier to compromise by attackers",
+    "synthetic_id": "missing-network-segmentation@web-ui",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Fetching Rendered Manifests from Cache</b> from <b>API Server</b> to <b>Repo Server</b>",
+    "synthetic_id": "missing-authentication@api-server>fetching-rendered-manifests-from-cache@api-server@repo-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>fetching-rendered-manifests-from-cache",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Get App Code</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication@web-ui>get-app-code@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-app-code",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Base Image from Docker Hub</b> from <b>Argo CD Build Pipeline (GitHub Actions)</b> to <b>Docker Hub</b>",
+    "synthetic_id": "missing-authentication@argo-cd-build-pipeline>pull-base-image-from-docker-hub@argo-cd-build-pipeline@docker-hub",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "docker-hub",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "docker-hub"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Rendered Manifest Requests</b> from <b>Application Controller</b> to <b>Repo Server</b>",
+    "synthetic_id": "missing-authentication@application-controller>rendered-manifest-requests@application-controller@repo-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "repo-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "repo-server"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Send/Receive Cached Rendered Manifests</b> from <b>Repo Server</b> to <b>Rendered Manifests Cache (Redis)</b>",
+    "synthetic_id": "missing-authentication@repo-server>send-receive-cached-rendered-manifests@repo-server@rendered-manifests-cache",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "rendered-manifests-cache",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "rendered-manifests-cache"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "unchecked",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Validate Dex OIDC Token</b> from <b>API Server</b> to <b>OIDC Proxy (Dex)</b>",
+    "synthetic_id": "missing-authentication@api-server>validate-dex-oidc-token@api-server@dex-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "dex-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>validate-dex-oidc-token",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "dex-server"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "false-positive",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>API Server</b> to <b>Quay</b>",
+    "synthetic_id": "missing-authentication@api-server>pull-argo-cd-image@api-server@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "api-server>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "false-positive",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>Application Controller</b> to <b>Quay</b>",
+    "synthetic_id": "missing-authentication@application-controller>pull-argo-cd-image@application-controller@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "application-controller>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "false-positive",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>ApplicationSet Controller</b> to <b>Quay</b>",
+    "synthetic_id": "missing-authentication@applicationset-controller>pull-argo-cd-image@applicationset-controller@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-authentication",
+    "risk_status": "false-positive",
+    "severity": "elevated",
+    "exploitation_likelihood": "likely",
+    "exploitation_impact": "high",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>Repo Server</b> to <b>Quay</b>",
+    "synthetic_id": "missing-authentication@repo-server>pull-argo-cd-image@repo-server@quay",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "quay",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "quay"
+    ]
+  },
+  {
+    "category": "missing-waf",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Web Application Firewall (WAF)</b> risk at <b>API Server</b>",
+    "synthetic_id": "missing-waf@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-waf",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Web Application Firewall (WAF)</b> risk at <b>External Cluster Kubernetes API</b>",
+    "synthetic_id": "missing-waf@external-cluster-kubernetes-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "external-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "external-cluster-kubernetes-api"
+    ]
+  },
+  {
+    "category": "missing-waf",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Web Application Firewall (WAF)</b> risk at <b>Host Cluster Kubernetes API</b>",
+    "synthetic_id": "missing-waf@host-cluster-kubernetes-api",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "host-cluster-kubernetes-api",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "host-cluster-kubernetes-api"
+    ]
+  }
+]

@@ -279,7 +279,6 @@ data_assets:
   #  Argo CD Dex HAProxy Manifests:
   #  Argo CD Redis HA Manifests:
   #  Argo CD Source Repo Push Token:
-  #  RBAC Config:
   Cluster Access Credentials:
     id: cluster-access-credentials
     description: Credentials granting access to manage an external Kubernetes cluster's resources.
@@ -311,7 +310,34 @@ data_assets:
     confidentiality: public
     integrity: mission-critical
     availability: operational
-  #  OIDC Configuration:
+  OIDC Configuration:
+    id: oidc-configuration
+    description: Configuration of Argo CD's OIDC provider (either bundled Dex instance or external).
+    usage: business
+    origin: Argo CD Operator
+    quantity: very-few
+    confidentiality: internal  # This block represents the non-secret part of the configuration.
+    integrity: mission-critical
+    availability: important
+    justification_cia_rating: >
+      The OIDC configuration is "internal," because it informs users' CLIs or UIs how to log a user in. But that 
+      information should not be public if Argo CD is not exposed to the public internet.
+      
+      The integrity of the configuration is mission critical, because if someone can change the configuration, they can
+      cause Argo CD to trust identity information from an untrustworthy source.
+      
+      Availability is important, because without the configuration, users will be unable to log into Argo CD.
+      Availability is not mission critical, because the core Argo CD components (controller, repo-server, Redis) will be
+      unaffected. An administrator can use Kubernetes API access to restore the configuration.
+  OIDC Client Secret:
+    id: oidc-client-secret
+    description: Client secret used by the API server to authenticate with an OIDC provider.
+    usage: business
+    origin: OIDC Provider
+    quantity: very-few
+    confidentiality: strictly-confidential
+    integrity: important
+    availability: important
   Repo Access Credentials:
     id: repo-access-credentials
     description: Credentials for retrieving manifest sources from a source control manager (git, Helm, etc.).
@@ -443,6 +469,15 @@ data_assets:
     availability: mission-critical # values: archive, operational, important, critical, mission-critical
     justification_cia_rating: >
       Potentially very sensitive data being shown within UI. Care here must be shown with regards to transport to UI.
+  Bundled UI Code:
+    id: bundled-ui-code
+    description: Webpack bundled UI code which runs the Argo CD single-page app.
+    usage: devops
+    origin: Argo CD Maintainers
+    quantity: very-few
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
 
 technical_assets:
   Argo CD Maintainer Git Client:
@@ -663,16 +698,21 @@ technical_assets:
       - argo-cd-container-image
       - argocd-db-export
       - manifest-sources # When sent for server-side generation or override sync.
+      - oidc-configuration
+      - oidc-client-secret
     data_assets_stored:
       - oidc-public-keys
       - argo-cd-rbac-config
+      - oidc-configuration
     data_assets_sent:
       - argocd-db-export
+      - oidc-configuration
     data_assets_produced:
       - argocd-db-export
     data_formats_accepted:
       - json
       - csv
+      - file
     communication_links:
       Export Database:
         target: user-cli
@@ -687,6 +727,8 @@ technical_assets:
         usage: devops # values: business, devops
         data_assets_sent: # sequence of IDs to reference
           - argocd-db-export
+        data_assets_received:
+          - oidc-tokens
       Pull Argo CD Image:
         target: quay
         description: Pull the Argo CD container image from Quay.
@@ -731,6 +773,8 @@ technical_assets:
           - cluster-access-configuration
           - argo-cd-rbac-config
           - repo-access-credentials
+          - oidc-configuration
+          - oidc-client-secret
         vpn: false
         ip_filtered: false
         data_assets_received:
@@ -740,6 +784,8 @@ technical_assets:
           - cluster-access-configuration
           - repo-access-credentials
           - argo-cd-rbac-config
+          - oidc-configuration
+          - oidc-client-secret
       Get/Update/Delete Live Resource State from Kubernetes (External):
         target: external-cluster-kubernetes-api
         description: >
@@ -1227,7 +1273,6 @@ technical_assets:
       - git-org-name
       - git-branch-name
       - git-repo-name
-      - git-repo-name
     data_assets_stored:
       - manifest-sources
   Internal Source Control Management UI:
@@ -1362,13 +1407,13 @@ technical_assets:
     used_as_client_by_human: true
     data_assets_stored:
       - oidc-tokens
-      - argo-tokens
     data_assets_processed:
       - rendered-manifests
       - live-manifests
       - oidc-tokens
       - argo-tokens
       - application-manifest
+      - applicationset-manifest
       - appproject-manifest
       - application-name
       - cluster-access-credentials
@@ -1376,8 +1421,9 @@ technical_assets:
       - manifest-sources  # When doing things like local diffing or local syncing
       - repo-access-credentials
       - user-provided-secret
+      - oidc-configuration
     communication_links:
-      Make Requests to API Server:
+      Make Requests to API Server: &api-server-request
         target: api-server
         description: Make requests to the API server.
         protocol: https # values: see help
@@ -1394,6 +1440,7 @@ technical_assets:
           - manifest-sources
           - application-name
           - application-manifest
+          - applicationset-manifest
           - appproject-manifest
           - cluster-access-credentials
           - cluster-access-configuration
@@ -1401,6 +1448,61 @@ technical_assets:
           - user-provided-secret
         data_assets_received: # sequence of IDs to reference
           - argo-tokens
+          - rendered-manifests
+          - oidc-configuration
+          - application-name
+          - application-manifest
+          - applicationset-manifest
+          - appproject-manifest
+  Web UI:
+    id: web-ui
+    description: Argo CD web UI - single-page JavaScript app.
+    type: process
+    usage: devops
+    size: application
+    technology: web-application
+    out_of_scope: false
+    internet: false
+    machine: physical
+    encryption: data-with-symmetric-shared-key
+    owner: Argo CD User
+    confidentiality: public
+    integrity: mission-critical
+    availability: operational
+    multi_tenant: false
+    used_as_client_by_human: true
+    data_assets_stored:
+      - oidc-tokens
+    data_assets_processed:
+      - rendered-manifests
+      - live-manifests
+      - oidc-tokens
+      - argo-tokens
+      - application-manifest
+      - applicationset-manifest
+      - appproject-manifest
+      - application-name
+      - cluster-access-credentials
+      - cluster-access-configuration
+      - repo-access-credentials
+      - user-provided-secret
+      - oidc-configuration
+    communication_links:
+      Get App Code:
+        target: api-server
+        description: Get the web app code from the API server.
+        protocol: https
+        authentication: none
+        authorization: none
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+        data_assets_received:
+          - bundled-ui-code
+      Make Requests to API Server:
+        <<: *api-server-request
 
 trust_boundaries:
   Kubernetes Argo CD Namespace:
@@ -1435,6 +1537,7 @@ trust_boundaries:
       - internal-source-control-management-ui
       - internal-source-control-management-api
       - user-cli
+      - web-ui
     trust_boundaries_nested: # sequence of IDs to reference
       - kubernetes-network
   Build Time Boundary:
@@ -1448,14 +1551,16 @@ trust_boundaries:
       - docker-hub
       - quay
       - argo-cd-maintainer-git-client
+    trust_boundaries_nested:
   External Services:
     id: external-services-boundary
-    description: Represents external services used by an Argoo CD User.
+    description: Represents external services used by an Argo CD User.
     type: network-cloud-provider # values: see help
     tags:
     technical_assets_inside: # sequence of IDs to reference
       - external-cluster-kubernetes-api
       - oidc-provider
+    trust_boundaries_nested:
 
 shared_runtimes:
   Kubernetes Node:
@@ -1512,13 +1617,52 @@ shared_runtimes:
 # seeding the risk tracking part here based on already identified and not yet handled risks.
 #risk_tracking:
 #
-#  unencrypted-asset@some-component: # wildcards "*" between the @ characters are possible
-#    status: accepted # values: unchecked, in-discussion, accepted, in-progress, mitigated, false-positive
-#    justification: Risk accepted as tolerable
-#    ticket: XYZ-1234
-#    date: 2020-01-04
-#    checked_by: John Doe
-
+risk_tracking:
+  missing-authentication@*>pull-argo-cd-image@*@quay:
+    status: false-positive # values: unchecked, in-discussion, accepted, in-progress, mitigated, false-positive
+    justification: The Argo CD image is public. There is no need to authenticate to Quay.
+    date: 2022-11-17
+    checked_by: Michael Crenshaw
+    ticket:
+  missing-file-validation@repo-server:
+    status: mitigated
+    justification: >
+      The Argo CD repo server accepts files from a number of sources. First, it accepts files from Git and Helm 
+      repositories. Second, it accepts files from users via the API when they do "local syncs" or "local diffs". 
+      
+      The repo server has several lines of defense against invalid file inputs. 
+      1) Some storage mechanisms limit file size by default (for example git, unless LFS is enabled).
+      2) The repo-server enforces a secondary, user-configured file size limit for directory-type apps (since
+         those files are read directly into memory).
+      3) The repo-server relies on configuration management tools (Helm, Kustomize, jsonnet) to only accept valid input.
+      4) The repo-server, by default, disallows symlink files which exit the repository boundaries.
+    date: 2022-11-18
+    checked_by: Michael Crenshaw
+    ticket:
+  cross-site-scripting@web-ui:
+    status: in-progress
+    justification: >
+      In general, Argo CD relies on the anti-XSS tools provided by React and other frontend libraries to sanitize and
+      encode input before injecting them to the DOM.
+      
+      The Argo CD team has dealt with XSS vulnerabilities in the past:
+       * A leaked API server encryption key can allow XSS for SSO users - https://github.com/argoproj/argo-cd/security/advisories/GHSA-pmjg-52h9-72qv
+       * Possible XSS when using SSO with the CLI - https://github.com/argoproj/argo-cd/security/advisories/GHSA-qq5v-f4c3-395c
+       * Missing XSS Protection Header - https://github.com/argoproj/argo-cd/security/advisories/GHSA-pg99-h5gc-446r
+       * External URLs for Deployments can include javascript - https://github.com/argoproj/argo-cd/security/advisories/GHSA-h4w9-6x78-8vrj
+      
+      One area of particular interest is user-supplied links in the interface. GHSA-h4w9-6x78-8vrj showed that, where a
+      user can insert an unsanitized link, they can cause JavaScript code to run in another user's browser.
+      
+      Other links may only be provided by administrators and are therefore considered relatively trusted.
+      
+      Some work to mitigate XSS is still underway:
+       * fix: set security headers on oidc handler responses - https://github.com/argoproj/argo-cd/pull/9854
+       * fix: add url validation for help chat - https://github.com/argoproj/argo-cd/pull/10417
+       * feat: stricter CSP - https://github.com/argoproj/argo-cd/pull/10131
+    date: 2022-11-18
+    checked_by: Michael Crenshaw
+    ticket:
 
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
