@@ -1837,9 +1837,18 @@ risk_tracking:
 #    date: 2022-11-19
 #    checked_by: Zach Aller
   server-side-request-forgery@api-server@repo-server@api-server>fetching-rendered-manifests:
-    status: false-positive
+    status: accepted
     justification: >
-      TODO
+      There is potential for SSRF in the repo-server. The repo-server is responsible for fetching manifests from git and
+      running a plugin to render the manifests. The plugins themself support fetching remote resources, such as Kustomizes
+      remote bases and Helms remote dependencies.
+      
+      There is work in progress to mitigate this issue more by moving manifest generation outside of the repo-server,
+      and into what we call a config management plugin. This plugin will be responsible for generating manifests for a specific
+      plugin such as kustomize. This removes a risk because repo-server contains highly sensitive information and running
+      various plugins within repo-server is a risk because we depend on the plugins to behave well. The config management 
+      plugin will be run in a separate container/pod which adds a layer of isolation and removes plugins such as 
+      helm/kustomize from the repo-server.
     ticket:
     date: 2022-11-19
     checked_by: Zach Aller
@@ -1891,7 +1900,16 @@ risk_tracking:
   server-side-request-forgery@application-controller@repo-server@application-controller>rendered-manifest-requests:
     status: false-positive
     justification: >
-      TODO
+      There is potential for SSRF in the repo-server. The repo-server is responsible for fetching manifests from git and
+      running a plugin to render the manifests. The plugins themself support fetching remote resources, such as Kustomizes
+      remote bases and Helms remote dependencies.
+  
+      There is work in progress to mitigate this issue more by moving manifest generation outside of the repo-server,
+      and into what we call a config management plugin. This plugin will be responsible for generating manifests for a specific
+      plugin such as kustomize. This removes a risk because repo-server contains highly sensitive information and running
+      various plugins within repo-server is a risk because we depend on the plugins to behave well. The config management 
+      plugin will be run in a separate container/pod which adds a layer of isolation and removes plugins such as 
+      helm/kustomize from the repo-server.
     ticket:
     date: 2022-11-19
     checked_by: Zach Aller
