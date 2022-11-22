@@ -1761,6 +1761,15 @@ risk_tracking:
     ticket:
     date: 2022-11-19
     checked_by: Michael Crenshaw
+  server-side-request-forgery@api-server@oidc-provider@api-server>validate-external-oidc-token:
+    status: false-positive
+    justification: >
+      There is a request to get 3rd party public OIDC keys. The request URL comes from an ArgoCD configmap 
+      so there is no risk of SSRF. It is also the responsibility of the OIDC provider to ensure that SSRF dose not 
+      affect them.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
   server-side-request-forgery@api-server@external-cluster-kubernetes-api@api-server>get-update-delete-live-resource-state-from-kubernetes-external:
     status: false-positive
     justification: >
