@@ -734,21 +734,21 @@ technical_assets:
           - argocd-db-export
         data_assets_received:
           - oidc-tokens
-      Pull Argo CD Image:
-        target: quay
-        description: Pull the Argo CD container image from Quay.
-        protocol: https
-        authentication: none
-        authorization: none
-        vpn: false
-        ip_filtered: false
-        readonly: true
-        usage: devops
-        data_assets_sent:
-          - argo-cd-container-image-tag
-        data_assets_received:
-          - argo-cd-container-image
-      Fetching Rendered Manifests from Cache:
+#      Pull Argo CD Image:
+#        target: quay
+#        description: Pull the Argo CD container image from Quay.
+#        protocol: https
+#        authentication: none
+#        authorization: none
+#        vpn: false
+#        ip_filtered: false
+#        readonly: true
+#        usage: devops
+#        data_assets_sent:
+#          - argo-cd-container-image-tag
+#        data_assets_received:
+#          - argo-cd-container-image
+      Fetching Rendered Manifests:
         target: repo-server
         description: Fetch manifests from the repo server to display via UI or CLI.
         protocol: https # values: see help
@@ -913,20 +913,20 @@ technical_assets:
     data_formats_accepted: # sequence of formats like: json, xml, serialization, file, csv
       - json
     communication_links:
-      Pull Argo CD Image:
-        target: quay
-        description: Pull the Argo CD container image from Quay.
-        protocol: https
-        authentication: none
-        authorization: none
-        vpn: false
-        ip_filtered: false
-        readonly: true
-        usage: devops
-        data_assets_sent:
-          - argo-cd-container-image-tag
-        data_assets_received:
-          - argo-cd-container-image
+#      Pull Argo CD Image:
+#        target: quay
+#        description: Pull the Argo CD container image from Quay.
+#        protocol: https
+#        authentication: none
+#        authorization: none
+#        vpn: false
+#        ip_filtered: false
+#        readonly: true
+#        usage: devops
+#        data_assets_sent:
+#          - argo-cd-container-image-tag
+#        data_assets_received:
+#          - argo-cd-container-image
       Rendered Manifest Requests:
         target: repo-server
         description: Fetch manifests from the repo server to be applied to the cluster.
@@ -1633,12 +1633,12 @@ shared_runtimes:
 #risk_tracking:
 #
 risk_tracking:
-  missing-authentication@*>pull-argo-cd-image@*@quay:
-    status: false-positive # values: unchecked, in-discussion, accepted, in-progress, mitigated, false-positive
-    justification: The Argo CD image is public. There is no need to authenticate to Quay.
-    date: 2022-11-17
-    checked_by: Michael Crenshaw
-    ticket:
+#  missing-authentication@*>pull-argo-cd-image@*@quay:
+#    status: false-positive # values: unchecked, in-discussion, accepted, in-progress, mitigated, false-positive
+#    justification: The Argo CD image is public. There is no need to authenticate to Quay.
+#    date: 2022-11-17
+#    checked_by: Michael Crenshaw
+#    ticket:
   missing-file-validation@repo-server:
     status: mitigated
     justification: >
@@ -1761,6 +1761,146 @@ risk_tracking:
     ticket:
     date: 2022-11-19
     checked_by: Michael Crenshaw
+  server-side-request-forgery@api-server@external-cluster-kubernetes-api@api-server>get-update-delete-live-resource-state-from-kubernetes-external:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>get-update-delete-live-resource-state-from-kubernetes-host:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes api dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-cluster-access-config:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-rbac-config:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@host-cluster-kubernetes-api@api-server>update-repo-access-credentials:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@dex-server@api-server>validate-dex-oidc-token:
+    status: mitigated
+    justification: >
+      There is a request to get the Dex public keys from the Dex server. The request URL comes from an ArgoCD configmap 
+      so there is no risk of SSRF. Dex is also out of scope of components that are developed by ArgoCD maintainers.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+#  server-side-request-forgery@api-server@quay@api-server>pull-argo-cd-image:
+#    status: false-positive
+#    justification: >
+#      This is outside the scope of ArgoCD, we are making a 3rd party request to download an image from quay.io. It would
+#      be up to quay to defend against any SSRF within their infrastructure.
+#    ticket:
+#    date: 2022-11-19
+#    checked_by: Zach Aller
+  server-side-request-forgery@api-server@repo-server@api-server>fetching-rendered-manifests:
+    status: false-positive
+    justification: >
+      TODO
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@api-server@user-cli@api-server>export-database:
+    status: false-positive
+    justification: >
+      The export command dose not call any ArgoCD API's it talks directly to Kubernetes API and therefor is out of scope for
+      SSRF.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@application-controller@external-cluster-kubernetes-api@application-controller>reconcile-resource-state-external-cluster:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@application-controller@host-cluster-kubernetes-api@application-controller>reconcile-resource-state-host-cluster:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+#  server-side-request-forgery@application-controller@quay@application-controller>pull-argo-cd-image:
+#    status: false-positive
+#    justification: >
+#      TODO
+#    ticket:
+#    date: 2022-11-19
+#    checked_by: Zach Aller
+  server-side-request-forgery@applicationset-controller@host-cluster-kubernetes-api@applicationset-controller>reconcile-resource-state-host-cluster:
+    status: false-positive
+    justification: >
+      This is outside the scope of ArgoCD security we do not control the Kubernetes API, we depend on Kubernetes to protect 
+      against any SSRF. ArgoCD uses the Kubernetes client-go library to communicate with the Kubernetes API server. 
+      As far as we know, the Kubernetes API dose not allow SSRF, because there is generally no passed in URLs to the 
+      Kubernetes API server.
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@application-controller@repo-server@application-controller>rendered-manifest-requests:
+    status: false-positive
+    justification: >
+      TODO
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+  server-side-request-forgery@applicationset-controller@internal-source-control-management-api@applicationset-controller>git-generator-pull:
+    status: false-positive
+    justification: >
+      TODO
+    ticket:
+    date: 2022-11-19
+    checked_by: Zach Aller
+#  server-side-request-forgery@applicationset-controller@quay@applicationset-controller>pull-argo-cd-image:
+#    status: false-positive
+#    justification: >
+#      TODO
+#    ticket:
+#    date: 2022-11-19
+#    checked_by: Zach Aller
+
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 
