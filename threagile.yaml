@@ -592,8 +592,11 @@ technical_assets:
     redundant: false
     data_assets_processed:
       - argo-cd-source
+      - argo-cd-container-image-tag
+      - argo-cd-github-push-token
     data_assets_stored:
       - argo-cd-source
+      - argo-cd-container-image-tag
   Argo CD Build Pipeline (GitHub Actions):
     id: argo-cd-build-pipeline
     description: Argo CD build pipeline, hosted on GitHub Actions.
@@ -704,9 +707,11 @@ technical_assets:
       - oidc-public-keys
       - argo-cd-rbac-config
       - oidc-configuration
+      - bundled-ui-code
     data_assets_sent:
       - argocd-db-export
       - oidc-configuration
+      - bundled-ui-code
     data_assets_produced:
       - argocd-db-export
     data_formats_accepted:
@@ -1217,6 +1222,7 @@ technical_assets:
       - application-name
       - appproject-manifest
       - user-provided-secret
+      - argo-cd-rbac-config
     data_assets_stored:
       - live-manifests
       - cluster-access-credentials
@@ -1226,6 +1232,11 @@ technical_assets:
       - applicationset-manifest
       - application-manifest
       - appproject-manifest
+      - argo-cd-rbac-config
+      - oidc-client-secret
+      - oidc-configuration
+    data_formats_accepted:
+      - json
   External Cluster Kubernetes API:
     id: external-cluster-kubernetes-api
     description: Kubernetes API Server for a cluster Argo CD is managing
@@ -1422,6 +1433,7 @@ technical_assets:
       - repo-access-credentials
       - user-provided-secret
       - oidc-configuration
+      - argocd-db-export
     communication_links:
       Make Requests to API Server: &api-server-request
         target: api-server
@@ -1473,6 +1485,7 @@ technical_assets:
     used_as_client_by_human: true
     data_assets_stored:
       - oidc-tokens
+      - bundled-ui-code
     data_assets_processed:
       - rendered-manifests
       - live-manifests
@@ -1487,6 +1500,8 @@ technical_assets:
       - repo-access-credentials
       - user-provided-secret
       - oidc-configuration
+      - bundled-ui-code
+      - manifest-sources # When doing local syncs or server-side local manifest generation
     communication_links:
       Get App Code:
         target: api-server
@@ -1631,10 +1646,14 @@ risk_tracking:
       repositories. Second, it accepts files from users via the API when they do "local syncs" or "local diffs". 
       
       The repo server has several lines of defense against invalid file inputs. 
+      
       1) Some storage mechanisms limit file size by default (for example git, unless LFS is enabled).
+      
       2) The repo-server enforces a secondary, user-configured file size limit for directory-type apps (since
          those files are read directly into memory).
+      
       3) The repo-server relies on configuration management tools (Helm, Kustomize, jsonnet) to only accept valid input.
+      
       4) The repo-server, by default, disallows symlink files which exit the repository boundaries.
     date: 2022-11-18
     checked_by: Michael Crenshaw
@@ -1646,9 +1665,13 @@ risk_tracking:
       encode input before injecting them to the DOM.
       
       The Argo CD team has dealt with XSS vulnerabilities in the past:
+      
        * A leaked API server encryption key can allow XSS for SSO users - https://github.com/argoproj/argo-cd/security/advisories/GHSA-pmjg-52h9-72qv
+      
        * Possible XSS when using SSO with the CLI - https://github.com/argoproj/argo-cd/security/advisories/GHSA-qq5v-f4c3-395c
+      
        * Missing XSS Protection Header - https://github.com/argoproj/argo-cd/security/advisories/GHSA-pg99-h5gc-446r
+      
        * External URLs for Deployments can include javascript - https://github.com/argoproj/argo-cd/security/advisories/GHSA-h4w9-6x78-8vrj
       
       One area of particular interest is user-supplied links in the interface. GHSA-h4w9-6x78-8vrj showed that, where a
@@ -1657,13 +1680,87 @@ risk_tracking:
       Other links may only be provided by administrators and are therefore considered relatively trusted.
       
       Some work to mitigate XSS is still underway:
+      
        * fix: set security headers on oidc handler responses - https://github.com/argoproj/argo-cd/pull/9854
+      
        * fix: add url validation for help chat - https://github.com/argoproj/argo-cd/pull/10417
+      
        * feat: stricter CSP - https://github.com/argoproj/argo-cd/pull/10131
     date: 2022-11-18
     checked_by: Michael Crenshaw
     ticket:
-
+  missing-authentication-second-factor@web-ui>get-app-code@web-ui@api-server:
+    status: false-positive
+    justification: 2FA does not make sense when fetching the app code, since Argo CD app code is public.
+    ticket:
+    date: 2022-11-19
+    checked_by: Michael Crenshaw
+  missing-authentication-second-factor@*>make-requests-to-api-server@*@api-server:
+    status: accepted
+    justification: >
+      Argo CD does not yet support 2FA for API actions. It has been requested, specifically when users attempt sensitive
+      API calls.
+      
+      Argo CD does support OIDC providers which may require 2FA for login.
+    ticket: https://github.com/argoproj/argo-cd/issues/10232
+    date: 2022-11-19
+    checked_by: Michael Crenshaw
+  server-side-request-forgery@argo-cd-build-pipeline@argo-cd-source-repo@argo-cd-build-pipeline>pull-source:
+    status: mitigated
+    justification: >
+      The Argo CD build pipeline uses GitHub's checkout action to retrieve source code before building. The action
+      accepts no input, and it should be impossible for a malicious actor (outside GitHub itself) to cause the checkout
+      action to retrieve anything besides the Argo CD source code.
+    ticket:
+    date: 2022-11-19
+    checked_by: Michael Crenshaw
+  unencrypted-asset@repo-server-storage:
+    status: accepted
+    justification: >
+      The Argo CD repo-server does not encrypt resources at rest on the disk cache.
+      
+      The cache should not contain any secrets. The cache holds the contents of git and Helm repositories, which are not
+      designed for storing secrets. Users may choose to store secrets on the repo-server (for example, when using a 
+      plugin that injects secrets into manifests). Those users should consider adding encryption to their plugins.
+      
+      All users should consider Kubernetes- and cloud provider-level encryption for storage used by Argo CD.
+    ticket:
+    date: 2022-11-19
+    checked_by: Michael Crenshaw
+  path-traversal@repo-server@repo-server-storage@repo-server>store-cached-manifest-sources:
+    status: mitigated
+    justification: >
+      The repo server maintains a cache of git and Helm repo contents. The cache should not contain secrets, but it might
+      contain otherwise-sensitive information. If multiple tenants use the same Argo CD instance, an attacker from one
+      tenant may try to access the manifests owned by another tenant.
+      
+      The repo server component has suffered from a variety of path traversal and symlink following bugs. In response,
+      we have built strong safeguards against these attacks.
+      
+      1) Symlinks exiting the repository bounds are blocked by default.
+      
+      2) All user path inputs are run through a standard path traversal detection library. That library has good unit 
+      test coverage.
+      
+      3) The config management tools (Helm, Jsonnet, Kustomize) have built-in path traversal prevention mechanisms.
+      
+      4) Cache directories have random names (cryptographically-secure random UUIDs). The directories' permissions are
+      locked down when the directories are not actively in use. This makes many traversal attacks impractical.
+      
+      Previously discovered and resolved path traversal and symlink following bugs include the following:
+      
+      * Symlink following allows leaking out-of-bounds YAML files from Argo CD repo-server - https://github.com/argoproj/argo-cd/security/advisories/GHSA-q4w5-4gq2-98vm
+      
+      * Symlink following allows leaking out-of-bound manifests and JSON files from Argo CD repo-server - https://github.com/argoproj/argo-cd/security/advisories/GHSA-6gcg-hp2x-q54h
+      
+      * Path traversal and improper access control allows leaking out-of-bound files from Argo CD repo-server - https://github.com/argoproj/argo-cd/security/advisories/GHSA-r9cr-hvjj-496v
+      
+      * Path traversal allows leaking out-of-bound files from Argo CD repo-server - https://github.com/argoproj/argo-cd/security/advisories/GHSA-h6h5-6fmq-rh28
+      
+      * Path traversal and dereference of symlinks when passing Helm value files - https://github.com/argoproj/argo-cd/security/advisories/GHSA-63qx-x74g-jcr7
+    ticket:
+    date: 2022-11-19
+    checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 
