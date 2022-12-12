@@ -1128,7 +1128,7 @@ technical_assets:
       Send/Receive Cached Rendered Manifests:
         target: rendered-manifests-cache
         description: Sends and receives rendered manifests to and from the cache.
-        protocol: https # values: see help
+        protocol: http # values: see help
         authentication: none # values: none, credentials, session-id, token, client-certificate, two-factor
         authorization: none # values: none, technical-user, enduser-identity-propagation
         tags:
@@ -1503,6 +1503,183 @@ technical_assets:
       - bundled-ui-code
       - manifest-sources # When doing local syncs or server-side local manifest generation
     communication_links:
+      Manage Applications:
+        target: api-server
+        description: >
+          The UI makes a variety of API calls to manage Applications. Those calls include get, create, update, update
+          spec, patch, delete, and watch. The UI can also request/terminate syncs and perform rollbacks, which are 
+          specialized "update" operations, because they just edit the Application spec.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+          - application-manifest
+        data_assets_received:
+          - application-manifest
+      Get App Manifests:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          -
+      Get Resource Events:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+      Manage Application Resources:
+        target: api-server
+        description: >
+          The UI can perform certain actions on resources managed by an Application. Those actions include get, patch,
+          and delete.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Patch a Managed Resource:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Delete a Managed Resource:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Get the Resource Tree:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Watch the Resource Tree:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Get Revision Metadata:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Get Managed Resources:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Get Pod Logs:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      List Resource Actions:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Run a Resource Action:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
+      Get Application Sync Windows:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+
       Get App Code:
         target: api-server
         description: Get the web app code from the API server.
