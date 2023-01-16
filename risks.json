@@ -1,7 +1,7 @@
 [
   {
     "category": "code-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -20,7 +20,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -38,7 +38,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -56,7 +56,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -74,7 +74,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -128,7 +128,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -164,7 +164,7 @@
   },
   {
     "category": "container-baseimage-backdooring",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -506,7 +506,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -524,7 +524,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -542,7 +542,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -560,7 +560,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -578,7 +578,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -596,7 +596,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -632,7 +632,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -650,7 +650,7 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -722,7 +722,7 @@
   },
   {
     "category": "missing-authentication",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
@@ -740,7 +740,7 @@
   },
   {
     "category": "missing-authentication",
-    "risk_status": "unchecked",
+    "risk_status": "in-discussion",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
@@ -1123,9 +1123,9 @@
     "most_relevant_communication_link": "api-server>validate-dex-oidc-token",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "rendered-manifests-cache",
       "api-server",
       "repo-server",
-      "rendered-manifests-cache",
       "dex-server"
     ]
   },
@@ -1144,9 +1144,9 @@
     "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-external",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "api-server",
       "repo-server",
+      "dex-server",
       "rendered-manifests-cache"
     ]
   },
@@ -1165,10 +1165,10 @@
     "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-host",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "api-server",
       "repo-server",
-      "rendered-manifests-cache",
       "dex-server",
-      "api-server"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1186,10 +1186,10 @@
     "most_relevant_communication_link": "api-server>update-cluster-access-config",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
-      "rendered-manifests-cache",
+      "api-server",
       "dex-server",
-      "api-server"
+      "rendered-manifests-cache",
+      "repo-server"
     ]
   },
   {
@@ -1207,10 +1207,10 @@
     "most_relevant_communication_link": "api-server>update-rbac-config",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
+      "repo-server",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1228,10 +1228,10 @@
     "most_relevant_communication_link": "api-server>update-repo-access-credentials",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "repo-server",
+      "dex-server",
       "rendered-manifests-cache",
-      "dex-server"
+      "repo-server",
+      "api-server"
     ]
   },
   {
@@ -1251,8 +1251,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "repo-server",
-      "rendered-manifests-cache",
-      "dex-server"
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1270,10 +1270,10 @@
     "most_relevant_communication_link": "api-server>fetching-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
       "repo-server",
-      "rendered-manifests-cache",
-      "dex-server"
+      "api-server",
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1292,9 +1292,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "repo-server",
+      "dex-server",
       "rendered-manifests-cache",
-      "dex-server"
+      "repo-server"
     ]
   },
   {
@@ -1312,11 +1312,11 @@
     "most_relevant_communication_link": "application-controller>reconcile-resource-state-external-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
-      "dex-server",
       "application-controller",
+      "rendered-manifests-cache",
+      "repo-server",
       "api-server",
-      "repo-server"
+      "dex-server"
     ]
   },
   {
@@ -1336,9 +1336,9 @@
     "data_breach_technical_assets": [
       "application-controller",
       "repo-server",
-      "rendered-manifests-cache",
+      "api-server",
       "dex-server",
-      "api-server"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1356,11 +1356,11 @@
     "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
-      "dex-server",
-      "api-server",
       "application-controller",
-      "repo-server"
+      "repo-server",
+      "api-server",
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1378,9 +1378,9 @@
     "most_relevant_communication_link": "applicationset-controller>reconcile-resource-state-host-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "repo-server",
       "rendered-manifests-cache",
+      "repo-server",
+      "api-server",
       "dex-server",
       "applicationset-controller"
     ]
@@ -1401,9 +1401,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "applicationset-controller",
-      "api-server",
-      "repo-server",
       "rendered-manifests-cache",
+      "repo-server",
+      "api-server",
       "dex-server"
     ]
   },
@@ -1422,11 +1422,11 @@
     "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
-      "rendered-manifests-cache",
       "dex-server",
+      "api-server",
+      "rendered-manifests-cache",
       "applicationset-controller",
-      "api-server"
+      "repo-server"
     ]
   },
   {
@@ -1444,10 +1444,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-build-pipeline",
+      "argo-cd-source-repo",
       "quay",
-      "docker-hub",
-      "argo-cd-source-repo"
+      "argo-cd-build-pipeline",
+      "docker-hub"
     ]
   },
   {
@@ -1466,9 +1466,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
-      "argo-cd-source-repo",
       "docker-hub",
-      "quay"
+      "quay",
+      "argo-cd-source-repo"
     ]
   },
   {
@@ -1486,10 +1486,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "quay",
-      "argo-cd-source-repo",
       "argo-cd-build-pipeline",
-      "docker-hub"
+      "docker-hub",
+      "argo-cd-source-repo",
+      "quay"
     ]
   },
   {
@@ -1507,9 +1507,9 @@
     "most_relevant_communication_link": "argo-cd-maintainer-git-client>push-code-tags-to-github",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-source-repo",
       "argo-cd-maintainer-git-client",
       "docker-hub",
+      "argo-cd-source-repo",
       "quay"
     ]
   },
@@ -1529,8 +1529,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "dex-server",
-      "api-server",
       "repo-server",
+      "api-server",
       "rendered-manifests-cache"
     ]
   },
@@ -1549,10 +1549,10 @@
     "most_relevant_communication_link": "repo-server>get-repo-access-credentials",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
-      "dex-server",
       "repo-server",
-      "api-server"
+      "api-server",
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1570,10 +1570,10 @@
     "most_relevant_communication_link": "repo-server>fetch-manifest-sources",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "api-server",
       "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1591,9 +1591,9 @@
     "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "repo-server",
       "dex-server",
       "api-server",
-      "repo-server",
       "rendered-manifests-cache"
     ]
   },
@@ -1612,10 +1612,10 @@
     "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
-      "dex-server",
       "repo-server",
-      "api-server"
+      "dex-server",
+      "api-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1653,8 +1653,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1673,8 +1673,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1693,8 +1693,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1713,8 +1713,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1733,8 +1733,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1753,8 +1753,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1772,9 +1772,9 @@
     "most_relevant_communication_link": "web-ui>list-resource-actions",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
       "web-ui",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1792,9 +1792,9 @@
     "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "user-cli",
+      "web-ui",
       "internal-source-control-management-api",
-      "web-ui"
+      "user-cli"
     ]
   },
   {
@@ -1813,8 +1813,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {

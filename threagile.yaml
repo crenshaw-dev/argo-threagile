@@ -2130,6 +2130,108 @@ risk_tracking:
     ticket:
     date: 2023-01-16
     checked_by: Michael Crenshaw
+  code-backdooring@argo-cd-build-pipeline:
+    status: mitigated
+    justification: >
+      Most Argo CD dependencies are pinned at particular versions, and we run weekly Snyk scans to detect 
+      vulnerabilities. Un-pinned dependencies include packages which are bundled with our Ubuntu base image. We rely on
+      the Ubuntu team to monitor their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to
+      notify us of any vulnerabilities in our base image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@api-server:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@application-controller:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@applicationset-controller:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@repo-server*:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@dex-server:
+    status: mitigated
+    justification: >
+      The Argo CD team relies on the Dex team to monitor their dependencies for vulnerabilities and keep them patched.
+      We also run weekly Snyk scans on the currently-used version of Dex. If a Dex image contains high- or critical-
+      severity vulnerabilities, we push a release to update the image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@rendered-manifests-cache:
+    status: mitigated
+    justification: >
+      The Argo CD team relies on the Redis team to monitor their dependencies for vulnerabilities and keep them patched.
+      We also run weekly Snyk scans on the currently-used version of Redis. If a Redis image contains high- or critical-
+      severity vulnerabilities, we push a release to update the image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication-second-factor@*@user-cli@api-server:
+    status: accepted
+    justification: >
+      Argo CD does not currently support 2FA for the CLI.
+    ticket: https://github.com/argoproj/argo-cd/issues/10232
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication-second-factor@*@web-ui@api-server:
+    status: accepted
+    justification: >
+      Argo CD does not currently support 2FA for the web UI.
+    ticket: https://github.com/argoproj/argo-cd/issues/10232
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@*@*@rendered-manifests-cache:
+    status: accepted
+    justification: >
+      Argo CD supports authentication for Redis, but only in non-HA mode.
+      
+      The Argo CD team plans to enable authentication by default, and for HA mode, in a future version.
+    ticket: https://github.com/argoproj/argo-cd/issues/11386
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@web-ui>get-app-code@web-ui@api-server:
+    status: in-discussion
+    justification: >
+      TODO: determine whether auth happens for the endpoint which returns the web UI assets.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 
