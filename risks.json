@@ -780,34 +780,16 @@
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Fetching Rendered Manifests from Cache</b> from <b>API Server</b> to <b>Repo Server</b>",
-    "synthetic_id": "missing-authentication@api-server>fetching-rendered-manifests-from-cache@api-server@repo-server",
+    "title": "<b>Missing Authentication</b> covering communication link <b>Fetching Rendered Manifests</b> from <b>API Server</b> to <b>Repo Server</b>",
+    "synthetic_id": "missing-authentication@api-server>fetching-rendered-manifests@api-server@repo-server",
     "most_relevant_data_asset": "",
     "most_relevant_technical_asset": "repo-server",
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "api-server>fetching-rendered-manifests-from-cache",
+    "most_relevant_communication_link": "api-server>fetching-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "repo-server"
-    ]
-  },
-  {
-    "category": "missing-authentication",
-    "risk_status": "false-positive",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>API Server</b> to <b>Quay</b>",
-    "synthetic_id": "missing-authentication@api-server>pull-argo-cd-image@api-server@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "api-server>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "quay"
     ]
   },
   {
@@ -830,24 +812,6 @@
   },
   {
     "category": "missing-authentication",
-    "risk_status": "false-positive",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>Application Controller</b> to <b>Quay</b>",
-    "synthetic_id": "missing-authentication@application-controller>pull-argo-cd-image@application-controller@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "application-controller>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "quay"
-    ]
-  },
-  {
-    "category": "missing-authentication",
     "risk_status": "unchecked",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
@@ -866,7 +830,7 @@
   },
   {
     "category": "missing-authentication",
-    "risk_status": "false-positive",
+    "risk_status": "unchecked",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
@@ -902,7 +866,7 @@
   },
   {
     "category": "missing-authentication",
-    "risk_status": "false-positive",
+    "risk_status": "unchecked",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
@@ -1308,7 +1272,7 @@
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1322,14 +1286,14 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "repo-server",
+      "dex-server",
       "rendered-manifests-cache",
-      "dex-server"
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1344,13 +1308,13 @@
     "data_breach_technical_assets": [
       "api-server",
       "repo-server",
-      "rendered-manifests-cache",
-      "dex-server"
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1365,13 +1329,13 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1386,13 +1350,13 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1406,14 +1370,14 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "dex-server",
+      "rendered-manifests-cache",
       "repo-server",
-      "rendered-manifests-cache"
+      "dex-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1428,13 +1392,13 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "medium",
@@ -1449,55 +1413,34 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
-    "synthetic_id": "server-side-request-forgery@api-server@quay@api-server>pull-argo-cd-image",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "api-server>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "repo-server",
       "rendered-manifests-cache",
-      "dex-server",
-      "api-server"
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Repo Server</b> via <b>Fetching Rendered Manifests from Cache</b>",
-    "synthetic_id": "server-side-request-forgery@api-server@repo-server@api-server>fetching-rendered-manifests-from-cache",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>API Server</b> server-side web-requesting the target <b>Repo Server</b> via <b>Fetching Rendered Manifests</b>",
+    "synthetic_id": "server-side-request-forgery@api-server@repo-server@api-server>fetching-rendered-manifests",
     "most_relevant_data_asset": "",
     "most_relevant_technical_asset": "api-server",
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "api-server>fetching-rendered-manifests-from-cache",
+    "most_relevant_communication_link": "api-server>fetching-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "dex-server",
+      "rendered-manifests-cache",
       "repo-server",
-      "rendered-manifests-cache"
+      "dex-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1511,14 +1454,14 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "dex-server",
-      "api-server",
+      "rendered-manifests-cache",
       "repo-server",
-      "rendered-manifests-cache"
+      "api-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1531,16 +1474,16 @@
     "most_relevant_communication_link": "application-controller>reconcile-resource-state-external-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "application-controller",
       "dex-server",
-      "api-server",
+      "rendered-manifests-cache",
       "repo-server",
-      "rendered-manifests-cache"
+      "application-controller",
+      "api-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1554,37 +1497,15 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "application-controller",
-      "repo-server",
-      "rendered-manifests-cache",
       "dex-server",
+      "rendered-manifests-cache",
+      "repo-server",
       "api-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Application Controller</b> server-side web-requesting the target <b>Quay</b> via <b>Pull Argo CD Image</b>",
-    "synthetic_id": "server-side-request-forgery@application-controller@quay@application-controller>pull-argo-cd-image",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "application-controller",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "application-controller>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "repo-server",
-      "rendered-manifests-cache",
-      "application-controller",
-      "dex-server",
-      "api-server"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1597,16 +1518,16 @@
     "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
       "application-controller",
+      "api-server",
+      "dex-server",
       "rendered-manifests-cache",
-      "repo-server",
-      "dex-server"
+      "repo-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1619,16 +1540,16 @@
     "most_relevant_communication_link": "applicationset-controller>reconcile-resource-state-host-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "api-server",
       "applicationset-controller",
+      "rendered-manifests-cache",
       "repo-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "api-server"
     ]
   },
   {
     "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
+    "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -1642,10 +1563,10 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "applicationset-controller",
+      "api-server",
       "rendered-manifests-cache",
       "repo-server",
-      "dex-server",
-      "api-server"
+      "dex-server"
     ]
   },
   {
@@ -1663,11 +1584,11 @@
     "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "repo-server",
       "applicationset-controller",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server",
-      "dex-server"
+      "dex-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1685,10 +1606,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "argo-cd-source-repo",
       "argo-cd-build-pipeline",
       "docker-hub",
-      "quay",
-      "argo-cd-source-repo"
+      "quay"
     ]
   },
   {
@@ -1706,10 +1627,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-source-repo",
-      "docker-hub",
       "argo-cd-build-pipeline",
-      "quay"
+      "docker-hub",
+      "quay",
+      "argo-cd-source-repo"
     ]
   },
   {
@@ -1727,8 +1648,8 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "quay",
       "argo-cd-build-pipeline",
+      "quay",
       "argo-cd-source-repo",
       "docker-hub"
     ]
@@ -1749,9 +1670,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-maintainer-git-client",
-      "docker-hub",
       "quay",
-      "argo-cd-source-repo"
+      "argo-cd-source-repo",
+      "docker-hub"
     ]
   },
   {
@@ -1769,9 +1690,9 @@
     "most_relevant_communication_link": "dex-server>proxying-to-an-external-oidc-provider",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
       "dex-server",
       "api-server",
+      "rendered-manifests-cache",
       "repo-server"
     ]
   },
@@ -1813,8 +1734,8 @@
     "data_breach_technical_assets": [
       "dex-server",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1832,9 +1753,9 @@
     "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
       "repo-server",
       "dex-server",
+      "rendered-manifests-cache",
       "api-server"
     ]
   },
@@ -1853,10 +1774,10 @@
     "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "api-server",
       "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1893,9 +1814,9 @@
     "most_relevant_communication_link": "web-ui>get-app-code",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
       "web-ui",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1914,8 +1835,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1934,8 +1855,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1953,8 +1874,8 @@
     "most_relevant_communication_link": "web-ui>get-pod-logs",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
+      "web-ui",
       "user-cli"
     ]
   },
@@ -2034,8 +1955,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -2053,8 +1974,8 @@
     "most_relevant_communication_link": "web-ui>manage-application-resources",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
       "web-ui",
+      "internal-source-control-management-api",
       "user-cli"
     ]
   },

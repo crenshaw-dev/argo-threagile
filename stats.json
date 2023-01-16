@@ -10,11 +10,11 @@
     },
     "elevated": {
       "accepted": 0,
-      "false-positive": 4,
+      "false-positive": 1,
       "in-discussion": 0,
       "in-progress": 1,
       "mitigated": 2,
-      "unchecked": 36
+      "unchecked": 37
     },
     "high": {
       "accepted": 0,
@@ -33,12 +33,12 @@
       "unchecked": 11
     },
     "medium": {
-      "accepted": 3,
-      "false-positive": 1,
+      "accepted": 4,
+      "false-positive": 12,
       "in-discussion": 0,
       "in-progress": 0,
-      "mitigated": 1,
-      "unchecked": 72
+      "mitigated": 2,
+      "unchecked": 57
     }
   }
 }
