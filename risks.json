@@ -309,78 +309,6 @@
   {
     "category": "cross-site-request-forgery",
     "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Create an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>create-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>create-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Delete a Managed Resource</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>delete-a-managed-resource",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>delete-a-managed-resource",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Delete an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>delete-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>delete-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get a Managed Resource</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-a-managed-resource",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-a-managed-resource",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
     "severity": "elevated",
     "exploitation_likelihood": "very-likely",
     "exploitation_impact": "medium",
@@ -420,24 +348,6 @@
     "severity": "medium",
     "exploitation_likelihood": "very-likely",
     "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get App Manifests With Files</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-app-manifests-with-files",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-app-manifests-with-files",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
     "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get Application Sync Windows</b> from <b>Web UI</b>",
     "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-application-sync-windows",
     "most_relevant_data_asset": "",
@@ -445,42 +355,6 @@
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
     "most_relevant_communication_link": "web-ui>get-application-sync-windows",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get Applications</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-applications",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-applications",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get Managed Resources</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-managed-resources",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-managed-resources",
     "data_breach_probability": "improbable",
     "data_breach_technical_assets": [
       "api-server"
@@ -525,27 +399,9 @@
   {
     "category": "cross-site-request-forgery",
     "risk_status": "unchecked",
-    "severity": "medium",
+    "severity": "elevated",
     "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get Revision Metadata</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-revision-metadata",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-revision-metadata",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
+    "exploitation_impact": "medium",
     "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Get the Resource Tree</b> from <b>Web UI</b>",
     "synthetic_id": "cross-site-request-forgery@api-server@web-ui>get-the-resource-tree",
     "most_relevant_data_asset": "",
@@ -600,49 +456,13 @@
     "severity": "medium",
     "exploitation_likelihood": "very-likely",
     "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Patch a Managed Resource</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>patch-a-managed-resource",
+    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Manage Application Resources</b> from <b>Web UI</b>",
+    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>manage-application-resources",
     "most_relevant_data_asset": "",
     "most_relevant_technical_asset": "api-server",
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>patch-a-managed-resource",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Patch an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>patch-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>patch-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Rollback an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>rollback-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>rollback-an-application",
+    "most_relevant_communication_link": "web-ui>manage-application-resources",
     "data_breach_probability": "improbable",
     "data_breach_technical_assets": [
       "api-server"
@@ -669,99 +489,9 @@
   {
     "category": "cross-site-request-forgery",
     "risk_status": "unchecked",
-    "severity": "medium",
+    "severity": "elevated",
     "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Sync an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>sync-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>sync-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Terminate a Sync Operation</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>terminate-a-sync-operation",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>terminate-a-sync-operation",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Update an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>update-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>update-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Update an Application Spec</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>update-an-application-spec",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>update-an-application-spec",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
-    "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Watch an Application</b> from <b>Web UI</b>",
-    "synthetic_id": "cross-site-request-forgery@api-server@web-ui>watch-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>watch-an-application",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "cross-site-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "low",
+    "exploitation_impact": "medium",
     "title": "<b>Cross-Site Request Forgery (CSRF)</b> risk at <b>API Server</b> via <b>Watch the Resource Tree</b> from <b>Web UI</b>",
     "synthetic_id": "cross-site-request-forgery@api-server@web-ui>watch-the-resource-tree",
     "most_relevant_data_asset": "",
@@ -866,24 +596,6 @@
   },
   {
     "category": "missing-authentication-second-factor",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "medium",
-    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Create an Application</b> from <b>Web UI</b> to <b>API Server</b>",
-    "synthetic_id": "missing-authentication-second-factor@web-ui>create-an-application@web-ui@api-server",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "api-server",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>create-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "api-server"
-    ]
-  },
-  {
-    "category": "missing-authentication-second-factor",
     "risk_status": "false-positive",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
@@ -902,6 +614,114 @@
   },
   {
     "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get App Manifests</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-app-manifests@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-app-manifests",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get Application Sync Windows</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-application-sync-windows@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-application-sync-windows",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get Pod Logs</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-pod-logs@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-pod-logs",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get Resource Events</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-resource-events@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-resource-events",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Get the Resource Tree</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>get-the-resource-tree@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>get-the-resource-tree",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>List Resource Actions</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>list-resource-actions@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>list-resource-actions",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
     "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
@@ -913,6 +733,42 @@
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
     "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Manage Application Resources</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>manage-application-resources@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>manage-application-resources",
+    "data_breach_probability": "possible",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "missing-authentication-second-factor",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Missing Two-Factor Authentication</b> covering communication link <b>Watch the Resource Tree</b> from <b>Web UI</b> to <b>API Server</b>",
+    "synthetic_id": "missing-authentication-second-factor@web-ui>watch-the-resource-tree@web-ui@api-server",
+    "most_relevant_data_asset": "",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "web-ui>watch-the-resource-tree",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server"
@@ -1467,8 +1323,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "repo-server",
-      "dex-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "dex-server"
     ]
   },
   {
@@ -1487,8 +1343,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
       "repo-server",
+      "rendered-manifests-cache",
       "dex-server"
     ]
   },
@@ -1509,8 +1365,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1529,9 +1385,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
+      "dex-server",
       "repo-server",
-      "dex-server"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1550,8 +1406,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "repo-server",
       "dex-server",
+      "repo-server",
       "rendered-manifests-cache"
     ]
   },
@@ -1572,8 +1428,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1591,10 +1447,10 @@
     "most_relevant_communication_link": "api-server>validate-external-oidc-token",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "dex-server",
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1612,10 +1468,10 @@
     "most_relevant_communication_link": "api-server>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "rendered-manifests-cache",
       "repo-server",
-      "dex-server"
+      "rendered-manifests-cache",
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1634,9 +1490,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
+      "dex-server",
       "repo-server",
-      "dex-server"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1654,10 +1510,10 @@
     "most_relevant_communication_link": "api-server>export-database",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
       "dex-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "api-server",
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1678,8 +1534,8 @@
       "application-controller",
       "dex-server",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1699,9 +1555,9 @@
     "data_breach_technical_assets": [
       "application-controller",
       "repo-server",
+      "rendered-manifests-cache",
       "dex-server",
-      "api-server",
-      "rendered-manifests-cache"
+      "api-server"
     ]
   },
   {
@@ -1719,11 +1575,11 @@
     "most_relevant_communication_link": "application-controller>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "application-controller",
       "repo-server",
+      "rendered-manifests-cache",
+      "application-controller",
       "dex-server",
-      "api-server",
-      "rendered-manifests-cache"
+      "api-server"
     ]
   },
   {
@@ -1741,11 +1597,11 @@
     "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
-      "dex-server",
       "api-server",
       "application-controller",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server",
+      "dex-server"
     ]
   },
   {
@@ -1765,9 +1621,9 @@
     "data_breach_technical_assets": [
       "dex-server",
       "api-server",
-      "rendered-manifests-cache",
+      "applicationset-controller",
       "repo-server",
-      "applicationset-controller"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1785,11 +1641,11 @@
     "most_relevant_communication_link": "applicationset-controller>git-generator-pull",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "applicationset-controller",
-      "api-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1807,11 +1663,11 @@
     "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "applicationset-controller",
       "api-server",
       "rendered-manifests-cache",
       "repo-server",
-      "dex-server",
-      "applicationset-controller"
+      "dex-server"
     ]
   },
   {
@@ -1830,9 +1686,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
-      "argo-cd-source-repo",
       "docker-hub",
-      "quay"
+      "quay",
+      "argo-cd-source-repo"
     ]
   },
   {
@@ -1850,9 +1706,9 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-build-pipeline",
-      "docker-hub",
       "argo-cd-source-repo",
+      "docker-hub",
+      "argo-cd-build-pipeline",
       "quay"
     ]
   },
@@ -1871,10 +1727,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "quay",
       "argo-cd-build-pipeline",
       "argo-cd-source-repo",
-      "docker-hub",
-      "quay"
+      "docker-hub"
     ]
   },
   {
@@ -1893,8 +1749,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-maintainer-git-client",
-      "quay",
       "docker-hub",
+      "quay",
       "argo-cd-source-repo"
     ]
   },
@@ -1913,9 +1769,9 @@
     "most_relevant_communication_link": "dex-server>proxying-to-an-external-oidc-provider",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "dex-server",
       "rendered-manifests-cache",
+      "dex-server",
+      "api-server",
       "repo-server"
     ]
   },
@@ -1934,9 +1790,9 @@
     "most_relevant_communication_link": "repo-server>get-repo-access-credentials",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "repo-server",
       "api-server",
       "rendered-manifests-cache",
-      "repo-server",
       "dex-server"
     ]
   },
@@ -1955,10 +1811,10 @@
     "most_relevant_communication_link": "repo-server>fetch-manifest-sources",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
       "dex-server",
       "api-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ]
   },
   {
@@ -1997,10 +1853,10 @@
     "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "dex-server",
       "api-server",
-      "rendered-manifests-cache",
       "repo-server",
-      "dex-server"
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -2018,88 +1874,8 @@
     "most_relevant_communication_link": "user-cli>make-requests-to-api-server",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Create an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>create-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>create-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
       "user-cli",
       "internal-source-control-management-api"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Delete a Managed Resource</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>delete-a-managed-resource",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>delete-a-managed-resource",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Delete an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>delete-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>delete-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "user-cli",
-      "web-ui",
-      "internal-source-control-management-api"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get a Managed Resource</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-a-managed-resource",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-a-managed-resource",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
     ]
   },
   {
@@ -2117,8 +1893,8 @@
     "most_relevant_communication_link": "web-ui>get-app-code",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
+      "web-ui",
       "user-cli"
     ]
   },
@@ -2148,26 +1924,6 @@
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get App Manifests With Files</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-app-manifests-with-files",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-app-manifests-with-files",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
     "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get Application Sync Windows</b>",
     "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-application-sync-windows",
     "most_relevant_data_asset": "",
@@ -2180,46 +1936,6 @@
       "web-ui",
       "internal-source-control-management-api",
       "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get Applications</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-applications",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-applications",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get Managed Resources</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-managed-resources",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-managed-resources",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "user-cli",
-      "web-ui",
-      "internal-source-control-management-api"
     ]
   },
   {
@@ -2268,26 +1984,6 @@
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get Revision Metadata</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-revision-metadata",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>get-revision-metadata",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "internal-source-control-management-api",
-      "user-cli",
-      "web-ui"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
     "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Get the Resource Tree</b>",
     "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>get-the-resource-tree",
     "most_relevant_data_asset": "",
@@ -2297,9 +1993,9 @@
     "most_relevant_communication_link": "web-ui>get-the-resource-tree",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "web-ui",
       "user-cli",
-      "internal-source-control-management-api",
-      "web-ui"
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -2337,46 +2033,6 @@
     "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
-      "user-cli",
-      "web-ui"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Patch a Managed Resource</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>patch-a-managed-resource",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>patch-a-managed-resource",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "internal-source-control-management-api",
-      "user-cli",
-      "web-ui"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Patch an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>patch-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>patch-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
       "web-ui",
       "internal-source-control-management-api",
       "user-cli"
@@ -2388,18 +2044,18 @@
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Rollback an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>rollback-an-application",
+    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Manage Application Resources</b>",
+    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>manage-application-resources",
     "most_relevant_data_asset": "",
     "most_relevant_technical_asset": "web-ui",
     "most_relevant_trust_boundary": "",
     "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>rollback-an-application",
+    "most_relevant_communication_link": "web-ui>manage-application-resources",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "internal-source-control-management-api",
-      "user-cli",
-      "web-ui"
+      "web-ui",
+      "user-cli"
     ]
   },
   {
@@ -2418,108 +2074,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Sync an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>sync-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>sync-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "internal-source-control-management-api",
       "user-cli",
-      "web-ui"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Terminate a Sync Operation</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>terminate-a-sync-operation",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>terminate-a-sync-operation",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Update an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>update-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>update-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "internal-source-control-management-api",
-      "user-cli",
-      "web-ui"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Update an Application Spec</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>update-an-application-spec",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>update-an-application-spec",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
-    ]
-  },
-  {
-    "category": "server-side-request-forgery",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Server-Side Request Forgery (SSRF)</b> risk at <b>Web UI</b> server-side web-requesting the target <b>API Server</b> via <b>Watch an Application</b>",
-    "synthetic_id": "server-side-request-forgery@web-ui@api-server@web-ui>watch-an-application",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "web-ui>watch-an-application",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -2703,6 +2259,186 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "quay"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Actions</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-actions@api-server@web-ui",
+    "most_relevant_data_asset": "resource-actions",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Actions</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-actions@web-ui@api-server",
+    "most_relevant_data_asset": "resource-actions",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Event</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-event@api-server@web-ui",
+    "most_relevant_data_asset": "resource-event",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Event</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-event@web-ui@api-server",
+    "most_relevant_data_asset": "resource-event",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Logs</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-logs@api-server@web-ui",
+    "most_relevant_data_asset": "resource-logs",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Logs</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-logs@web-ui@api-server",
+    "most_relevant_data_asset": "resource-logs",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Tree</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-tree@api-server@web-ui",
+    "most_relevant_data_asset": "resource-tree",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "medium",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "medium",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Tree</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@resource-tree@web-ui@api-server",
+    "most_relevant_data_asset": "resource-tree",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Sync Window</b> data at <b>API Server</b> from/to <b>Web UI</b>",
+    "synthetic_id": "unnecessary-data-transfer@sync-window@api-server@web-ui",
+    "most_relevant_data_asset": "sync-window",
+    "most_relevant_technical_asset": "api-server",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "api-server"
+    ]
+  },
+  {
+    "category": "unnecessary-data-transfer",
+    "risk_status": "unchecked",
+    "severity": "low",
+    "exploitation_likelihood": "unlikely",
+    "exploitation_impact": "low",
+    "title": "<b>Unnecessary Data Transfer</b> of <b>Sync Window</b> data at <b>Web UI</b> from/to <b>API Server</b>",
+    "synthetic_id": "unnecessary-data-transfer@sync-window@web-ui@api-server",
+    "most_relevant_data_asset": "sync-window",
+    "most_relevant_technical_asset": "web-ui",
+    "most_relevant_trust_boundary": "",
+    "most_relevant_shared_runtime": "",
+    "most_relevant_communication_link": "",
+    "data_breach_probability": "improbable",
+    "data_breach_technical_assets": [
+      "web-ui"
     ]
   },
   {

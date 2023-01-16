@@ -478,6 +478,51 @@ data_assets:
     confidentiality: public
     integrity: mission-critical
     availability: operational
+  Resource Tree:
+    id: resource-tree
+    description: The tree of resources that Argo CD is managing for a given Application.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+  Resource Logs:
+    id: resource-logs
+    description: Logs for a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: very-many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Resource Event:
+    id: resource-event
+    description: Events for a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: very-many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Resource Actions:
+    id: resource-actions
+    description: Actions that can be performed on a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Sync Window:
+    id: sync-window
+    description: The time window during which Argo CD is allowed to sync an Application.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: important
+    availability: operational
 
 technical_assets:
   Argo CD Maintainer Git Client:
@@ -1503,48 +1548,34 @@ technical_assets:
       - bundled-ui-code
       - manifest-sources # When doing local syncs or server-side local manifest generation
     communication_links:
-      Manage Applications:
-        target: api-server
-        description: >
-          The UI makes a variety of API calls to manage Applications. Those calls include get, create, update, update
-          spec, patch, delete, and watch. The UI can also request/terminate syncs and perform rollbacks, which are 
-          specialized "update" operations, because they just edit the Application spec.
-        protocol: https
-        authentication: token
-        authorization: enduser-identity-propagation
-        vpn: false
-        ip_filtered: false
-        readonly: false
-        usage: business
-        data_assets_sent:
-          - application-name
-          - application-manifest
-        data_assets_received:
-          - application-manifest
       Get App Manifests:
         target: api-server
+        description: Download app manifests from the API server. This can be either desired or live manifests.
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
         data_assets_received:
-          -
+          - application-manifest
       Get Resource Events:
         target: api-server
+        description: Get all the Kubernetes Events associated with a particular resource.
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
+        data_assets_received:
+          - resource-event
       Manage Application Resources:
         target: api-server
         description: >
@@ -1559,105 +1590,80 @@ technical_assets:
         usage: business
         data_assets_sent:
           - application-name
-
-      Patch a Managed Resource:
-        target: api-server
-        protocol: https
-        authentication: token
-        authorization: enduser-identity-propagation
-        vpn: false
-        ip_filtered: false
-        readonly: false
-        usage: business
-        data_assets_sent:
-          - application-name
-
-      Delete a Managed Resource:
-        target: api-server
-        protocol: https
-        authentication: token
-        authorization: enduser-identity-propagation
-        vpn: false
-        ip_filtered: false
-        readonly: false
-        usage: business
-        data_assets_sent:
-          - application-name
-
+        data_assets_received:
+          - application-manifest
       Get the Resource Tree:
         target: api-server
+        description: Get a tree representing all the resources managed by an application.
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
-
+        data_assets_received:
+          - resource-tree
       Watch the Resource Tree:
         target: api-server
-        protocol: https
+        description: Watch the tree representing all the resources managed by an Application.
+        protocol: wss
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
-
-      Get Revision Metadata:
-        target: api-server
-        protocol: https
-        authentication: token
-        authorization: enduser-identity-propagation
-        vpn: false
-        ip_filtered: false
-        readonly: false
-        usage: business
-        data_assets_sent:
-          - application-name
-
-      Get Managed Resources:
-        target: api-server
-        protocol: https
-        authentication: token
-        authorization: enduser-identity-propagation
-        vpn: false
-        ip_filtered: false
-        readonly: false
-        usage: business
-        data_assets_sent:
-          - application-name
-
+        data_assets_received:
+          - resource-tree
+# TODO: research this endpoint.
+#      Get Revision Metadata:
+#        target: api-server
+#        protocol: https
+#        authentication: token
+#        authorization: enduser-identity-propagation
+#        vpn: false
+#        ip_filtered: false
+#        readonly: false
+#        usage: business
+#        data_assets_sent:
+#          - application-name
       Get Pod Logs:
         target: api-server
+        description: Get logs from a Pod managed in an Application.
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
-
+        data_assets_received:
+          - resource-logs
       List Resource Actions:
         target: api-server
+        description: >
+          Get a list of Actions associated with a resource (including the Application) in an Application resource tree.
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
         vpn: false
         ip_filtered: false
-        readonly: false
+        readonly: true
         usage: business
         data_assets_sent:
           - application-name
-
+        data_assets_received:
+          - resource-actions
       Run a Resource Action:
         target: api-server
+        description: Run an action on a resource managed by an Application (or the Application itself).
         protocol: https
         authentication: token
         authorization: enduser-identity-propagation
@@ -1667,7 +1673,7 @@ technical_assets:
         usage: business
         data_assets_sent:
           - application-name
-
+        data_assets_received:
       Get Application Sync Windows:
         target: api-server
         protocol: https
@@ -1679,7 +1685,8 @@ technical_assets:
         usage: business
         data_assets_sent:
           - application-name
-
+        data_assets_received:
+          - sync-window
       Get App Code:
         target: api-server
         description: Get the web app code from the API server.
