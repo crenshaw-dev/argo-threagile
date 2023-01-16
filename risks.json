@@ -1,59 +1,5 @@
 [
   {
-    "category": "accidental-secret-leak",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Accidental Secret Leak</b> risk at <b>Argo CD Source Repo (GitHub)</b>",
-    "synthetic_id": "accidental-secret-leak@argo-cd-source-repo",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "argo-cd-source-repo",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
-      "argo-cd-source-repo"
-    ]
-  },
-  {
-    "category": "accidental-secret-leak",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Accidental Secret Leak</b> risk at <b>Docker Hub</b>",
-    "synthetic_id": "accidental-secret-leak@docker-hub",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "docker-hub",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
-      "docker-hub"
-    ]
-  },
-  {
-    "category": "accidental-secret-leak",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Accidental Secret Leak</b> risk at <b>Quay</b>",
-    "synthetic_id": "accidental-secret-leak@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
-      "quay"
-    ]
-  },
-  {
     "category": "code-backdooring",
     "risk_status": "unchecked",
     "severity": "medium",
@@ -69,60 +15,6 @@
     "data_breach_probability": "probable",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
-      "quay"
-    ]
-  },
-  {
-    "category": "code-backdooring",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Code Backdooring</b> risk at <b>Argo CD Source Repo (GitHub)</b>",
-    "synthetic_id": "code-backdooring@argo-cd-source-repo",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "argo-cd-source-repo",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
-      "argo-cd-source-repo"
-    ]
-  },
-  {
-    "category": "code-backdooring",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Code Backdooring</b> risk at <b>Docker Hub</b>",
-    "synthetic_id": "code-backdooring@docker-hub",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "docker-hub",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
-      "docker-hub"
-    ]
-  },
-  {
-    "category": "code-backdooring",
-    "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "high",
-    "title": "<b>Code Backdooring</b> risk at <b>Quay</b>",
-    "synthetic_id": "code-backdooring@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "probable",
-    "data_breach_technical_assets": [
       "quay"
     ]
   },
@@ -834,60 +726,6 @@
     "severity": "elevated",
     "exploitation_likelihood": "likely",
     "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>ApplicationSet Controller</b> to <b>Quay</b>",
-    "synthetic_id": "missing-authentication@applicationset-controller>pull-argo-cd-image@applicationset-controller@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "applicationset-controller>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "quay"
-    ]
-  },
-  {
-    "category": "missing-authentication",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Base Image from Docker Hub</b> from <b>Argo CD Build Pipeline (GitHub Actions)</b> to <b>Docker Hub</b>",
-    "synthetic_id": "missing-authentication@argo-cd-build-pipeline>pull-base-image-from-docker-hub@argo-cd-build-pipeline@docker-hub",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "docker-hub",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "docker-hub"
-    ]
-  },
-  {
-    "category": "missing-authentication",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "high",
-    "title": "<b>Missing Authentication</b> covering communication link <b>Pull Argo CD Image</b> from <b>Repo Server</b> to <b>Quay</b>",
-    "synthetic_id": "missing-authentication@repo-server>pull-argo-cd-image@repo-server@quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "quay"
-    ]
-  },
-  {
-    "category": "missing-authentication",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "likely",
-    "exploitation_impact": "high",
     "title": "<b>Missing Authentication</b> covering communication link <b>Send/Receive Cached Rendered Manifests</b> from <b>Repo Server</b> to <b>Rendered Manifests Cache (Redis)</b>",
     "synthetic_id": "missing-authentication@repo-server>send-receive-cached-rendered-manifests@repo-server@rendered-manifests-cache",
     "most_relevant_data_asset": "",
@@ -1286,9 +1124,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "dex-server",
+      "repo-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "dex-server"
     ]
   },
   {
@@ -1306,9 +1144,9 @@
     "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-external",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "dex-server",
       "api-server",
       "repo-server",
-      "dex-server",
       "rendered-manifests-cache"
     ]
   },
@@ -1327,10 +1165,10 @@
     "most_relevant_communication_link": "api-server>get-update-delete-live-resource-state-from-kubernetes-host",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "dex-server",
+      "repo-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1348,10 +1186,10 @@
     "most_relevant_communication_link": "api-server>update-cluster-access-config",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "api-server",
-      "dex-server",
+      "repo-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "dex-server",
+      "api-server"
     ]
   },
   {
@@ -1369,10 +1207,10 @@
     "most_relevant_communication_link": "api-server>update-rbac-config",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "dex-server",
       "api-server",
       "rendered-manifests-cache",
-      "repo-server",
-      "dex-server"
+      "repo-server"
     ]
   },
   {
@@ -1391,9 +1229,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "dex-server",
+      "repo-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "dex-server"
     ]
   },
   {
@@ -1412,9 +1250,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "dex-server",
+      "repo-server",
       "rendered-manifests-cache",
-      "repo-server"
+      "dex-server"
     ]
   },
   {
@@ -1433,8 +1271,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
       "repo-server",
+      "rendered-manifests-cache",
       "dex-server"
     ]
   },
@@ -1453,10 +1291,10 @@
     "most_relevant_communication_link": "api-server>export-database",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "rendered-manifests-cache",
+      "api-server",
       "repo-server",
-      "api-server"
+      "rendered-manifests-cache",
+      "dex-server"
     ]
   },
   {
@@ -1474,11 +1312,11 @@
     "most_relevant_communication_link": "application-controller>reconcile-resource-state-external-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "rendered-manifests-cache",
-      "repo-server",
+      "dex-server",
       "application-controller",
-      "api-server"
+      "api-server",
+      "repo-server"
     ]
   },
   {
@@ -1497,9 +1335,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "application-controller",
-      "dex-server",
-      "rendered-manifests-cache",
       "repo-server",
+      "rendered-manifests-cache",
+      "dex-server",
       "api-server"
     ]
   },
@@ -1518,10 +1356,10 @@
     "most_relevant_communication_link": "application-controller>rendered-manifest-requests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "application-controller",
-      "api-server",
-      "dex-server",
       "rendered-manifests-cache",
+      "dex-server",
+      "api-server",
+      "application-controller",
       "repo-server"
     ]
   },
@@ -1540,11 +1378,11 @@
     "most_relevant_communication_link": "applicationset-controller>reconcile-resource-state-host-cluster",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "applicationset-controller",
-      "rendered-manifests-cache",
+      "api-server",
       "repo-server",
+      "rendered-manifests-cache",
       "dex-server",
-      "api-server"
+      "applicationset-controller"
     ]
   },
   {
@@ -1564,8 +1402,8 @@
     "data_breach_technical_assets": [
       "applicationset-controller",
       "api-server",
-      "rendered-manifests-cache",
       "repo-server",
+      "rendered-manifests-cache",
       "dex-server"
     ]
   },
@@ -1585,10 +1423,10 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "repo-server",
-      "applicationset-controller",
-      "api-server",
+      "rendered-manifests-cache",
       "dex-server",
-      "rendered-manifests-cache"
+      "applicationset-controller",
+      "api-server"
     ]
   },
   {
@@ -1606,10 +1444,10 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-source-repo",
       "argo-cd-build-pipeline",
+      "quay",
       "docker-hub",
-      "quay"
+      "argo-cd-source-repo"
     ]
   },
   {
@@ -1628,9 +1466,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
+      "argo-cd-source-repo",
       "docker-hub",
-      "quay",
-      "argo-cd-source-repo"
+      "quay"
     ]
   },
   {
@@ -1648,9 +1486,9 @@
     "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-build-pipeline",
       "quay",
       "argo-cd-source-repo",
+      "argo-cd-build-pipeline",
       "docker-hub"
     ]
   },
@@ -1669,10 +1507,10 @@
     "most_relevant_communication_link": "argo-cd-maintainer-git-client>push-code-tags-to-github",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "argo-cd-maintainer-git-client",
-      "quay",
       "argo-cd-source-repo",
-      "docker-hub"
+      "argo-cd-maintainer-git-client",
+      "docker-hub",
+      "quay"
     ]
   },
   {
@@ -1692,8 +1530,8 @@
     "data_breach_technical_assets": [
       "dex-server",
       "api-server",
-      "rendered-manifests-cache",
-      "repo-server"
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1711,10 +1549,10 @@
     "most_relevant_communication_link": "repo-server>get-repo-access-credentials",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
-      "api-server",
       "rendered-manifests-cache",
-      "dex-server"
+      "dex-server",
+      "repo-server",
+      "api-server"
     ]
   },
   {
@@ -1753,10 +1591,10 @@
     "most_relevant_communication_link": "repo-server>pull-argo-cd-image",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
       "dex-server",
-      "rendered-manifests-cache",
-      "api-server"
+      "api-server",
+      "repo-server",
+      "rendered-manifests-cache"
     ]
   },
   {
@@ -1774,9 +1612,9 @@
     "most_relevant_communication_link": "repo-server>send-receive-cached-rendered-manifests",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
       "rendered-manifests-cache",
       "dex-server",
+      "repo-server",
       "api-server"
     ]
   },
@@ -1795,8 +1633,8 @@
     "most_relevant_communication_link": "user-cli>make-requests-to-api-server",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1835,8 +1673,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ]
   },
   {
@@ -1874,9 +1712,9 @@
     "most_relevant_communication_link": "web-ui>get-pod-logs",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "internal-source-control-management-api",
       "web-ui",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -1934,8 +1772,8 @@
     "most_relevant_communication_link": "web-ui>list-resource-actions",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
+      "web-ui",
       "user-cli"
     ]
   },
@@ -1954,9 +1792,9 @@
     "most_relevant_communication_link": "web-ui>make-requests-to-api-server",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "web-ui"
     ]
   },
   {
@@ -2015,8 +1853,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "web-ui",
-      "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "internal-source-control-management-api"
     ]
   },
   {
@@ -2112,7 +1950,7 @@
   },
   {
     "category": "unencrypted-communication",
-    "risk_status": "unchecked",
+    "risk_status": "accepted",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "high",
@@ -2126,60 +1964,6 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "rendered-manifests-cache"
-    ]
-  },
-  {
-    "category": "unguarded-access-from-internet",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Unguarded Access from Internet</b> of <b>Argo CD Source Repo (GitHub)</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Pull Source</b>",
-    "synthetic_id": "unguarded-access-from-internet@argo-cd-source-repo@argo-cd-build-pipeline@argo-cd-build-pipeline>pull-source",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "argo-cd-source-repo",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-source",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "argo-cd-source-repo"
-    ]
-  },
-  {
-    "category": "unguarded-access-from-internet",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Unguarded Access from Internet</b> of <b>Docker Hub</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Pull Base Image from Docker Hub</b>",
-    "synthetic_id": "unguarded-access-from-internet@docker-hub@argo-cd-build-pipeline@argo-cd-build-pipeline>pull-base-image-from-docker-hub",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "docker-hub",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "argo-cd-build-pipeline>pull-base-image-from-docker-hub",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "docker-hub"
-    ]
-  },
-  {
-    "category": "unguarded-access-from-internet",
-    "risk_status": "unchecked",
-    "severity": "elevated",
-    "exploitation_likelihood": "very-likely",
-    "exploitation_impact": "medium",
-    "title": "<b>Unguarded Access from Internet</b> of <b>Quay</b> by <b>Argo CD Build Pipeline (GitHub Actions)</b> via <b>Push Image to Quay</b>",
-    "synthetic_id": "unguarded-access-from-internet@quay@argo-cd-build-pipeline@argo-cd-build-pipeline>push-image-to-quay",
-    "most_relevant_data_asset": "",
-    "most_relevant_technical_asset": "quay",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "argo-cd-build-pipeline>push-image-to-quay",
-    "data_breach_probability": "possible",
-    "data_breach_technical_assets": [
-      "quay"
     ]
   },
   {
@@ -2206,24 +1990,6 @@
     "severity": "low",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "low",
-    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Actions</b> data at <b>Web UI</b> from/to <b>API Server</b>",
-    "synthetic_id": "unnecessary-data-transfer@resource-actions@web-ui@api-server",
-    "most_relevant_data_asset": "resource-actions",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "web-ui"
-    ]
-  },
-  {
-    "category": "unnecessary-data-transfer",
-    "risk_status": "unchecked",
-    "severity": "low",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "low",
     "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Event</b> data at <b>API Server</b> from/to <b>Web UI</b>",
     "synthetic_id": "unnecessary-data-transfer@resource-event@api-server@web-ui",
     "most_relevant_data_asset": "resource-event",
@@ -2234,24 +2000,6 @@
     "data_breach_probability": "improbable",
     "data_breach_technical_assets": [
       "api-server"
-    ]
-  },
-  {
-    "category": "unnecessary-data-transfer",
-    "risk_status": "unchecked",
-    "severity": "low",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "low",
-    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Event</b> data at <b>Web UI</b> from/to <b>API Server</b>",
-    "synthetic_id": "unnecessary-data-transfer@resource-event@web-ui@api-server",
-    "most_relevant_data_asset": "resource-event",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "web-ui"
     ]
   },
   {
@@ -2275,24 +2023,6 @@
   {
     "category": "unnecessary-data-transfer",
     "risk_status": "unchecked",
-    "severity": "low",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "low",
-    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Logs</b> data at <b>Web UI</b> from/to <b>API Server</b>",
-    "synthetic_id": "unnecessary-data-transfer@resource-logs@web-ui@api-server",
-    "most_relevant_data_asset": "resource-logs",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "web-ui"
-    ]
-  },
-  {
-    "category": "unnecessary-data-transfer",
-    "risk_status": "unchecked",
     "severity": "medium",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "medium",
@@ -2311,24 +2041,6 @@
   {
     "category": "unnecessary-data-transfer",
     "risk_status": "unchecked",
-    "severity": "medium",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "medium",
-    "title": "<b>Unnecessary Data Transfer</b> of <b>Resource Tree</b> data at <b>Web UI</b> from/to <b>API Server</b>",
-    "synthetic_id": "unnecessary-data-transfer@resource-tree@web-ui@api-server",
-    "most_relevant_data_asset": "resource-tree",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "web-ui"
-    ]
-  },
-  {
-    "category": "unnecessary-data-transfer",
-    "risk_status": "unchecked",
     "severity": "low",
     "exploitation_likelihood": "unlikely",
     "exploitation_impact": "low",
@@ -2342,24 +2054,6 @@
     "data_breach_probability": "improbable",
     "data_breach_technical_assets": [
       "api-server"
-    ]
-  },
-  {
-    "category": "unnecessary-data-transfer",
-    "risk_status": "unchecked",
-    "severity": "low",
-    "exploitation_likelihood": "unlikely",
-    "exploitation_impact": "low",
-    "title": "<b>Unnecessary Data Transfer</b> of <b>Sync Window</b> data at <b>Web UI</b> from/to <b>API Server</b>",
-    "synthetic_id": "unnecessary-data-transfer@sync-window@web-ui@api-server",
-    "most_relevant_data_asset": "sync-window",
-    "most_relevant_technical_asset": "web-ui",
-    "most_relevant_trust_boundary": "",
-    "most_relevant_shared_runtime": "",
-    "most_relevant_communication_link": "",
-    "data_breach_probability": "improbable",
-    "data_breach_technical_assets": [
-      "web-ui"
     ]
   },
   {

@@ -577,7 +577,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: artifact-registry
     internet: true
@@ -601,7 +601,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: artifact-registry
     internet: true
@@ -623,7 +623,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: application
     technology: sourcecode-repository
     internet: true
@@ -1547,6 +1547,11 @@ technical_assets:
       - oidc-configuration
       - bundled-ui-code
       - manifest-sources # When doing local syncs or server-side local manifest generation
+      - resource-actions
+      - resource-event
+      - resource-logs
+      - resource-tree
+      - sync-window
     communication_links:
       Get App Manifests:
         target: api-server
@@ -2111,7 +2116,20 @@ risk_tracking:
 #    ticket:
 #    date: 2022-11-19
 #    checked_by: Zach Aller
-
+  unencrypted-communication@repo-server>send-receive-cached-rendered-manifests@repo-server@rendered-manifests-cache:
+    status: accepted
+    justification: >
+      The sensitivity of traffic between the repo-server and other Argo CD components depends on the sensitivity of the 
+      rendered manifests. If you do not store secrets in Git and if you do not use a secret-substitution plugin, then
+      it should be relatively safe for the communication to occur in the clear.
+      
+      However, if your manifests are sensitive or secret, then you should carefully analyze who may have access to this
+      plaintext traffic and restrict that access as much as possible.
+      
+      The Argo CD team plans to enable HTTPS communication with Redis in a future version.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 
