@@ -9,12 +9,12 @@
       "unchecked": 0
     },
     "elevated": {
-      "accepted": 0,
-      "false-positive": 4,
-      "in-discussion": 0,
+      "accepted": 3,
+      "false-positive": 1,
+      "in-discussion": 1,
       "in-progress": 1,
-      "mitigated": 2,
-      "unchecked": 25
+      "mitigated": 3,
+      "unchecked": 26
     },
     "high": {
       "accepted": 0,
@@ -30,15 +30,15 @@
       "in-discussion": 0,
       "in-progress": 0,
       "mitigated": 0,
-      "unchecked": 3
+      "unchecked": 7
     },
     "medium": {
-      "accepted": 3,
-      "false-positive": 1,
+      "accepted": 13,
+      "false-positive": 12,
       "in-discussion": 0,
       "in-progress": 0,
-      "mitigated": 1,
-      "unchecked": 54
+      "mitigated": 9,
+      "unchecked": 34
     }
   }
 }

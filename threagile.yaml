@@ -478,6 +478,51 @@ data_assets:
     confidentiality: public
     integrity: mission-critical
     availability: operational
+  Resource Tree:
+    id: resource-tree
+    description: The tree of resources that Argo CD is managing for a given Application.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: mission-critical
+    availability: operational
+  Resource Logs:
+    id: resource-logs
+    description: Logs for a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: very-many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Resource Event:
+    id: resource-event
+    description: Events for a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: very-many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Resource Actions:
+    id: resource-actions
+    description: Actions that can be performed on a given resource.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: operational
+    availability: operational
+  Sync Window:
+    id: sync-window
+    description: The time window during which Argo CD is allowed to sync an Application.
+    usage: devops
+    origin: Argo CD
+    quantity: many
+    confidentiality: confidential
+    integrity: important
+    availability: operational
 
 technical_assets:
   Argo CD Maintainer Git Client:
@@ -532,7 +577,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: artifact-registry
     internet: true
@@ -556,7 +601,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: system
     technology: artifact-registry
     internet: true
@@ -578,7 +623,7 @@ technical_assets:
     type: datastore
     usage: devops
     used_as_client_by_human: false
-    out_of_scope: false
+    out_of_scope: true
     size: application
     technology: sourcecode-repository
     internet: true
@@ -927,7 +972,7 @@ technical_assets:
 #          - argo-cd-container-image-tag
 #        data_assets_received:
 #          - argo-cd-container-image
-      Rendered Manifest Requests:
+      Fetching Rendered Manifests:
         target: repo-server
         description: Fetch manifests from the repo server to be applied to the cluster.
         protocol: https # values: see help
@@ -1128,7 +1173,7 @@ technical_assets:
       Send/Receive Cached Rendered Manifests:
         target: rendered-manifests-cache
         description: Sends and receives rendered manifests to and from the cache.
-        protocol: https # values: see help
+        protocol: http # values: see help
         authentication: none # values: none, credentials, session-id, token, client-certificate, two-factor
         authorization: none # values: none, technical-user, enduser-identity-propagation
         tags:
@@ -1502,7 +1547,151 @@ technical_assets:
       - oidc-configuration
       - bundled-ui-code
       - manifest-sources # When doing local syncs or server-side local manifest generation
+      - resource-actions
+      - resource-event
+      - resource-logs
+      - resource-tree
+      - sync-window
     communication_links:
+      Get App Manifests:
+        target: api-server
+        description: Download app manifests from the API server. This can be either desired or live manifests.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - application-manifest
+      Get Resource Events:
+        target: api-server
+        description: Get all the Kubernetes Events associated with a particular resource.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - resource-event
+      Manage Application Resources:
+        target: api-server
+        description: >
+          The UI can perform certain actions on resources managed by an Application. Those actions include get, patch,
+          and delete.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - application-manifest
+      Get the Resource Tree:
+        target: api-server
+        description: Get a tree representing all the resources managed by an application.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - resource-tree
+      Watch the Resource Tree:
+        target: api-server
+        description: Watch the tree representing all the resources managed by an Application.
+        protocol: wss
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - resource-tree
+# TODO: research this endpoint.
+#      Get Revision Metadata:
+#        target: api-server
+#        protocol: https
+#        authentication: token
+#        authorization: enduser-identity-propagation
+#        vpn: false
+#        ip_filtered: false
+#        readonly: false
+#        usage: business
+#        data_assets_sent:
+#          - application-name
+      Get Pod Logs:
+        target: api-server
+        description: Get logs from a Pod managed in an Application.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - resource-logs
+      List Resource Actions:
+        target: api-server
+        description: >
+          Get a list of Actions associated with a resource (including the Application) in an Application resource tree.
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: true
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - resource-actions
+      Run a Resource Action:
+        target: api-server
+        description: Run an action on a resource managed by an Application (or the Application itself).
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+      Get Application Sync Windows:
+        target: api-server
+        protocol: https
+        authentication: token
+        authorization: enduser-identity-propagation
+        vpn: false
+        ip_filtered: false
+        readonly: false
+        usage: business
+        data_assets_sent:
+          - application-name
+        data_assets_received:
+          - sync-window
       Get App Code:
         target: api-server
         description: Get the web app code from the API server.
@@ -1897,7 +2086,7 @@ risk_tracking:
     ticket:
     date: 2022-11-19
     checked_by: Zach Aller
-  server-side-request-forgery@application-controller@repo-server@application-controller>rendered-manifest-requests:
+  server-side-request-forgery@application-controller@repo-server@application-controller>fetching-rendered-manifests:
     status: false-positive
     justification: >
       There is potential for SSRF in the repo-server. The repo-server is responsible for fetching manifests from git and
@@ -1927,7 +2116,156 @@ risk_tracking:
 #    ticket:
 #    date: 2022-11-19
 #    checked_by: Zach Aller
-
+  unencrypted-communication@repo-server>send-receive-cached-rendered-manifests@repo-server@rendered-manifests-cache:
+    status: accepted
+    justification: >
+      The sensitivity of traffic between the repo-server and other Argo CD components depends on the sensitivity of the 
+      rendered manifests. If you do not store secrets in Git and if you do not use a secret-substitution plugin, then
+      it should be relatively safe for the communication to occur in the clear.
+      
+      However, if your manifests are sensitive or secret, then you should carefully analyze who may have access to this
+      plaintext traffic and restrict that access as much as possible.
+      
+      The Argo CD team plans to enable HTTPS communication with Redis in a future version.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  code-backdooring@argo-cd-build-pipeline:
+    status: mitigated
+    justification: >
+      Most Argo CD dependencies are pinned at particular versions, and we run weekly Snyk scans to detect 
+      vulnerabilities. Un-pinned dependencies include packages which are bundled with our Ubuntu base image. We rely on
+      the Ubuntu team to monitor their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to
+      notify us of any vulnerabilities in our base image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@api-server:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@application-controller:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@applicationset-controller:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@repo-server*:
+    status: mitigated
+    justification: >
+      We use a widely-used base image, which is maintained by the Ubuntu team. We rely on the Ubuntu team to monitor 
+      their dependencies for vulnerabilities and keep them patched. We also rely on Snyk to notify us of any 
+      vulnerabilities in our base image.
+      
+      The Argo CD team is evaluating distroless base images to further limit the CVE surface area.
+    ticket: https://github.com/argoproj/argo-cd/issues/9029
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@dex-server:
+    status: mitigated
+    justification: >
+      The Argo CD team relies on the Dex team to monitor their dependencies for vulnerabilities and keep them patched.
+      We also run weekly Snyk scans on the currently-used version of Dex. If a Dex image contains high- or critical-
+      severity vulnerabilities, we push a release to update the image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  container-baseimage-backdooring@rendered-manifests-cache:
+    status: mitigated
+    justification: >
+      The Argo CD team relies on the Redis team to monitor their dependencies for vulnerabilities and keep them patched.
+      We also run weekly Snyk scans on the currently-used version of Redis. If a Redis image contains high- or critical-
+      severity vulnerabilities, we push a release to update the image.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication-second-factor@*@user-cli@api-server:
+    status: accepted
+    justification: >
+      Argo CD does not currently support 2FA for the CLI.
+    ticket: https://github.com/argoproj/argo-cd/issues/10232
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication-second-factor@*@web-ui@api-server:
+    status: accepted
+    justification: >
+      Argo CD does not currently support 2FA for the web UI.
+    ticket: https://github.com/argoproj/argo-cd/issues/10232
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@*@*@rendered-manifests-cache:
+    status: accepted
+    justification: >
+      Argo CD supports authentication for Redis, but only in non-HA mode.
+      
+      The Argo CD team plans to enable authentication by default, and for HA mode, in a future version.
+    ticket: https://github.com/argoproj/argo-cd/issues/11386
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@web-ui>get-app-code@web-ui@api-server:
+    status: in-discussion
+    justification: >
+      TODO: determine whether auth happens for the endpoint which returns the web UI assets.
+    ticket:
+    date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@*>fetching-rendered-manifests@*@repo-server:
+    status: accepted
+    justification: >
+      The Application controller and the API server components send unathenticated requests to the repo-server. This is
+      generally okay, because while the repo-server may send sensitive information (manifests), it generally does not
+      send secret information.
+      
+      However, Argo CD may be configured with a secret-substitution plugin, which injects secrets into the manifests. In
+      this case, the repo-server may send secret information.
+      
+      Someone with the ability to make requests to the repo-server could potentially use this to retrieve secrets.
+      
+      A couple mitigations are 1) to host Argo CD on its own cluster or 2) use network policies to limit access.
+      
+      The Argo CD team plans to eventually add authentication which will further mitigate the risk.
+    ticket: https://github.com/argoproj/argo-cd/issues/12084
+    date: 2023-01-23
+    checked_by: Michael Crenshaw
+  cross-site-scripting@api-server:
+    status: mitigated
+    justification: >
+      Some API server responses are particularly vulnerable to XSS attacks. For example, responses which include user-
+      configured link URLs. In those cases, we apply server-side validation to prevent including scripts in URLs.
+      
+      Other responses are generally JSON or plain-text which are handled by the UI in a way that is not especially XSS-
+      prone. For example, the data structure used to generate the application resource tree is interpreted as a tree in
+      a way which makes it difficult to inject any active component. And plain-text manifests are rendered in a third-
+      party text editor which safely interprets the text as simply text.
+      
+      The Argo CD team plans to continually evaluate our default Content Security Policy and narrow down the rules where
+      possible.
+    ticket:
+    date: 2023-01-23
+    checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 
