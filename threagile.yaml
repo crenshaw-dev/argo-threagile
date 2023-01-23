@@ -972,7 +972,7 @@ technical_assets:
 #          - argo-cd-container-image-tag
 #        data_assets_received:
 #          - argo-cd-container-image
-      Rendered Manifest Requests:
+      Fetching Rendered Manifests:
         target: repo-server
         description: Fetch manifests from the repo server to be applied to the cluster.
         protocol: https # values: see help
@@ -2086,7 +2086,7 @@ risk_tracking:
     ticket:
     date: 2022-11-19
     checked_by: Zach Aller
-  server-side-request-forgery@application-controller@repo-server@application-controller>rendered-manifest-requests:
+  server-side-request-forgery@application-controller@repo-server@application-controller>fetching-rendered-manifests:
     status: false-positive
     justification: >
       There is potential for SSRF in the repo-server. The repo-server is responsible for fetching manifests from git and
@@ -2231,6 +2231,24 @@ risk_tracking:
       TODO: determine whether auth happens for the endpoint which returns the web UI assets.
     ticket:
     date: 2023-01-16
+    checked_by: Michael Crenshaw
+  missing-authentication@*>fetching-rendered-manifests@*@repo-server:
+    status: accepted
+    justification: >
+      The Application controller and the API server components send unathenticated requests to the repo-server. This is
+      generally okay, because while the repo-server may send sensitive information (manifests), it generally does not
+      send secret information.
+      
+      However, Argo CD may be configured with a secret-substitution plugin, which injects secrets into the manifests. In
+      this case, the repo-server may send secret information.
+      
+      Someone with the ability to make requests to the repo-server could potentially use this to retrieve secrets.
+      
+      A couple mitigations are 1) to host Argo CD on its own cluster or 2) use network policies to limit access.
+      
+      The Argo CD team plans to eventually add authentication which will further mitigate the risk.
+    ticket: https://github.com/argoproj/argo-cd/issues/12084
+    date: 2023-01-23
     checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)

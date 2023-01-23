@@ -9,12 +9,12 @@
       "unchecked": 0
     },
     "elevated": {
-      "accepted": 1,
+      "accepted": 3,
       "false-positive": 1,
       "in-discussion": 1,
       "in-progress": 1,
       "mitigated": 2,
-      "unchecked": 29
+      "unchecked": 27
     },
     "high": {
       "accepted": 0,
