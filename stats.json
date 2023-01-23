@@ -13,8 +13,8 @@
       "false-positive": 1,
       "in-discussion": 1,
       "in-progress": 1,
-      "mitigated": 2,
-      "unchecked": 27
+      "mitigated": 3,
+      "unchecked": 26
     },
     "high": {
       "accepted": 0,

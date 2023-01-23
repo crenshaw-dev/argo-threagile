@@ -2250,6 +2250,22 @@ risk_tracking:
     ticket: https://github.com/argoproj/argo-cd/issues/12084
     date: 2023-01-23
     checked_by: Michael Crenshaw
+  cross-site-scripting@api-server:
+    status: mitigated
+    justification: >
+      Some API server responses are particularly vulnerable to XSS attacks. For example, responses which include user-
+      configured link URLs. In those cases, we apply server-side validation to prevent including scripts in URLs.
+      
+      Other responses are generally JSON or plain-text which are handled by the UI in a way that is not especially XSS-
+      prone. For example, the data structure used to generate the application resource tree is interpreted as a tree in
+      a way which makes it difficult to inject any active component. And plain-text manifests are rendered in a third-
+      party text editor which safely interprets the text as simply text.
+      
+      The Argo CD team plans to continually evaluate our default Content Security Policy and narrow down the rules where
+      possible.
+    ticket:
+    date: 2023-01-23
+    checked_by: Michael Crenshaw
 
 #diagram_tweak_edge_layout: spline # values: spline, polyline, false, ortho (this suppresses edge labels), curved (this suppresses edge labels and can cause problems with edges)
 

@@ -427,7 +427,7 @@
     "most_relevant_shared_runtime": "",
     "most_relevant_technical_asset": "api-server",
     "most_relevant_trust_boundary": "",
-    "risk_status": "unchecked",
+    "risk_status": "mitigated",
     "severity": "elevated",
     "synthetic_id": "cross-site-scripting@api-server",
     "title": "<b>Cross-Site Scripting (XSS)</b> risk at <b>API Server</b>"
