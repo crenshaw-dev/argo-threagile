@@ -777,10 +777,10 @@
     "data_breach_probability": "probable",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
+      "argo-cd-maintainer-git-client",
       "argo-cd-source-repo",
       "docker-hub",
-      "quay",
-      "argo-cd-maintainer-git-client"
+      "quay"
     ],
     "exploitation_impact": "very-high",
     "exploitation_likelihood": "unlikely",
@@ -817,18 +817,18 @@
     "category": "missing-cloud-hardening",
     "data_breach_probability": "probable",
     "data_breach_technical_assets": [
-      "internal-source-control-management-ui",
-      "internal-source-control-management-api",
-      "user-cli",
-      "web-ui",
-      "host-cluster-kubernetes-api",
-      "repo-server",
-      "repo-server-storage",
+      "api-server",
       "application-controller",
       "applicationset-controller",
+      "dex-server",
+      "host-cluster-kubernetes-api",
+      "internal-source-control-management-api",
+      "internal-source-control-management-ui",
       "rendered-manifests-cache",
-      "api-server",
-      "dex-server"
+      "repo-server",
+      "repo-server-storage",
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "very-high",
     "exploitation_likelihood": "unlikely",
@@ -1114,8 +1114,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1133,10 +1133,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "api-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1154,10 +1154,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "repo-server",
       "api-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1175,10 +1175,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "repo-server",
       "api-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1198,8 +1198,8 @@
     "data_breach_technical_assets": [
       "api-server",
       "dex-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1217,9 +1217,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
       "api-server",
       "dex-server",
+      "rendered-manifests-cache",
       "repo-server"
     ],
     "exploitation_impact": "medium",
@@ -1239,8 +1239,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
       "dex-server",
+      "rendered-manifests-cache",
       "repo-server"
     ],
     "exploitation_impact": "medium",
@@ -1260,8 +1260,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "rendered-manifests-cache",
       "dex-server",
+      "rendered-manifests-cache",
       "repo-server"
     ],
     "exploitation_impact": "medium",
@@ -1280,10 +1280,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
+      "api-server",
       "dex-server",
-      "repo-server",
-      "api-server"
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1301,11 +1301,11 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "api-server",
       "application-controller",
       "dex-server",
-      "api-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1323,10 +1323,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "application-controller",
-      "rendered-manifests-cache",
-      "dex-server",
       "api-server",
+      "application-controller",
+      "dex-server",
+      "rendered-manifests-cache",
       "repo-server"
     ],
     "exploitation_impact": "medium",
@@ -1345,10 +1345,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "application-controller",
-      "rendered-manifests-cache",
-      "dex-server",
       "api-server",
+      "application-controller",
+      "dex-server",
+      "rendered-manifests-cache",
       "repo-server"
     ],
     "exploitation_impact": "medium",
@@ -1367,11 +1367,11 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
-      "repo-server",
-      "rendered-manifests-cache",
+      "api-server",
       "applicationset-controller",
-      "api-server"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1390,10 +1390,10 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
-      "repo-server",
-      "rendered-manifests-cache",
       "applicationset-controller",
-      "dex-server"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1411,11 +1411,11 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "rendered-manifests-cache",
       "api-server",
+      "applicationset-controller",
       "dex-server",
-      "repo-server",
-      "applicationset-controller"
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1433,10 +1433,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "quay",
       "argo-cd-build-pipeline",
       "argo-cd-source-repo",
-      "docker-hub"
+      "docker-hub",
+      "quay"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1455,8 +1455,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-build-pipeline",
-      "docker-hub",
       "argo-cd-source-repo",
+      "docker-hub",
       "quay"
     ],
     "exploitation_impact": "medium",
@@ -1497,8 +1497,8 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "argo-cd-maintainer-git-client",
-      "docker-hub",
       "argo-cd-source-repo",
+      "docker-hub",
       "quay"
     ],
     "exploitation_impact": "medium",
@@ -1517,10 +1517,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "api-server",
       "dex-server",
-      "repo-server",
       "rendered-manifests-cache",
-      "api-server"
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1539,9 +1539,9 @@
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
       "api-server",
+      "dex-server",
       "rendered-manifests-cache",
-      "repo-server",
-      "dex-server"
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1559,8 +1559,8 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "api-server",
+      "dex-server",
       "rendered-manifests-cache",
       "repo-server"
     ],
@@ -1580,10 +1580,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "repo-server",
-      "dex-server",
       "api-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1601,10 +1601,10 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "dex-server",
       "api-server",
-      "repo-server",
-      "rendered-manifests-cache"
+      "dex-server",
+      "rendered-manifests-cache",
+      "repo-server"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1622,8 +1622,8 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "user-cli",
-      "internal-source-control-management-api"
+      "internal-source-control-management-api",
+      "user-cli"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1641,9 +1641,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
+      "internal-source-control-management-api",
       "user-cli",
-      "internal-source-control-management-api"
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1661,9 +1661,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1681,9 +1681,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1701,9 +1701,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1721,9 +1721,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "internal-source-control-management-api",
       "user-cli",
-      "web-ui",
-      "internal-source-control-management-api"
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1741,9 +1741,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
+      "internal-source-control-management-api",
       "user-cli",
-      "web-ui",
-      "internal-source-control-management-api"
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1761,9 +1761,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1781,9 +1781,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "unlikely",
@@ -1801,9 +1801,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
       "internal-source-control-management-api",
-      "user-cli"
+      "user-cli",
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
@@ -1841,9 +1841,9 @@
     "category": "server-side-request-forgery",
     "data_breach_probability": "possible",
     "data_breach_technical_assets": [
-      "web-ui",
+      "internal-source-control-management-api",
       "user-cli",
-      "internal-source-control-management-api"
+      "web-ui"
     ],
     "exploitation_impact": "medium",
     "exploitation_likelihood": "likely",
